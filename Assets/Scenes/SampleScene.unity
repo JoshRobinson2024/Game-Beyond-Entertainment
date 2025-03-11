@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2958322
+      value: -8.86
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -249,7 +249,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -290,11 +290,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5944009785737486260, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.028421879
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5944009785737486260, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1436253
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5944009785737486260, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e316a6441ec9ab64da4aa0c07c0ff6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBullet: {fileID: 6864084023453524555, guid: 43f2143ea824b224c828ca693866a760, type: 3}
+  pooledBullet: {fileID: 6864084023453524555, guid: a242ff4b5c4964f4da6bc19a81d76ab3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

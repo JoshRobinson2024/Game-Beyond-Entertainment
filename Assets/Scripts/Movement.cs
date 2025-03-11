@@ -62,15 +62,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = moveForce;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name.Equals("Bullet"))
-        {
-            //Debug.Log("Nokbak");
-            //forceToApply += new Vector2(-20, 0);
-            Destroy(collision.gameObject);
-        }
-        
-    }
+    
 }
 

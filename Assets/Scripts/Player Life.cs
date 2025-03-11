@@ -14,7 +14,7 @@ public class PlayerLife : MonoBehaviour
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Bullet"))
         {
