@@ -10,14 +10,19 @@ public class Fire : MonoBehaviour
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
 
+    [SerializeField]
+    private float Delay = 4f;
     private Vector2 bulletMoveDirection;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("FireBul", 0f, 2f);
+        
+        InvokeRepeating("FireBul", 0f, Delay);
     }
     private void FireBul()
     {
+        startAngle = Random.Range(0, 360);
+        endAngle = startAngle + 360;
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         float angle = startAngle;
         for (int i = 0; i < bulletsAmount+1; i++)

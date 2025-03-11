@@ -360,6 +360,7 @@ MonoBehaviour:
   bulletsAmount: 20
   startAngle: 0
   endAngle: 360
+  Delay: 4
 --- !u!1 &942273942
 GameObject:
   m_ObjectHideFlags: 0
