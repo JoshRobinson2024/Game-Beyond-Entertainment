@@ -9,20 +9,27 @@ public class SingleSpiral : MonoBehaviour
     private float increment = 0;
 
     
+
     
+
+
     // Start is called before the first frame update
     void Awake()
     {
+        Debug.Log("anything it don't mattetr");
         redefine();
-        InvokeRepeating("FireSpiral", 0f, 0.12f);
-        InvokeRepeating("FireSpiral", 0f, 5);
+        InvokeRepeating("FireSpiral", 0f, 0.08f);
+        InvokeRepeating("Redefine", 0f, 2f);
         
         
     }
     private void redefine()
     {
         angle = Random.Range(0, 360);
-        increment = Random.Range(12, 17);
+        increment = Random.Range(20, 27);
+        
+        CancelInvoke("FireSpiral");
+        InvokeRepeating("FireSpiral", 0f, 0.08f);
     }
     private void FireSpiral()
     {
@@ -45,7 +52,7 @@ public class SingleSpiral : MonoBehaviour
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
-
+            
         }
 
     }

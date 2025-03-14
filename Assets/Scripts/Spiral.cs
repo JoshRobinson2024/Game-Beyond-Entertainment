@@ -16,7 +16,7 @@ public class Spiral : MonoBehaviour
     private void FireSpiral()
     {
         
-        angle += 5f;
+        angle += 10f;
         if (angle >= 360)
         {
             angle = 0f;
