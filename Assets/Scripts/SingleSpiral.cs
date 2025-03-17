@@ -19,7 +19,7 @@ public class SingleSpiral : MonoBehaviour
         angle = Random.Range(0, 360);
         Debug.Log("anything it don't mattetr");
         redefine();
-        InvokeRepeating("FireSpiral", 0f, 0.06f);
+        InvokeRepeating("FireSpiral", 0f, 0.05f);
         
         
         
@@ -28,7 +28,7 @@ public class SingleSpiral : MonoBehaviour
     {
         Debug.Log("redefining...");
         
-        increment = Random.Range(20, 27);
+        increment = Random.Range(20, 30);
         
         
     }
@@ -60,7 +60,7 @@ public class SingleSpiral : MonoBehaviour
             // x = 0
 
         }
-        for (int i = 0; i <= 250; i += 1)
+        for (int i = 0; i <= 200; i += 1)
         {
             if(i <= 250)
             {

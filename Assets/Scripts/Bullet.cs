@@ -3,17 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 7f;
     private Vector2 moveDirection;
-    public float bulletLife = 5f;
+    
 
-    private void OnEnable()
-    {
-        Invoke("Destroy", bulletLife);
-    }
+    
 
     
     private void Update()

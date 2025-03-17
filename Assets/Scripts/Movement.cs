@@ -16,11 +16,36 @@ public class PlayerMovement : MonoBehaviour
     public float dashLength = 0.5f, dashCooldown = 1f;
     private float dashCounter;
     private float dashCoolCounter;
-
+    public float maxHealth;
+    public float defense;
+    public float currentHealth;
+    public float healthToLose;
+    public bool iFrames = false;
     private void Start()
     {
+        currentHealth = maxHealth;
+        healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
     }
+    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Bullet"))
+        {
+            if (iFrames == false)
+            {
+                iFrames = true;
+                currentHealth -= healthToLose;
+                Debug.Log(currentHealth.ToString());
+                Invoke("loseIFrames", 0.67f);
+            }
+
+        }
+    }
+    private void loseIFrames()
+    {
+        iFrames = false;
+    }
+    
     void Update()
     {
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -31,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Dashhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
+                iFrames = true;
+                Invoke("loseIFrames", 0.5f);
             }
         }
         if (dashCounter > 0)
@@ -40,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
+               
             }
         }
 
