@@ -14,22 +14,23 @@ public class SingleSpiral : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
+        angle = Random.Range(0, 360);
         Debug.Log("anything it don't mattetr");
         redefine();
-        InvokeRepeating("FireSpiral", 0f, 0.08f);
-        InvokeRepeating("Redefine", 0f, 2f);
+        InvokeRepeating("FireSpiral", 0f, 0.06f);
+        
         
         
     }
     private void redefine()
     {
-        angle = Random.Range(0, 360);
+        Debug.Log("redefining...");
+        
         increment = Random.Range(20, 27);
         
-        CancelInvoke("FireSpiral");
-        InvokeRepeating("FireSpiral", 0f, 0.08f);
+        
     }
     private void FireSpiral()
     {
@@ -41,8 +42,8 @@ public class SingleSpiral : MonoBehaviour
         }
         for (int i = 0; i <= 1; i++)
         {
-            float bulDirX = transform.position.x + Mathf.Cos((angle  * Mathf.PI) / 180f);
-            float bulDirY = transform.position.y + Mathf.Sin((angle  * Mathf.PI) / 180f);
+            float bulDirX = transform.position.x + Mathf.Cos((angle * Mathf.PI) / 180f);
+            float bulDirY = transform.position.y + Mathf.Sin((angle * Mathf.PI) / 180f);
 
             Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMoveVector - transform.position).normalized;
@@ -52,7 +53,19 @@ public class SingleSpiral : MonoBehaviour
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
-            
+            // for i in range(1,250,1):
+            // x+=1
+            //if x = 250:
+            // rerandomise 
+            // x = 0
+
+        }
+        for (int i = 0; i <= 250; i += 1)
+        {
+            if(i <= 250)
+            {
+                redefine();
+            }
         }
 
     }
