@@ -13,6 +13,8 @@ public class Fire : MonoBehaviour
     [SerializeField]
     private float Delay = 4f;
     private Vector2 bulletMoveDirection;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,9 @@ public class Fire : MonoBehaviour
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
             angle += angleStep;
+            ;
         }
+        
     }
 
 }

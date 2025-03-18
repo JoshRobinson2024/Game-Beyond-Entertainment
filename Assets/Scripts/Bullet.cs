@@ -9,8 +9,11 @@ public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 7f;
     private Vector2 moveDirection;
-    
-
+    public float bulletLife = 5f;
+    private void OnAwake()
+    {
+        InvokeRepeating("Destroy", 0f,  bulletLife);
+    }
     
 
     

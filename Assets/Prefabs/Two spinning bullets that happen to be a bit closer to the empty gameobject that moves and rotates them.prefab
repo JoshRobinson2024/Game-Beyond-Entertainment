@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d3ef5d1a6c1224b8a8c06167b2b0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
 --- !u!1 &4729248989670811875
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9137559494682359840}
   - component: {fileID: 3971233462935855208}
+  - component: {fileID: 8561321863530357828}
   m_Layer: 0
   m_Name: Two spinning bullets that happen to be a bit closer to the empty gameobject
     that moves and rotates them
@@ -243,6 +245,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+--- !u!114 &8561321863530357828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6864084023453524555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79a1c913b6f43a4baa5ed5a978e0813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet1: {fileID: 3238226971411249277}
+  bullet2: {fileID: 6935000058171611660}
+  bullet3: {fileID: 6935000058171611660}
+  bullet4: {fileID: 6935000058171611660}
+  prefab: {fileID: 6864084023453524555}
+  rotator: {fileID: 4729248989670811875}
 --- !u!1 &6935000058171611660
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,3 +410,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d3ef5d1a6c1224b8a8c06167b2b0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
