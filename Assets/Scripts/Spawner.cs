@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     public Fire fire;
     public float waitTime;
     public Spiral spiral;
+    public GameObject shooter1;
+    public GameObject shooter2;
+    public float howlongtoshoot = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,51 +55,62 @@ public class Spawner : MonoBehaviour
     }
     private void Attk7()
     {
+        Debug.Log("Multiringattack");
         attkInProgress = true;
         fire.randomise();
         fire.delayfire();
         fire.delaystop();
-        Invoke("Reset", 1);
+        
     }
     private void Attk6()
     {
+        Debug.Log("double spiral");
         attkInProgress = true;
+        spiral.randomise();
         spiral.firing();
-        Invoke("Reset", 1);
+        
     }
     private void Attk5()
     {
+        Debug.Log("cannonbalrog");
         attkInProgress = true;
-        Invoke("Reset", 1);
+        howlongtoshoot = Random.Range(4, 7);
+        shooter1.SetActive(true);
+        shooter2.SetActive(true);
+        Invoke("Turnoffshooter", howlongtoshoot);
     }
     private void Attk4()
     {
-        attkInProgress = true;
-        Invoke("Reset", 1);
+        //...
     }
     private void Attk3()
     {
-        attkInProgress = true;
-        Invoke("Reset", 1);
+        //...
     }
     private void Attk2()
     {
-        attkInProgress = true;
-        Invoke("Reset", 1);
+        //...
     }
     private void Attk1()
     {
-        attkInProgress = true;
-        Invoke("Reset", 1);
+        //...
     }
     private void Reset()
     {
         attkInProgress = false;
     }
-    private void wait()
+    public void wait()
     {
+        Debug.Log("waiting");
         waitTime = Random.Range(0.5f, 2);
         Invoke("Reset", waitTime);
+    }
+    public void Turnoffshooter()
+    {
+        Debug.Log("Deactivating");
+        shooter1.SetActive(false);
+        shooter2.SetActive(false);
+        wait();
     }
 }
 

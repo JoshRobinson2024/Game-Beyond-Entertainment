@@ -5,18 +5,17 @@ using UnityEngine;
 public class Spiral : MonoBehaviour
 {
     private float angle = 0f;
-    
-
+    private float wait;
+    private float increment;
+    private float timeToShoot;
     private Vector2 bulletMoveDirections;
+    public Spawner spawner;
     // Start is called before the first frame update
-    void Start()
-    {
-        InvokeRepeating("FireSpiral", 0f, 0.12f);
-    }
+    
     private void FireSpiral()
     {
         
-        angle += 10f;
+        angle += increment;
         if (angle >= 360)
         {
             angle = 0f;
@@ -34,9 +33,33 @@ public class Spiral : MonoBehaviour
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+
             
         }
-        
+        for (int i = 0; i <= 125; i += 1)
+        {
+            if (i <= 250)
+            {
+                randomise();
+            }
+        }
+    }
+    public void firing()
+    {
+
+        InvokeRepeating("FireSpiral", 0f, timeToShoot);
+        Invoke("cease", wait);
+    }
+    public void randomise()
+    {
+        wait = Random.Range(6, 12);
+        increment = Random.Range(7, 20);
+        timeToShoot = Random.Range(0.04f, 0.1f);
+    }
+    private void cease()
+    {
+        CancelInvoke("FireSpiral");
+        spawner.wait();
     }
     
 }

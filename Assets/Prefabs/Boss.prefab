@@ -224,6 +224,10 @@ MonoBehaviour:
   bullets: []
   fire: {fileID: 4632159185948639465}
   waitTime: 0
+  spiral: {fileID: 6715148450820135244}
+  shooter1: {fileID: 510015445487765920}
+  shooter2: {fileID: 6092301250848041773}
+  howlongtoshoot: 0
 --- !u!114 &4632159185948639465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +243,7 @@ MonoBehaviour:
   bulletsAmount: 10
   startAngle: 0
   endAngle: 360
+  spawner: {fileID: 6683858716733289835}
 --- !u!114 &6715148450820135244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,3 +256,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa2b273bfba4374bb40e2f001ed012f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 6683858716733289835}

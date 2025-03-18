@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     */
     private void OnEnable()
     {
-        Debug.Log("Awake");
+        //Debug.Log("Awake");
         Invoke("Destroy", 5f);
     }
 

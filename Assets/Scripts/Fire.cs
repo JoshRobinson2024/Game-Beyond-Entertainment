@@ -14,7 +14,7 @@ public class Fire : MonoBehaviour
     private Vector2 bulletMoveDirection;
 
     private float timesshot;
-    
+    public Spawner spawner;
     public void FireBul()
     {
         bulletsAmount = Random.Range(15, 25);
@@ -48,6 +48,7 @@ public class Fire : MonoBehaviour
     public void stop()
     {
         CancelInvoke("FireBul");
+        spawner.wait();
     }
     public void delaystop()
     {
