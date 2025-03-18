@@ -12,11 +12,21 @@ public class Bullet : MonoBehaviour
     public float bulletLife = 5f;
     private void OnAwake()
     {
-        InvokeRepeating("Destroy", 0f,  bulletLife);
+        Invoke("Destroy", bulletLife);
     }
-    
+    /*
+    void Awake()
+    {
+        Debug.Log("Awake");
+        Invoke("Destroy", 5f);
+    }
+    */
+    private void Start()
+    {
+        Debug.Log("Awake");
+        Invoke("Destroy", 5f);
+    }
 
-    
     private void Update()
     {
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
@@ -25,8 +35,9 @@ public class Bullet : MonoBehaviour
     {
         moveDirection = dir;
     }
-    private void Destroy()
+    void Destroy()
     {
+        Debug.Log("sl;ifhjijaimwau");
         gameObject.SetActive(false);
     }
     private void OnDisable()

@@ -14,14 +14,9 @@ public class Fire : MonoBehaviour
     private float Delay = 4f;
     private Vector2 bulletMoveDirection;
 
+    private float timesshot;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        InvokeRepeating("FireBul", 0f, Delay);
-    }
-    private void FireBul()
+    public void FireBul()
     {
         startAngle = Random.Range(0, 360);
         endAngle = startAngle + 360;
@@ -45,5 +40,21 @@ public class Fire : MonoBehaviour
         }
         
     }
+    public void delayfire()
+    {
+        InvokeRepeating("FireBul", 0f, 0.6f);
+    }
+    public void stop()
+    {
+        CancelInvoke("FireBul");
+    }
+    public void delaystop()
+    {
+        Invoke("stop", timesshot*0.6f);
+    }
+    public void randomise()
+    {
+        timesshot = Random.Range(2, 5);
 
+    }
 }
