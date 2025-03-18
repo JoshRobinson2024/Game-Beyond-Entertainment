@@ -183,6 +183,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5944009785737486260}
+  - component: {fileID: 6683858716733289835}
+  - component: {fileID: 4632159185948639465}
+  - component: {fileID: 6715148450820135244}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -206,3 +209,45 @@ Transform:
   - {fileID: 5727081988663216936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6683858716733289835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835274119263181597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b959b2d03c8743b1f535b6ff62aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullets: []
+  fire: {fileID: 4632159185948639465}
+  waitTime: 0
+--- !u!114 &4632159185948639465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835274119263181597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23632f56c162ebc40a702d62bc909ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletsAmount: 10
+  startAngle: 0
+  endAngle: 360
+--- !u!114 &6715148450820135244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835274119263181597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa2b273bfba4374bb40e2f001ed012f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

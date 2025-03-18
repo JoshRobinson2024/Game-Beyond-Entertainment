@@ -8,6 +8,9 @@ public class Spawner : MonoBehaviour
     private bool attkInProgress = false;
     private int attkSelected;
     public GameObject[] bullets;
+    public Fire fire;
+    public float waitTime;
+    public Spiral spiral;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,36 +53,50 @@ public class Spawner : MonoBehaviour
     private void Attk7()
     {
         attkInProgress = true;
-        Instantiate(bullets[1]);
+        fire.randomise();
+        fire.delayfire();
+        fire.delaystop();
         Invoke("Reset", 1);
     }
     private void Attk6()
     {
-        //...
+        attkInProgress = true;
+        spiral.firing();
+        Invoke("Reset", 1);
     }
     private void Attk5()
     {
-        // ...
+        attkInProgress = true;
+        Invoke("Reset", 1);
     }
     private void Attk4()
     {
-        // ...
+        attkInProgress = true;
+        Invoke("Reset", 1);
     }
     private void Attk3()
     {
-        // ...
+        attkInProgress = true;
+        Invoke("Reset", 1);
     }
     private void Attk2()
     {
-        //...
+        attkInProgress = true;
+        Invoke("Reset", 1);
     }
     private void Attk1()
     {
-        // ...
+        attkInProgress = true;
+        Invoke("Reset", 1);
     }
     private void Reset()
     {
         attkInProgress = false;
+    }
+    private void wait()
+    {
+        waitTime = Random.Range(0.5f, 2);
+        Invoke("Reset", waitTime);
     }
 }
 

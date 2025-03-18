@@ -10,14 +10,14 @@ public class Fire : MonoBehaviour
     [SerializeField]
     private float startAngle = 0f, endAngle = 360f;
 
-    [SerializeField]
-    private float Delay = 4f;
+    
     private Vector2 bulletMoveDirection;
 
     private float timesshot;
     
     public void FireBul()
     {
+        bulletsAmount = Random.Range(15, 25);
         startAngle = Random.Range(0, 360);
         endAngle = startAngle + 360;
         float angleStep = (endAngle - startAngle) / bulletsAmount;
@@ -42,6 +42,7 @@ public class Fire : MonoBehaviour
     }
     public void delayfire()
     {
+        
         InvokeRepeating("FireBul", 0f, 0.6f);
     }
     public void stop()
@@ -54,6 +55,7 @@ public class Fire : MonoBehaviour
     }
     public void randomise()
     {
+        
         timesshot = Random.Range(2, 5);
 
     }

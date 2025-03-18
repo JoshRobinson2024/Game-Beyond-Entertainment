@@ -309,6 +309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4632159185948639465, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: bulletsAmount
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 5944009785737486260, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -384,7 +388,6 @@ MonoBehaviour:
   bulletsAmount: 20
   startAngle: 0
   endAngle: 360
-  Delay: 5
 --- !u!114 &725930151
 MonoBehaviour:
   m_ObjectHideFlags: 0
