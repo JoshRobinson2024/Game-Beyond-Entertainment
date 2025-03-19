@@ -52,7 +52,7 @@ public class Spiral : MonoBehaviour
     }
     public void randomise()
     {
-        wait = Random.Range(6, 12);
+        wait = Random.Range(6, 8);
         increment = Random.Range(7, 20);
         timeToShoot = Random.Range(0.04f, 0.1f);
     }

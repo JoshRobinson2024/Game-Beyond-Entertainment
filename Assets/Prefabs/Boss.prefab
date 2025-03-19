@@ -188,6 +188,8 @@ GameObject:
   - component: {fileID: 6683858716733289835}
   - component: {fileID: 4632159185948639465}
   - component: {fileID: 6715148450820135244}
+  - component: {fileID: 4346037441687580804}
+  - component: {fileID: 4493794981236587890}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -229,7 +231,13 @@ MonoBehaviour:
   spiral: {fileID: 6715148450820135244}
   shooter: {fileID: 2956735238823794821}
   shooter2: {fileID: 5756359125840865880}
+  spiral1off: 0
+  spiral2off: 0
   howlongtoshoot: 0
+  reuse: 0
+  usedAttack: 0
+  spray: {fileID: 4346037441687580804}
+  ring: {fileID: 4493794981236587890}
 --- !u!114 &4632159185948639465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,4 +266,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa2b273bfba4374bb40e2f001ed012f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 6683858716733289835}
+--- !u!114 &4346037441687580804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835274119263181597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c505312b5bd6d2448b910e22b51618d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 6683858716733289835}
+  ring: {fileID: 4493794981236587890}
+--- !u!114 &4493794981236587890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8835274119263181597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f3850e4bfd4ee43951ecb380e9a3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletsAmount: 10
   spawner: {fileID: 6683858716733289835}

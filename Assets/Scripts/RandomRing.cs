@@ -2,29 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class RandomRing : MonoBehaviour
 {
     [SerializeField]
     private int bulletsAmount = 10;
-
-    [SerializeField]
-    private float startAngle = 0f, endAngle = 360f;
-
-    
-    private Vector2 bulletMoveDirection;
-    private float delay = 0.6f;
-    
-
-    private float timesshot;
     public Spawner spawner;
+    private float delay = 0;
+    private int timesshot = 0;
+    private float angle = 0;
     public void FireBul()
     {
-        bulletsAmount = Random.Range(15, 25);
-        startAngle = Random.Range(0, 360);
-        endAngle = startAngle + 360;
-        float angleStep = (endAngle - startAngle) / bulletsAmount;
-        float angle = startAngle;
-        for (int i = 0; i < bulletsAmount+1; i++)
+        delay = Random.Range(0.7f, 1.4f);
+        bulletsAmount = Random.Range(75, 85);
+        angle = Random.Range(0, 361);
+        
+        for (int i = 0; i < bulletsAmount + 1; i++)
         {
             float bulDirx = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
             float bulDiry = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
@@ -37,30 +29,22 @@ public class Fire : MonoBehaviour
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
-            angle += angleStep;
-            
+            angle = Random.Range(0, 361); 
+
         }
-        
-        
+
+
     }
-    public void delayfire()
+    public void DelayFire()
     {
-        
+        timesshot = Random.Range(4, 7);
+        delay = Random.Range(0.5f, 1.2f);
         InvokeRepeating("FireBul", 0f, delay);
+        Invoke("EndFiring", timesshot * delay);
     }
-    public void stop()
+    public void EndFiring()
     {
         CancelInvoke("FireBul");
         spawner.wait();
-    }
-    public void delaystop()
-    {
-        Invoke("stop", delay * timesshot);
-    }
-    public void randomise()
-    {
-        
-        timesshot = Random.Range(3, 6);
-        delay = Random.Range(0.15f, 0.35f);
     }
 }
