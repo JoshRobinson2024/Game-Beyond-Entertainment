@@ -309,6 +309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 510015445487765920, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4632159185948639465, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: bulletsAmount
       value: 18
@@ -353,6 +357,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092301250848041773, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -360,46 +368,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6697744162024625583, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 725930149}
-    - targetCorrespondingSourceObject: {fileID: 6697744162024625583, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 725930151}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
---- !u!1 &725930147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6697744162024625583, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
-  m_PrefabInstance: {fileID: 723238469}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &725930149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725930147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23632f56c162ebc40a702d62bc909ae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletsAmount: 20
-  startAngle: 0
-  endAngle: 360
---- !u!114 &725930151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725930147}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa2b273bfba4374bb40e2f001ed012f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &826786763
 GameObject:
   m_ObjectHideFlags: 0

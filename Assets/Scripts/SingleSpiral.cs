@@ -8,28 +8,32 @@ public class SingleSpiral : MonoBehaviour
 
     private float increment = 0;
 
-    
+    private float speed = 0;
 
     
+
+    public Spawner spawner;
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Fire()
     {
+        
+        
         angle = Random.Range(0, 360);
-        Debug.Log("anything it don't mattetr");
+        //Debug.Log("anything it don't mattetr");
         redefine();
-        InvokeRepeating("FireSpiral", 0f, 0.05f);
+        InvokeRepeating("FireSpiral", 0f, speed);
         
         
         
     }
     private void redefine()
     {
-        Debug.Log("redefining...");
+        //Debug.Log("redefining...");
         
         increment = Random.Range(20, 30);
-        
+        speed = Random.Range(0.05f, 0.08f);
         
     }
     private void FireSpiral()
@@ -69,5 +73,11 @@ public class SingleSpiral : MonoBehaviour
         }
 
     }
-
+    public void endfire()
+    {
+        
+        CancelInvoke("FireSpiral");
+        
+    }
+    
 }

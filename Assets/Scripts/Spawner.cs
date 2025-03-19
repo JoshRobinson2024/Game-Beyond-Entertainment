@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,9 +12,13 @@ public class Spawner : MonoBehaviour
     public Fire fire;
     public float waitTime;
     public Spiral spiral;
-    public GameObject shooter1;
-    public GameObject shooter2;
+    public SingleSpiral shooter;
+    public SingleSpiral shooter2;
+    public bool spiral1off = false;
+    public bool spiral2off = false;
     public float howlongtoshoot = 0f;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +57,12 @@ public class Spawner : MonoBehaviour
                     break;
             }
         }
+        if(spiral1off == true && spiral2off == true)
+        {
+            spiral1off = false;
+            spiral2off = false;
+            wait(); 
+        }
     }
     private void Attk7()
     {
@@ -75,9 +86,15 @@ public class Spawner : MonoBehaviour
         Debug.Log("cannonbalrog");
         attkInProgress = true;
         howlongtoshoot = Random.Range(4, 7);
-        shooter1.SetActive(true);
-        shooter2.SetActive(true);
-        Invoke("Turnoffshooter", howlongtoshoot);
+        shooter.Fire();
+        shooter2.Fire();
+        howlongtoshoot = Random.Range(4, 7);
+        Invoke("endSpiral", howlongtoshoot);
+        howlongtoshoot = Random.Range(4, 7);
+        Invoke("endSpiral2", howlongtoshoot);
+        
+
+
     }
     private void Attk4()
     {
@@ -105,12 +122,16 @@ public class Spawner : MonoBehaviour
         waitTime = Random.Range(0.5f, 2);
         Invoke("Reset", waitTime);
     }
-    public void Turnoffshooter()
+    public void endSpiral()
     {
-        Debug.Log("Deactivating");
-        shooter1.SetActive(false);
-        shooter2.SetActive(false);
-        wait();
+        shooter.endfire();
+        spiral1off = true;
+        
+    }
+    public void endSpiral2()
+    {
+        shooter2.endfire();
+        spiral2off = true;
     }
 }
 

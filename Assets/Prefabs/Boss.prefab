@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4ceb8a06e771342bd3e1a462902e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 6683858716733289835}
 --- !u!1 &6092301250848041773
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5019416982755306553}
-  - component: {fileID: 57213512647369396}
+  - component: {fileID: 5756359125840865880}
   m_Layer: 0
   m_Name: SpiralSpawner 2
   m_TagString: Untagged
@@ -76,7 +77,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5727081988663216936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &57213512647369396
+--- !u!114 &5756359125840865880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4ceb8a06e771342bd3e1a462902e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 6683858716733289835}
 --- !u!1 &6697744162024625583
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,8 +227,8 @@ MonoBehaviour:
   fire: {fileID: 4632159185948639465}
   waitTime: 0
   spiral: {fileID: 6715148450820135244}
-  shooter1: {fileID: 510015445487765920}
-  shooter2: {fileID: 6092301250848041773}
+  shooter: {fileID: 2956735238823794821}
+  shooter2: {fileID: 5756359125840865880}
   howlongtoshoot: 0
 --- !u!114 &4632159185948639465
 MonoBehaviour:
