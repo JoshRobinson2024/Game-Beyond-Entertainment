@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 550c2f790a9ed254c85ff18e705b06d9
+guid: b2f1db36f1d83214797ac5ba55a5e24b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arena Background Spritesheet_0
+      name: Fog of war fade-in Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3180
-        height: 2480
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d0a21a68b8738b4a8bf676990422faf
-      internalID: 1969669594
+      spriteID: 07407770076be644281b45d4ae471951
+      internalID: 452080560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arena Background Spritesheet_1
+      name: Fog of war fade-in Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 3180
+        x: 800
         y: 0
-        width: 3180
-        height: 2480
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a10c517bc96fb1f4fb0fe421f4f41c59
-      internalID: 427567098
+      spriteID: 09227a679f76a31428e7fe07f45859cf
+      internalID: 1904202084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fog of war fade-in Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9304eae322423844083ade909ed95735
+      internalID: -505976650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fog of war fade-in Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e2e569f6ee3be4e886850f1702b5ba
+      internalID: 1764259573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fog of war fade-in Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b2a731149794247b0b1d889e2064af
+      internalID: -542616909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fog of war fade-in Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351ba8520be4c29479fb8837be9705c5
+      internalID: -1952480713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fog of war fade-in Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 800
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f175b93354e594499caca2791bb199e
+      internalID: 297787059
       vertices: []
       indices: 
       edges: []
@@ -201,8 +306,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Arena Background Spritesheet_0: 1969669594
-      Arena Background Spritesheet_1: 427567098
+      Fog of war fade-in Spritesheet_0: 452080560
+      Fog of war fade-in Spritesheet_1: 1904202084
+      Fog of war fade-in Spritesheet_2: -505976650
+      Fog of war fade-in Spritesheet_3: 1764259573
+      Fog of war fade-in Spritesheet_4: -542616909
+      Fog of war fade-in Spritesheet_5: -1952480713
+      Fog of war fade-in Spritesheet_6: 297787059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

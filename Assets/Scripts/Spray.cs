@@ -51,10 +51,10 @@ public class Spray : MonoBehaviour
     {
 
         InvokeRepeating("FireSpray", 0f, timeToShoot);
-        if(fire1 == 0)
+        /*if(fire1 == 0)
         {
             Invoke("RingFire1", ringDelay1);
-        }
+        }*/
         if(fire2 == 0)
         {
             Invoke("RingFire2", ringDelay2);
@@ -114,9 +114,9 @@ public class Spray : MonoBehaviour
         ringDelay2 = Random.Range(5, 7);
         ringDelay3 = Random.Range(8, 10);
         wait = Random.Range(10, 12);
-        fire1 = Random.Range(0, 1);
-        fire2 = Random.Range(0, 1);
-        fire3 = Random.Range(0, 1);
-        fire4 = Random.Range(0, 1);
+        fire1 = Random.Range(0, 2);
+        fire2 = Random.Range(0, 2);
+        fire3 = Random.Range(0, 2);
+        fire4 = Random.Range(0, 2);
     }
 }
