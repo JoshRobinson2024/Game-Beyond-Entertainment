@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2fcb7dcb315fe9b4898434662d1bfa3f
+guid: 325b3bf4f8ced49448deb9a233beca98
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fog Of War spritesheet_0
+      name: Fog Of War Spritesheet (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 450
+        width: 1600
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,41 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe544bbf38634344099b4982c64abc10
-      internalID: 38632732
+      spriteID: f15b253e3dbad544e9cab2912789c8fb
+      internalID: -46451532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fog Of War spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 800
-        height: 450
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 427d8c1df804426499a6cde395558665
-      internalID: -970879593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fog Of War spritesheet_2
+      name: Fog Of War Spritesheet (1)_1
       rect:
         serializedVersion: 2
         x: 1600
         y: 0
-        width: 800
-        height: 450
+        width: 1600
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cfaa552aeba42b4484a1ed3156ec887
-      internalID: -1688127359
+      spriteID: 6a99714c3420c1c44bee42c19cc7da0d
+      internalID: 1108398096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fog Of War spritesheet_3
+      name: Fog Of War Spritesheet (1)_2
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 3200
         y: 0
-        width: 800
-        height: 450
+        width: 1600
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,8 +205,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fc2294ead7935b4297abcc271c2f8d5
-      internalID: 916878222
+      spriteID: 57e2c308cc244c24e8c6ab8b18f69cc9
+      internalID: 1621477290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fog Of War Spritesheet (1)_3
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 1600
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc118fad9ca0fb24e8e9d46071318b31
+      internalID: 830640203
       vertices: []
       indices: 
       edges: []
@@ -243,10 +243,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fog Of War spritesheet_0: 38632732
-      Fog Of War spritesheet_1: -970879593
-      Fog Of War spritesheet_2: -1688127359
-      Fog Of War spritesheet_3: 916878222
+      Fog Of War Spritesheet (1)_0: -46451532
+      Fog Of War Spritesheet (1)_1: 1108398096
+      Fog Of War Spritesheet (1)_2: 1621477290
+      Fog Of War Spritesheet (1)_3: 830640203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

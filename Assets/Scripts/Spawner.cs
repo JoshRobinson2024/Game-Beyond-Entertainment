@@ -24,15 +24,18 @@ public class Spawner : MonoBehaviour
     public GameObject darkness;
     public float removalTime = 0f;
     public bool isDark = false;
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         darkness.SetActive(false);
     }
 
     
     void Update()
     {
+        
         if (attkInProgress == false)
         {
             attkSelected = Random.Range(1, 8);
@@ -134,6 +137,8 @@ public class Spawner : MonoBehaviour
             attkInProgress = true;
             isDark = true;
             darkness.SetActive(true);
+            
+            Invoke("removeDarknessAnim", removalTime - 5);
             Invoke("removeDarkness", removalTime);
             wait();
         }
@@ -175,5 +180,6 @@ public class Spawner : MonoBehaviour
         darkness.SetActive(false);
         isDark = false;
     }
+    
 }
 
