@@ -51,10 +51,10 @@ public class Spray : MonoBehaviour
     {
 
         InvokeRepeating("FireSpray", 0f, timeToShoot);
-        /*if(fire1 == 0)
+        if(fire1 == 0)
         {
             Invoke("RingFire1", ringDelay1);
-        }*/
+        }
         if(fire2 == 0)
         {
             Invoke("RingFire2", ringDelay2);

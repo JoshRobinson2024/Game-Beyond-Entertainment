@@ -178,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 178583052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: 0, z: 0}
+  m_LocalPosition: {x: 19, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,6 +287,10 @@ PrefabInstance:
     - target: {fileID: 1461639215282855164, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486800369990408817, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -411,7 +415,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 16.669434
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -517,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb53f987e2668e4fa5424503b7c5623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 945579815}
+  boss: {fileID: 673951915}
   TeleportList:
   - {fileID: 1792810729}
   - {fileID: 178583052}
@@ -528,7 +532,19 @@ MonoBehaviour:
   - {fileID: 790326085}
   - {fileID: 2006118720}
   - {fileID: 972123265}
-  spawner: {fileID: 0}
+--- !u!114 &673951936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673951915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5053e1a35729d4a989d4aeb8cad6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5000
 --- !u!1001 &723238469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +614,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1037596046}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: teleport
+      value: 
+      objectReference: {fileID: 673951929}
+    - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: darknesAnim
       value: 
       objectReference: {fileID: 673951922}
@@ -641,6 +661,10 @@ PrefabInstance:
       propertyPath: TeleportList.Array.data[8]
       value: 
       objectReference: {fileID: 972123265}
+    - target: {fileID: 6884405072680336451, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -659,6 +683,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 673951929}
+    - targetCorrespondingSourceObject: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673951936}
   m_SourcePrefab: {fileID: 100100000, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
 --- !u!1 &790326085
 GameObject:
@@ -1052,11 +1079,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledBullet: {fileID: 1955669257165685175, guid: bdebe2b58c6b6d842a3d12734d23b1d8, type: 3}
---- !u!1 &945579815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8456669709333360332, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
-  m_PrefabInstance: {fileID: 723238469}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &972123265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1104,7 @@ Transform:
   m_GameObject: {fileID: 972123265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -14.5, z: 0}
+  m_LocalPosition: {x: 0, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1147,8 +1169,8 @@ Transform:
   m_GameObject: {fileID: 1052183704}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18317068, y: -4.2714357, z: 4.582488}
-  m_LocalScale: {x: 2.6762931, y: 2.6776664, z: 1}
+  m_LocalPosition: {x: -0.5002, y: -4.5884, z: 4.582488}
+  m_LocalScale: {x: 3.7464473, y: 3.8150575, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1037596047}
@@ -1546,7 +1568,7 @@ Transform:
   m_GameObject: {fileID: 1740410744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.5, y: 0, z: 0}
+  m_LocalPosition: {x: -19, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1608,7 +1630,7 @@ Transform:
   m_GameObject: {fileID: 1909634485}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.5, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

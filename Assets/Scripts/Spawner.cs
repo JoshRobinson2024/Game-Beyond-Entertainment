@@ -24,57 +24,63 @@ public class Spawner : MonoBehaviour
     public GameObject darkness;
     public float removalTime = 0f;
     public bool isDark = false;
-    
+    public Teleport teleport;
+    public int attacksToteleport;
+    public int attacksDone = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        attacksToteleport = Random.Range(1, 4);
         darkness.SetActive(false);
     }
 
     
     void Update()
     {
+
         
         if (attkInProgress == false)
         {
-            attkSelected = Random.Range(1, 10);
-            //Debug.Log(attkSelected);
-            if (attkSelected != usedAttack )
+            if(attacksDone == attacksToteleport)
             {
-                switch (attkSelected)
+                tp();
+            }
+            else
+            {
+                attkSelected = Random.Range(1, 8);
+                //Debug.Log(attkSelected);
+                if (attkSelected != usedAttack)
                 {
-                    case 9:
-                        Attk1();
-                        break;
-                    case 8:
-                        Attk1();
-                        break;
-                    case 7:
-                        Attk7();
-                        break;
-                    case 6:
-                        Attk6();
-                        break;
-                    case 5:
-                        Attk5();
-                        break;
-                    case 4:
-                        Attk4();
-                        break;
-                    case 3:
-                        Attk3();
-                        break;
-                    case 2:
-                        Attk2();
-                        break;
-                    case 1:
-                        Attk1();
-                        break;
+                    switch (attkSelected)
+                    {
+
+                        case 7:
+                            Attk7();
+                            break;
+                        case 6:
+                            Attk6();
+                            break;
+                        case 5:
+                            Attk5();
+                            break;
+                        case 4:
+                            Attk4();
+                            break;
+                        case 3:
+                            Attk3();
+                            break;
+                        case 2:
+                            Attk2();
+                            break;
+                        case 1:
+                            Attk1();
+                            break;
+                    }
                 }
             }
         }
-        if(spiral1off == true && spiral2off == true)
+        if (spiral1off == true && spiral2off == true)
         {
             spiral1off = false;
             spiral2off = false;
@@ -83,6 +89,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk7()
     {
+        attacksDone +=1;
         attkInProgress = true;
         usedAttack = 0;
         Debug.Log("Multiringattack");
@@ -95,6 +102,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk6()
     {
+        attacksDone +=1;
         attkInProgress = true;
         usedAttack = 0;
         Debug.Log("double spiral");
@@ -105,6 +113,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk5()
     {
+        attacksDone +=1;
         attkInProgress = true;
         usedAttack = 0;
         Debug.Log("cannonbalrog");
@@ -122,7 +131,8 @@ public class Spawner : MonoBehaviour
     }
     private void Attk4()
     {
-        attkInProgress= true;
+        attacksDone +=1;
+        attkInProgress = true;
         usedAttack = 0;
         spray.randomise();
         spray.randomiseTime();
@@ -130,6 +140,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk3()
     {
+        attacksDone +=1;
         attkInProgress = true;
         usedAttack = 0;
         ring.DelayFire();
@@ -137,6 +148,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk2()
     {
+        attacksDone +=1;
         if (isDark == false)
         {
             removalTime = Random.Range(20, 30);
@@ -152,7 +164,16 @@ public class Spawner : MonoBehaviour
     }
     private void Attk1()
     {
+
+        //...
         
+    }
+    private void tp()
+    {
+
+        attacksDone = 0;
+        attacksToteleport = Random.Range(1, 4);
+        teleport.Disappear();
         
     }
     private void Reset()
@@ -167,8 +188,9 @@ public class Spawner : MonoBehaviour
     }
     public void wait()
     {
-        Debug.Log("waiting");
-        waitTime = Random.Range(0.5f, 2);
+        Debug.Log(attacksDone);
+        waitTime = Random.Range(0.5f, 1.5f);
+        
         Invoke("Reset", waitTime);
     }
     public void endSpiral()

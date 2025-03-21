@@ -7,7 +7,8 @@ public class Teleport : MonoBehaviour
     public GameObject boss;
     public List<GameObject> TeleportList;
     private int placeToTeleport;
-    public Spawner spawner;
+    private float time;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,16 @@ public class Teleport : MonoBehaviour
 
     public void Disappear()
     {
+        
         placeToTeleport = Random.Range(0, TeleportList.Count);
         boss.SetActive(false);
-        //spawner.SetActive(false);
+        time = Random.Range(0.5f, 1f);
+        Invoke("appear", time);
+    }
+    public void appear()
+    {
         boss.transform.position = TeleportList[placeToTeleport].transform.position;
         boss.SetActive(true);
+        
     }
-
 }
