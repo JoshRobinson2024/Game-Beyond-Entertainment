@@ -38,12 +38,18 @@ public class Spawner : MonoBehaviour
         
         if (attkInProgress == false)
         {
-            attkSelected = Random.Range(1, 8);
+            attkSelected = Random.Range(1, 10);
             //Debug.Log(attkSelected);
             if (attkSelected != usedAttack )
             {
                 switch (attkSelected)
                 {
+                    case 9:
+                        Attk1();
+                        break;
+                    case 8:
+                        Attk1();
+                        break;
                     case 7:
                         Attk7();
                         break;
@@ -146,7 +152,8 @@ public class Spawner : MonoBehaviour
     }
     private void Attk1()
     {
-        //...
+        
+        
     }
     private void Reset()
     {
