@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float currentHealth;
     public float healthToLose;
     public bool iFrames = false;
+    public GameObject sprite;
+    public Camera cam;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -48,6 +50,13 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if (currentHealth <= 0)
+        {
+            Debug.Log("death...");
+            Destroy (rb);
+            cam.transform.parent = null;
+            sprite.SetActive(false);
+        }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.Space))
         {

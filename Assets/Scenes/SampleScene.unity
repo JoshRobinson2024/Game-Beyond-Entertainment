@@ -333,6 +333,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1594251374}
+    - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: defense
       value: 5
       objectReference: {fileID: 0}
@@ -440,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04548794, y: 0.010000229, z: -12.8}
+  m_LocalPosition: {x: -0.04548794, y: 0.010000422, z: -12.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -532,6 +540,9 @@ MonoBehaviour:
   - {fileID: 790326085}
   - {fileID: 2006118720}
   - {fileID: 972123265}
+  fakeout: 0
+  spawner: {fileID: 673951941}
+  ring: {fileID: 673951943}
 --- !u!114 &673951936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +556,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5000
+--- !u!114 &673951941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+  m_PrefabInstance: {fileID: 723238469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673951915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b959b2d03c8743b1f535b6ff62aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &673951943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8483877587446319405, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+  m_PrefabInstance: {fileID: 723238469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673951915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40270e9af5d9834d81c9ce39491c5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &723238469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -663,8 +696,12 @@ PrefabInstance:
       objectReference: {fileID: 972123265}
     - target: {fileID: 6884405072680336451, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 8483877587446319405, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: teleport
+      value: 
+      objectReference: {fileID: 673951929}
     - target: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -1385,6 +1422,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1594251374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3607014654932779872, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+  m_PrefabInstance: {fileID: 332416164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625317736
 GameObject:
   m_ObjectHideFlags: 0

@@ -148,7 +148,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk2()
     {
-        attacksDone +=1;
+        /*attacksDone +=1;
         if (isDark == false)
         {
             removalTime = Random.Range(20, 30);
@@ -159,7 +159,7 @@ public class Spawner : MonoBehaviour
             Invoke("removeDarknessAnim", removalTime - 5);
             Invoke("removeDarkness", removalTime);
             wait();
-        }
+        }*/
         
     }
     private void Attk1()
@@ -170,7 +170,8 @@ public class Spawner : MonoBehaviour
     }
     private void tp()
     {
-
+        teleport.randomise();
+        attkInProgress=true;
         attacksDone = 0;
         attacksToteleport = Random.Range(1, 4);
         teleport.Disappear();
@@ -188,7 +189,7 @@ public class Spawner : MonoBehaviour
     }
     public void wait()
     {
-        Debug.Log(attacksDone);
+        //Debug.Log(attacksDone);
         waitTime = Random.Range(0.5f, 1.5f);
         
         Invoke("Reset", waitTime);

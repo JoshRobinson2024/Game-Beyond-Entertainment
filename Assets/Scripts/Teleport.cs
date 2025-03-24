@@ -8,7 +8,9 @@ public class Teleport : MonoBehaviour
     public List<GameObject> TeleportList;
     private int placeToTeleport;
     private float time;
-    
+    public int fakeout;
+    public Spawner spawner;
+    public FakeoutRing ring;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,10 @@ public class Teleport : MonoBehaviour
     {
         
     }
-
+    public void randomise()
+    {
+        fakeout = Random.Range(0, 5);
+    }
     public void Disappear()
     {
         
@@ -33,6 +38,21 @@ public class Teleport : MonoBehaviour
     {
         boss.transform.position = TeleportList[placeToTeleport].transform.position;
         boss.SetActive(true);
-        
+        if(fakeout > 0)
+        {
+            Debug.Log(fakeout);
+            ring.randomise();
+            ring.delayfire();
+            ring.delayteleport();
+            fakeout = fakeout - 1;
+        }
+        else
+        {
+            ring.randomise();
+            ring.delayfire();
+            ring.delaystop();
+            Debug . Log(fakeout);
+            spawner.wait();
+        }
     }
 }
