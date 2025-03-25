@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EFollower : MonoBehaviour
 {
     
-    public Transform weapon;
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject weapon;
+    public float distance;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,weapon.position, 1000 * Time.deltaTime);
+        var newPos = new Vector2(weapon.transform.position.x, weapon.transform.position.y+distance);
+       
+        transform.position = Vector3.MoveTowards(transform.position,newPos, 1000 * Time.deltaTime);
 
         
     }
+    
 }
