@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 3619714126078948612}
   - component: {fileID: 6184843870257953552}
   - component: {fileID: 9206946301093590722}
+  - component: {fileID: 3293675750183237606}
   m_Layer: 0
   m_Name: guitar
   m_TagString: Untagged
@@ -360,3 +361,38 @@ PolygonCollider2D:
       - {x: -0.16, y: -0.14}
       - {x: -0.22999999, y: -0.06}
   m_UseDelaunayMesh: 0
+--- !u!70 &3293675750183237606
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251686476617407297}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2, y: 1}
+  m_Direction: 1

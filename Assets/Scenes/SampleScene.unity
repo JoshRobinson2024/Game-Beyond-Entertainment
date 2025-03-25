@@ -214,6 +214,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &108369143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3721856864785000985, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+  m_PrefabInstance: {fileID: 1046185750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178583052
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +350,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 956277107202164891, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: m_Radius
+      value: 2.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1461639215282855164, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -416,12 +425,16 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7525979529135992529, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
     - {fileID: 244754639396281096, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+    - {fileID: 956277107202164891, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 850492453605502164, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 519420032}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3607014654932779872, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1594251380}
   m_SourcePrefab: {fileID: 100100000, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
 --- !u!1 &519420028
 GameObject:
@@ -516,6 +529,11 @@ Transform:
   - {fileID: 1037596047}
   m_Father: {fileID: 603163122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &557330164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5147933817988473591, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+  m_PrefabInstance: {fileID: 33304547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &603163122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 850492453605502164, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
@@ -639,6 +657,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40270e9af5d9834d81c9ce39491c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &690391086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4579023472159455681, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+  m_PrefabInstance: {fileID: 33304547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &723238469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1495,6 +1518,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1333329371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2478113877362512269, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+  m_PrefabInstance: {fileID: 851564405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1417981885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3005918773123894646, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+  m_PrefabInstance: {fileID: 1046185750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1487809985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6104973381696874652, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+  m_PrefabInstance: {fileID: 851564405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1536457008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,6 +1644,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3607014654932779872, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
   m_PrefabInstance: {fileID: 332416164}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1594251380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594251374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f2df4705c32924daff25cc1a187856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EController: {fileID: 557330164}
+  EGuitar: {fileID: 1487809985}
+  EJournal: {fileID: 1417981885}
+  grabbedObject: 0
+  Controller: {fileID: 690391086}
+  Guitar: {fileID: 1333329371}
+  Journal: {fileID: 108369143}
 --- !u!1 &1625317736
 GameObject:
   m_ObjectHideFlags: 0
