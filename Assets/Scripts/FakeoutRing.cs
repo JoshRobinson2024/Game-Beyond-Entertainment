@@ -19,7 +19,7 @@ public class FakeoutRing : MonoBehaviour
     public Teleport teleport;
     public void FireBul()
     {
-        bulletsAmount = Random.Range(15, 25);
+        bulletsAmount = Random.Range(15, 20);
         startAngle = Random.Range(0, 360);
         endAngle = startAngle + 360;
         float angleStep = (endAngle - startAngle) / bulletsAmount;
@@ -57,7 +57,7 @@ public class FakeoutRing : MonoBehaviour
     public void teleporting()
     {
         CancelInvoke("FireBul");
-        teleport.Invoke("Disappear", 0.5f);
+        teleport.Invoke("Disappear", 0.7f);
     }
     public void delaystop()
     {
@@ -70,7 +70,7 @@ public class FakeoutRing : MonoBehaviour
     public void randomise()
     {
 
-        timesshot = Random.Range(3, 6);
+        timesshot = Random.Range(3, 5);
         delay = Random.Range(0.04f, 0.06f);
     }
 
