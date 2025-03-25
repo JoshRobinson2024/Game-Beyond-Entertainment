@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1492105474377901966, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132364067661745933, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4579023472159455681, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_Name
       value: Game controller
@@ -178,6 +186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8670539144423434254, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -214,6 +226,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &54172398 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 9206946301093590722, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+  m_PrefabInstance: {fileID: 851564405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &54172399 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6184843870257953552, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+  m_PrefabInstance: {fileID: 851564405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &108369143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3721856864785000985, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
@@ -1663,6 +1685,23 @@ MonoBehaviour:
   Controller: {fileID: 690391086}
   Guitar: {fileID: 1333329371}
   Journal: {fileID: 108369143}
+  player: {fileID: 1594251374}
+  controllerRB: {fileID: 1609065967}
+  guitarRB: {fileID: 54172399}
+  journalRB: {fileID: 2039878397}
+  Controllercol: {fileID: 1609065968}
+  Guitarcol: {fileID: 54172398}
+  Journalcol: {fileID: 2039878398}
+--- !u!50 &1609065967 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8670539144423434254, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+  m_PrefabInstance: {fileID: 33304547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &1609065968 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4132364067661745933, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+  m_PrefabInstance: {fileID: 33304547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625317736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,6 +2015,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2039878397 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6158296679930082483, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+  m_PrefabInstance: {fileID: 1046185750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &2039878398 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1979926922165177803, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+  m_PrefabInstance: {fileID: 1046185750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2044269451
 GameObject:
   m_ObjectHideFlags: 0
