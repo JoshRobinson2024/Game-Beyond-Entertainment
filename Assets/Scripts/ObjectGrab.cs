@@ -21,6 +21,8 @@ public class ObjectGrab : MonoBehaviour
     public Collider2D Controllercol;
     public Collider2D Guitarcol;
     public Collider2D Journalcol;
+
+    public string whatObject = "nothin'";
     // Start is called before the first frame update
     void Start()
     {
@@ -35,16 +37,58 @@ public class ObjectGrab : MonoBehaviour
     {
         if (EController.activeInHierarchy&& Input.GetKeyDown(KeyCode.E)&& grabbedObject!= true)
         {
-            ControllerGrab();
+            EController.SetActive(false);
+            grabbedObject = true;
+            whatObject = "Controller";
             
+            controllerRB.velocity = new Vector2(0, 0);
+            controllerRB.bodyType = RigidbodyType2D.Dynamic;
+            controllerRB.freezeRotation = true;
+            InvokeRepeating("ControllerFollow", 0, Time.deltaTime);
         }
         else if(EGuitar.activeInHierarchy && Input.GetKeyDown(KeyCode.E))
         {
-            GuitarGrab();
+            EGuitar.SetActive(false);
+            grabbedObject = true;
+            whatObject = "Guitar";
+            guitarRB.velocity = new Vector2(0, 0);
+            guitarRB.bodyType = RigidbodyType2D.Dynamic;
+            guitarRB.freezeRotation = true;
+            InvokeRepeating("GuitarFollow", 0, Time.deltaTime);
         }
         else if(EJournal.activeInHierarchy&& Input.GetKeyDown(KeyCode.E))
         {
+            EJournal.SetActive(false);
             grabbedObject = true;
+            whatObject = "Journal";
+            journalRB.velocity = new Vector2(0, 0);
+            journalRB.bodyType = RigidbodyType2D.Dynamic;
+            journalRB.freezeRotation = true;
+            InvokeRepeating("JournalFollow", 0, Time.deltaTime);
+        }
+        else if(grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.E))
+        {
+            EController.SetActive(true);
+            grabbedObject = false;
+            controllerRB.isKinematic= true;
+            controllerRB.freezeRotation = false;
+            CancelInvoke("ControllerFollow");
+        }
+        else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.E))
+        {
+            EController.SetActive(true);
+            grabbedObject = false;
+            guitarRB.isKinematic = true;
+            guitarRB.freezeRotation = false;
+            CancelInvoke("GuitarFollow");
+        }
+        else if (grabbedObject == true && whatObject == "Journal" && Input.GetKeyDown(KeyCode.E))
+        {
+            EJournal.SetActive(true);
+            grabbedObject = false;
+            journalRB.isKinematic = true;
+            journalRB.freezeRotation = false;
+            CancelInvoke("JournalFollow");
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,26 +117,27 @@ public class ObjectGrab : MonoBehaviour
         EJournal.SetActive(false);
         
     }
-    public void ControllerGrab()
+    
+    
+        
+
+
+
+        
+    
+    public void ControllerFollow()
     {
-        EController.SetActive(false);
-        grabbedObject = true;
-        controllerRB.isKinematic = true;
-
-        Controller.transform.parent = player.transform;
-        var newPos = new Vector2(player.transform.position.x, player.transform.position.y +2);
-
-        Controller.transform.position = Vector3.MoveTowards(transform.position, newPos, 1000 * Time.deltaTime);
-    }
-    public void GuitarGrab()
-    {
-        EGuitar.SetActive(false);
-        grabbedObject = true;
-        guitarRB.isKinematic = true;
-
-        Guitar.transform.parent = player.transform;
         var newPos = new Vector2(player.transform.position.x, player.transform.position.y + 2);
-
-        Guitar.transform.position = Vector3.MoveTowards(transform.position, newPos, 1000 * Time.deltaTime);
+        Controller.transform.position = Vector3.MoveTowards(transform.position, newPos, 10000 * Time.deltaTime);
+    }
+    public void GuitarFollow()
+    {
+        var newPos = new Vector2(player.transform.position.x, player.transform.position.y + 2);
+        Guitar.transform.position = Vector3.MoveTowards(transform.position, newPos, 10000 * Time.deltaTime);
+    }
+    public void JournalFollow()
+    {
+        var newPos = new Vector2(player.transform.position.x, player.transform.position.y + 2);
+        Journal.transform.position = Vector3.MoveTowards(transform.position, newPos, 10000 * Time.deltaTime);
     }
 }

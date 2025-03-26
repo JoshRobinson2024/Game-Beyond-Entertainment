@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4132364067661745933, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4579023472159455681, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_Name
@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670539144423434254, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 723238469}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673951915}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84b959b2d03c8743b1f535b6ff62aba, type: 3}
   m_Name: 
@@ -758,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 673951929}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: darknesAnim
@@ -1035,6 +1035,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guitar
       objectReference: {fileID: 0}
+    - target: {fileID: 3293675750183237606, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184843870257953552, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7561117158231209928, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -1073,6 +1081,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7561117158231209928, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206946301093590722, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1354,9 +1366,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1979926922165177803, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3721856864785000985, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_Name
       value: Journal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158296679930082483, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8210446020364906982, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1692,6 +1712,7 @@ MonoBehaviour:
   Controllercol: {fileID: 1609065968}
   Guitarcol: {fileID: 54172398}
   Journalcol: {fileID: 2039878398}
+  whatObject: nothin'
 --- !u!50 &1609065967 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8670539144423434254, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
