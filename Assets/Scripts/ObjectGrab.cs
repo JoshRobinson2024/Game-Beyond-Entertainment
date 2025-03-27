@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ObjectGrab : MonoBehaviour
@@ -23,6 +24,9 @@ public class ObjectGrab : MonoBehaviour
     public Collider2D Journalcol;
 
     public string whatObject = "nothin'";
+
+    public Vector2 direction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,9 +99,45 @@ public class ObjectGrab : MonoBehaviour
             Vector2 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
-            Controller.transform.right = direction;
+            Controller.transform.up = direction;
+            EController.SetActive(true);
+            grabbedObject = false;
+            
+            controllerRB.freezeRotation = false;
+            CancelInvoke("ControllerFollow");
+            ControllerThrow();
+        }
+        else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+            Guitar.transform.up = direction;
+            EGuitar.SetActive(true);
+            grabbedObject = false;
+
+            guitarRB.freezeRotation = false;
+            CancelInvoke("GuitarFollow");
+            GuitarThrow();
+        }
+        else if (grabbedObject == true && whatObject == "Journal" && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+            Journal.transform.up = direction;
+            EJournal.SetActive(true);
+            grabbedObject = false;
+
+            journalRB.freezeRotation = false;
+            CancelInvoke("JournalFollow");
+            JournalThrow();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -148,5 +188,20 @@ public class ObjectGrab : MonoBehaviour
     {
         var newPos = new Vector2(player.transform.position.x, player.transform.position.y + 2);
         Journal.transform.position = Vector3.MoveTowards(transform.position, newPos, 10000 * Time.deltaTime);
+    }
+    public void ControllerThrow()
+    {
+        controllerRB.AddForce(direction * 100);
+        Controllercol.GetComponent<CapsuleCollider2D>().enabled = true;
+    }
+    public void GuitarThrow()
+    {
+        guitarRB.AddForce(direction * 100);
+        Guitarcol.GetComponent<PolygonCollider2D>().enabled = true;
+    }
+    public void JournalThrow()
+    {
+        journalRB.AddForce(direction * 100);
+        Journalcol.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 }
