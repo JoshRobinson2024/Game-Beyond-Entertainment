@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8670539144423434254}
   - component: {fileID: 1492105474377901966}
   - component: {fileID: 2501163278970501637}
+  - component: {fileID: 3613528995779164273}
   m_Layer: 0
   m_Name: controller
   m_TagString: Untagged
@@ -198,7 +199,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -230,7 +231,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -263,6 +264,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0702713, y: 0.70889306}
   m_EdgeRadius: 0
+--- !u!114 &3613528995779164273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4837394731420771305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3d03303a8dfe94c9c646328dfaf17c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoxCollider2D: {fileID: 2501163278970501637}
 --- !u!1 &5147933817988473591
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,6 +23,10 @@ public class ObjectGrab : MonoBehaviour
     public Collider2D Guitarcol;
     public Collider2D Journalcol;
 
+    public ObjectDamage damage;
+    public GuitarDamage gDamage;
+    public JournalDamage jDamage;
+
     public string whatObject = "nothin'";
 
     public Vector2 direction;
@@ -193,15 +197,18 @@ public class ObjectGrab : MonoBehaviour
     {
         controllerRB.AddForce(direction * 100);
         Controllercol.GetComponent<CapsuleCollider2D>().enabled = true;
+        damage.ControllerDamage();
     }
     public void GuitarThrow()
     {
         guitarRB.AddForce(direction * 100);
         Guitarcol.GetComponent<PolygonCollider2D>().enabled = true;
+        gDamage.GDamage();
     }
     public void JournalThrow()
     {
         journalRB.AddForce(direction * 100);
         Journalcol.GetComponent<CapsuleCollider2D>().enabled = true;
+        jDamage.JDamage();
     }
 }
