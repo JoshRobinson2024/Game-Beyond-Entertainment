@@ -663,7 +663,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 723238469}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673951915}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84b959b2d03c8743b1f535b6ff62aba, type: 3}
   m_Name: 
@@ -758,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 673951929}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: darknesAnim

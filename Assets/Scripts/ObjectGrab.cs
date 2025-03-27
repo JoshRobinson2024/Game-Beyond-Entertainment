@@ -76,7 +76,7 @@ public class ObjectGrab : MonoBehaviour
         }
         else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.E))
         {
-            EController.SetActive(true);
+            EGuitar.SetActive(true);
             grabbedObject = false;
             guitarRB.isKinematic = true;
             guitarRB.freezeRotation = false;
@@ -89,6 +89,15 @@ public class ObjectGrab : MonoBehaviour
             journalRB.isKinematic = true;
             journalRB.freezeRotation = false;
             CancelInvoke("JournalFollow");
+        }
+        else if (grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+            Controller.transform.right = direction;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
