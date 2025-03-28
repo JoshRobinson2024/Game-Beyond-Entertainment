@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class JournalDamage : MonoBehaviour
 {
-    public BoxCollider2D BoxCollider2D;
+    public bool Damaging = false;
+    public BossHealth health;
 
     public void JDamage()
     {
-        BoxCollider2D.GetComponent<BoxCollider2D>().enabled = true;
+        Damaging = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        BoxCollider2D.GetComponent<BoxCollider2D>().enabled = false;
+        if (Damaging && collision.gameObject.CompareTag("Boss"))
+        {
+            health.damage(100);
+            Debug.Log("hit");
+        }
+        Damaging = false;
     }
 }

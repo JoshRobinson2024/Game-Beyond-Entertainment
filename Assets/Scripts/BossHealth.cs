@@ -20,12 +20,5 @@ public class BossHealth : MonoBehaviour
     {
         health -= strength;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Weapon"))
-        {
-            damage(100);
-            
-        }
-    }
+    
 }
