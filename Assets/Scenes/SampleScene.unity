@@ -166,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4837394731420771305, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 7558089161478204918, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.09
@@ -510,6 +514,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -592,6 +597,23 @@ Transform:
   - {fileID: 1037596047}
   m_Father: {fileID: 603163122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shakeTechnique: 0
+  _makeDefaultOnEnable: 1
+  _limitMagnitude: 0
+  _positionalMagnitudeLimit: 10
+  _rotationalMagnitudeLimit: 3
 --- !u!1 &557330164 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5147933817988473591, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
@@ -697,6 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5053e1a35729d4a989d4aeb8cad6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeData: {fileID: 11400000, guid: ab5504ccc419a0e4f99c3f8c68e3e36d, type: 2}
   health: 5000
 --- !u!114 &673951941 stripped
 MonoBehaviour:
@@ -1096,6 +1119,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6251686476617407297, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 7561117158231209928, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.08
@@ -1445,6 +1472,10 @@ PrefabInstance:
     - target: {fileID: 2875008834757990312, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875008834757990312, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 3721856864785000985, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_Name

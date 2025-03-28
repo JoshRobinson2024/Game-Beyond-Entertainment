@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FirstGearGames.SmoothCameraShaker;
 public class BossHealth : MonoBehaviour
 {
+    public ShakeData shakeData;
     public int health = 5000;
     void Start()
     {
@@ -24,6 +25,7 @@ public class BossHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Weapon"))
         {
             damage(100);
+            CameraShakerHandler.Shake(shakeData);
         }
     }
 }
