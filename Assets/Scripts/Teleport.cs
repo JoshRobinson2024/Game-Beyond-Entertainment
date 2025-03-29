@@ -55,4 +55,8 @@ public class Teleport : MonoBehaviour
             spawner.wait();
         }
     }
+    public void FindClosest()
+    {
+        
+    }
 }
