@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashLength = 0.5f, dashCooldown = 1f;
     private float dashCounter;
     private float dashCoolCounter;
-    public float maxHealth;
-    public float defense;
+    public static int maxHealth;
+    public static int defense;
     public float currentHealth;
     public float healthToLose;
     public bool iFrames = false;

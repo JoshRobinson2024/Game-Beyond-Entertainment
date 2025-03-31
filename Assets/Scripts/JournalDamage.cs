@@ -7,9 +7,18 @@ public class JournalDamage : MonoBehaviour
     public bool Damaging = false;
     public BossHealth health;
     public static int journalStrength;
+    public Color damagingColour;
+    public SpriteRenderer rend;
+    public Color neutralColour;
+
+    private void Start()
+    {
+        rend = GetComponent<SpriteRenderer>();
+    }
     public void JDamage()
     {
         Damaging = true;
+        rend.color = damagingColour;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -20,6 +29,7 @@ public class JournalDamage : MonoBehaviour
             Debug.Log("hit");
         }
         Damaging = false;
+        rend.color = neutralColour;
     }
     public void journalStrengthGain(int journalStrengthtoGain)
     {
