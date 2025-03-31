@@ -6,6 +6,7 @@ public class ObjectDamage : MonoBehaviour
 {
     public bool Damaging = false;
     public BossHealth health;
+    public static int Strength;
     
     public void ControllerDamage()
     {
@@ -16,10 +17,14 @@ public class ObjectDamage : MonoBehaviour
     {
         if (Damaging && collision.gameObject.CompareTag("Boss"))
         {
-            health.damage(100);
+            health.damage(Strength);
             Debug.Log("hit");
         }
         Damaging = false;
         
+    }
+    public void gainStrength(int strengthToGain)
+    {
+        Strength += strengthToGain;
     }
 }

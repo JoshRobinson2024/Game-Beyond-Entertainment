@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    public float maxHealth;
-    public float defense;
+    public static int maxHealth;
+    public static int defense;
     public float currentHealth;
     public float healthToLose;
     public bool iFrames = false;

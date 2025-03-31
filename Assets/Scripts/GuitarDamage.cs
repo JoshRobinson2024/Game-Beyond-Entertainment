@@ -6,7 +6,7 @@ public class GuitarDamage : MonoBehaviour
 {
     public bool Damaging = false;
     public BossHealth health;
-
+    public static int guitarStrength;
 
     public void GDamage()
     {
@@ -17,9 +17,13 @@ public class GuitarDamage : MonoBehaviour
     {
         if (Damaging && collision.gameObject.CompareTag("Boss"))
         {
-            health.damage(100);
+            health.damage(guitarStrength);
             Debug.Log("hit");
         }
         Damaging = false;
+    }
+    public void GainGuitarStrangth(int guitarStrengthtoGain)
+    {
+        guitarStrength += guitarStrengthtoGain;
     }
 }

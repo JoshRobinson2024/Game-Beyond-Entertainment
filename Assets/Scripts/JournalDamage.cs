@@ -6,7 +6,7 @@ public class JournalDamage : MonoBehaviour
 {
     public bool Damaging = false;
     public BossHealth health;
-
+    public static int journalStrength;
     public void JDamage()
     {
         Damaging = true;
@@ -16,9 +16,13 @@ public class JournalDamage : MonoBehaviour
     {
         if (Damaging && collision.gameObject.CompareTag("Boss"))
         {
-            health.damage(100);
+            health.damage(journalStrength);
             Debug.Log("hit");
         }
         Damaging = false;
+    }
+    public void journalStrengthGain(int journalStrengthtoGain)
+    {
+        journalStrength += journalStrengthtoGain;
     }
 }
