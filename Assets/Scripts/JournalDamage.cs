@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JournalDamage : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class JournalDamage : MonoBehaviour
     public Color damagingColour;
     public SpriteRenderer rend;
     public Color neutralColour;
-
+    public Image HealthBar;
+    public float journalGuitarHealth;
+    public static float Journalhealth;
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GuitarDamage : MonoBehaviour
 {
@@ -10,9 +11,13 @@ public class GuitarDamage : MonoBehaviour
     public Color damagingColour;
     public SpriteRenderer rend;
     public Color neutralColour;
-
+    public Image HealthBar;
+    public float currentGuitarHealth;
+    public static float Guitarhealth;
     private void Start()
     {
+        Guitarhealth = 5;
+        currentGuitarHealth = Guitarhealth;
         rend = GetComponent<SpriteRenderer>();
     }
     public void GDamage()
@@ -28,11 +33,23 @@ public class GuitarDamage : MonoBehaviour
             health.damage(guitarStrength);
             Debug.Log("hit");
         }
+        else if (Damaging && collision.gameObject.CompareTag("Wall"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
+        }
         Damaging = false;
         rend.color = neutralColour;
     }
     public void GainGuitarStrangth(int guitarStrengthtoGain)
     {
         guitarStrength += guitarStrengthtoGain;
+    }
+    public void LoseHealth(int damage)
+    {
+        currentGuitarHealth -= damage;
+        HealthBar.fillAmount = currentGuitarHealth / Guitarhealth;
+        rend.color = neutralColour; ;
     }
 }

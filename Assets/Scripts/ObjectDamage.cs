@@ -8,12 +8,12 @@ public class ObjectDamage : MonoBehaviour
     public bool Damaging = false;
     public BossHealth health;
     public static int Strength;
-    public static int Controllerhealth;
+    public static float Controllerhealth;
     public Color damagingColour;
     public SpriteRenderer rend;
     public Color neutralColour;
     public Image HealthBar;
-    private int currentControllerHealth;
+    public float currentControllerHealth;
 
     private void Start()
     {
@@ -34,18 +34,27 @@ public class ObjectDamage : MonoBehaviour
         {
             health.damage(Strength);
             Debug.Log("hit");
+            LoseHealth(1);
+        }
+        
+        
+        else if (Damaging && collision.gameObject.CompareTag("Wall"))
+        {
+            
+            Debug.Log("hit");
+            LoseHealth(1);
         }
         Damaging = false;
         rend.color = neutralColour;
-        loseHealth(1);
     }
     public void gainStrength(int strengthToGain)
     {
         Strength += strengthToGain;
     }
-    public void loseHealth(int damage)
+    public void LoseHealth(int damage)
     {
         currentControllerHealth -= damage;
-        HealthBar.fillAmount = currentControllerHealth / Controllerhealth*100;
+        HealthBar.fillAmount = currentControllerHealth / Controllerhealth;
+        rend.color = neutralColour; ;
     }
 }
