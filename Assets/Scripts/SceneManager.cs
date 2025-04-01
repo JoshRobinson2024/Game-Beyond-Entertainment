@@ -19,6 +19,6 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadBoss()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Boss fight");
     }
 }
