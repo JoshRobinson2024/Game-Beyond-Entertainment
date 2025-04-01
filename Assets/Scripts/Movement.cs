@@ -50,13 +50,13 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        if (currentHealth <= 0)
+        /*if (currentHealth <= 0)
         {
             Debug.Log("death...");
             Destroy (rb);
             cam.transform.parent = null;
             sprite.SetActive(false);
-        }
+        }*/
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.Space))
         {
