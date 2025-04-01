@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
-    
-    public int health = 5000;
+    public Image HealthBar;
+    private float maxHealth = 5000;
+    public float health = 5000;
     void Start()
     {
         
@@ -18,7 +20,10 @@ public class BossHealth : MonoBehaviour
     }
     public void damage(int strength)
     {
+        Debug.Log("Lose health");
         health -= strength;
+        HealthBar.fillAmount = health / maxHealth;
+        
     }
     
 }

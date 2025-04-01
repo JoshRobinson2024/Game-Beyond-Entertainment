@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     //I recommend 7 for the move speed, and 1.2 for the force damping
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public bool iFrames = false;
     public GameObject sprite;
     public Camera cam;
+    public Image HealthBar;
     private void Start()
     {
         currentHealth = maxHealth;
@@ -39,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
                 currentHealth -= healthToLose;
                 Debug.Log(currentHealth.ToString());
                 Invoke("loseIFrames", 0.67f);
+                HealthBar.fillAmount = currentHealth / maxHealth;
+                
             }
 
         }

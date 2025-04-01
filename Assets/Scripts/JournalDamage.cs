@@ -12,10 +12,12 @@ public class JournalDamage : MonoBehaviour
     public SpriteRenderer rend;
     public Color neutralColour;
     public Image HealthBar;
-    public float journalGuitarHealth;
+    public float currentJournalHealth;
     public static float Journalhealth;
     private void Start()
     {
+        Journalhealth = 5;
+        currentJournalHealth = Journalhealth;
         rend = GetComponent<SpriteRenderer>();
     }
     public void JDamage()
@@ -30,12 +32,26 @@ public class JournalDamage : MonoBehaviour
         {
             health.damage(journalStrength);
             Debug.Log("hit");
+            LoseHealth(1);
+        }
+        else if (Damaging && collision.gameObject.CompareTag("Wall"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
         }
         Damaging = false;
+        
         rend.color = neutralColour;
     }
     public void journalStrengthGain(int journalStrengthtoGain)
     {
         journalStrength += journalStrengthtoGain;
+    }
+    public void LoseHealth(int damage)
+    {
+        currentJournalHealth -= damage;
+        HealthBar.fillAmount = currentJournalHealth / Journalhealth;
+        rend.color = neutralColour; ;
     }
 }

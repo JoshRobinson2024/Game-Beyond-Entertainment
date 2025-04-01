@@ -195,18 +195,21 @@ public class ObjectGrab : MonoBehaviour
     }
     public void ControllerThrow()
     {
+        whatObject = "nothing";
         controllerRB.AddForce(direction * 100);
         Controllercol.GetComponent<CapsuleCollider2D>().enabled = true;
         damage.ControllerDamage();
     }
     public void GuitarThrow()
     {
+        whatObject = "nothing";
         guitarRB.AddForce(direction * 100);
         Guitarcol.GetComponent<PolygonCollider2D>().enabled = true;
         gDamage.GDamage();
     }
     public void JournalThrow()
     {
+        whatObject = "nothing";
         journalRB.AddForce(direction * 100);
         Journalcol.GetComponent<CapsuleCollider2D>().enabled = true;
         jDamage.JDamage();

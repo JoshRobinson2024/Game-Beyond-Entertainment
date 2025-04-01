@@ -32,6 +32,7 @@ public class GuitarDamage : MonoBehaviour
         {
             health.damage(guitarStrength);
             Debug.Log("hit");
+            LoseHealth(1);
         }
         else if (Damaging && collision.gameObject.CompareTag("Wall"))
         {

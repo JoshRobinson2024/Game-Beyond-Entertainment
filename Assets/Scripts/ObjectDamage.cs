@@ -20,6 +20,7 @@ public class ObjectDamage : MonoBehaviour
         Controllerhealth = 5;
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
+        Strength = 50;
     }
     
     public void ControllerDamage()
@@ -32,9 +33,12 @@ public class ObjectDamage : MonoBehaviour
     {
         if (Damaging && collision.gameObject.CompareTag("Boss"))
         {
-            health.damage(Strength);
+            
             Debug.Log("hit");
             LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(Strength);
         }
         
         
@@ -43,9 +47,10 @@ public class ObjectDamage : MonoBehaviour
             
             Debug.Log("hit");
             LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
         }
-        Damaging = false;
-        rend.color = neutralColour;
+        
     }
     public void gainStrength(int strengthToGain)
     {
@@ -55,6 +60,6 @@ public class ObjectDamage : MonoBehaviour
     {
         currentControllerHealth -= damage;
         HealthBar.fillAmount = currentControllerHealth / Controllerhealth;
-        rend.color = neutralColour; ;
+        
     }
 }
