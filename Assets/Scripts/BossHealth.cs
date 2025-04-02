@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
     public Image HealthBar;
-    private float maxHealth = 5000;
+    public float maxHealth = 5000;
     public float health = 5000;
     void Start()
     {

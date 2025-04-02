@@ -74,30 +74,30 @@ public class ObjectGrab : MonoBehaviour
             journalRB.freezeRotation = true;
             InvokeRepeating("JournalFollow", 0, Time.deltaTime);
         }
-        else if(grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.E))
+        /*else if(grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.E))
         {
             EController.SetActive(true);
             grabbedObject = false;
             controllerRB.isKinematic= true;
             controllerRB.freezeRotation = false;
             CancelInvoke("ControllerFollow");
-        }
-        else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.E))
+        }*/
+        /*else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.E))
         {
             EGuitar.SetActive(true);
             grabbedObject = false;
             guitarRB.isKinematic = true;
             guitarRB.freezeRotation = false;
             CancelInvoke("GuitarFollow");
-        }
-        else if (grabbedObject == true && whatObject == "Journal" && Input.GetKeyDown(KeyCode.E))
+        }*/
+        /*else if (grabbedObject == true && whatObject == "Journal" && Input.GetKeyDown(KeyCode.E))
         {
             EJournal.SetActive(true);
             grabbedObject = false;
             journalRB.isKinematic = true;
             journalRB.freezeRotation = false;
             CancelInvoke("JournalFollow");
-        }
+        }*/
         else if (grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.Mouse0))
         {
             Vector2 mousePosition = Input.mousePosition;

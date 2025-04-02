@@ -19,6 +19,7 @@ public class GuitarDamage : MonoBehaviour
         Guitarhealth = 5;
         currentGuitarHealth = Guitarhealth;
         rend = GetComponent<SpriteRenderer>();
+        guitarStrength = 50;
     }
     public void GDamage()
     {
@@ -33,6 +34,7 @@ public class GuitarDamage : MonoBehaviour
             health.damage(guitarStrength);
             Debug.Log("hit");
             LoseHealth(1);
+            health.damage(guitarStrength);
         }
         else if (Damaging && collision.gameObject.CompareTag("Wall"))
         {

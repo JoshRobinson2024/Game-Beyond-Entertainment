@@ -19,6 +19,7 @@ public class JournalDamage : MonoBehaviour
         Journalhealth = 5;
         currentJournalHealth = Journalhealth;
         rend = GetComponent<SpriteRenderer>();
+        journalStrength = 50;
     }
     public void JDamage()
     {
@@ -33,6 +34,7 @@ public class JournalDamage : MonoBehaviour
             health.damage(journalStrength);
             Debug.Log("hit");
             LoseHealth(1);
+            health.damage(journalStrength);
         }
         else if (Damaging && collision.gameObject.CompareTag("Wall"))
         {

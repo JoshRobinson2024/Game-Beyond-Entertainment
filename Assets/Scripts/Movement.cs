@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashLength = 0.5f, dashCooldown = 1f;
     private float dashCounter;
     private float dashCoolCounter;
-    public static int maxHealth;
-    public static int defense;
+    public static float maxHealth;
+    public static float defense;
     public float currentHealth;
     public float healthToLose;
     public bool iFrames = false;
@@ -53,13 +53,13 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        /*if (currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("death...");
             Destroy (rb);
             cam.transform.parent = null;
             sprite.SetActive(false);
-        }*/
+        }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.Space))
         {
