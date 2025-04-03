@@ -20,7 +20,7 @@ public class ObjectDamage : MonoBehaviour
         Controllerhealth = 5;
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
-        Strength = 50;
+        Strength = 250;
     }
     
     public void ControllerDamage()

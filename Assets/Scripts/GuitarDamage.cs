@@ -19,7 +19,7 @@ public class GuitarDamage : MonoBehaviour
         Guitarhealth = 5;
         currentGuitarHealth = Guitarhealth;
         rend = GetComponent<SpriteRenderer>();
-        guitarStrength = 50;
+        guitarStrength = 250;
     }
     public void GDamage()
     {

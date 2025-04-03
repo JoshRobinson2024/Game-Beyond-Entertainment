@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public WillGaining WillGaining;
     private void Start()
     {
-        maxHealth = 1;
+        maxHealth = 50;
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;

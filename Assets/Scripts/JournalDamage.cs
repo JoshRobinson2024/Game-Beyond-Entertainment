@@ -19,7 +19,7 @@ public class JournalDamage : MonoBehaviour
         Journalhealth = 5;
         currentJournalHealth = Journalhealth;
         rend = GetComponent<SpriteRenderer>();
-        journalStrength = 50;
+        journalStrength = 250;
     }
     public void JDamage()
     {
