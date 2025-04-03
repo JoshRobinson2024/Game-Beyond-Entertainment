@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy (rb);
             cam.transform.parent = null;
             sprite.SetActive(false);
-            WillGaining.calculateWill();
+            WillGaining.calculateDisplay();
         }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.Space))
