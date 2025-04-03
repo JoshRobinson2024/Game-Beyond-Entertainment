@@ -27,9 +27,13 @@ public class WillGaining : MonoBehaviour
         DamageDealt /= 50;
         BossHealth.Agression /= 3;
         TimeSurvived /= 30;
-        Mathf.Floor(TimeSurvived);
-        Mathf.Floor(DamageDealt);
-        Mathf.Floor(BossHealth.Agression);
+
+        /*Mathf.FloorToInt(TimeSurvived);
+        Mathf.FloorToInt(DamageDealt);
+        Mathf.FloorToInt(BossHealth.Agression);*/
+        TimeSurvived = Mathf.Floor(TimeSurvived*1) / 1;
+        DamageDealt = Mathf.Floor(DamageDealt * 1) / 1;
+        BossHealth.Agression = Mathf.Floor(BossHealth.Agression * 1) / 1;
         Debug.Log(TimeSurvived);
         Debug.Log(DamageDealt);
         Debug.Log(BossHealth.Agression);
@@ -57,7 +61,7 @@ public class WillGaining : MonoBehaviour
             WillAmount += 3;
         }
         WillAmount += 1;
-        Mathf.RoundToInt(WillAmount);
+        Mathf.Round(WillAmount);
         Debug.Log(WillAmount);
     }
 }
