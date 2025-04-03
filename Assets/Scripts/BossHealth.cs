@@ -8,9 +8,11 @@ public class BossHealth : MonoBehaviour
     public Image HealthBar;
     public float maxHealth = 5000;
     public float health = 5000;
+    public float Agression = 0;
     void Start()
     {
-        
+        health = maxHealth;
+        Agression = 0;
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class BossHealth : MonoBehaviour
         Debug.Log("Lose health");
         health -= strength;
         HealthBar.fillAmount = health / maxHealth;
-        
+        Agression += 1;
     }
     
 }

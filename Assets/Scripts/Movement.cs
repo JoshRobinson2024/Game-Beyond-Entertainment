@@ -24,8 +24,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject sprite;
     public Camera cam;
     public Image HealthBar;
+    public WillGaining WillGaining;
     private void Start()
     {
+        maxHealth = 1;
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
@@ -59,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy (rb);
             cam.transform.parent = null;
             sprite.SetActive(false);
+            WillGaining.calculateWill();
         }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.Space))

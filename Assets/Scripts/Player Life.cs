@@ -13,6 +13,7 @@ public class PlayerLife : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
+
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
