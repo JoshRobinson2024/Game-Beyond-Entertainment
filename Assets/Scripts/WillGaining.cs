@@ -57,6 +57,7 @@ public class WillGaining : MonoBehaviour
             WillAmount += 3;
         }
         WillAmount += 1;
-        
+        Mathf.RoundToInt(WillAmount);
+        Debug.Log(WillAmount);
     }
 }
