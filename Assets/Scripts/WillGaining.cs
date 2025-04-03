@@ -8,11 +8,12 @@ public class WillGaining : MonoBehaviour
     public float TimeSurvived;
     public float DamageDealt;
     public BossHealth BossHealth;
-    public static int WillDisplay;
+    public static float WillDisplay;
     public static float SecondsSurvived;
     public static float DamageDone;
     public static float Aggression;
     public static float WillGained;
+    
     private void Start()
     {
         InvokeRepeating("CountTime", 0, 1);
@@ -57,18 +58,21 @@ public class WillGaining : MonoBehaviour
         if (TimeSurvived >= DamageDealt && TimeSurvived >= BossHealth.Agression)
         {
             WillAmount += DamageDealt * BossHealth.Agression;
+            WillGained = DamageDealt * BossHealth.Agression;
             Debug.Log(WillAmount);
             Debug.Log("Ignore time");
         }
         else if(TimeSurvived <= DamageDealt && BossHealth.Agression <= DamageDealt)
         {
             WillAmount += TimeSurvived * BossHealth.Agression;
+            WillGained = TimeSurvived * BossHealth.Agression;
             Debug.Log("Ignore Damage");
             Debug.Log(WillAmount);
         }
         else if (TimeSurvived <= BossHealth.Agression && BossHealth.Agression >= DamageDealt)
         {
             WillAmount += TimeSurvived * DamageDealt;
+            WillGained = TimeSurvived * DamageDealt;
             Debug.Log(WillAmount);
             Debug.Log("IgnoreAgression");
         }
@@ -76,13 +80,20 @@ public class WillGaining : MonoBehaviour
         {
             Debug.Log("Failsafe");
             WillAmount += 3;
+            WillGained = 3;
         }
         WillAmount += 1;
+        WillGained += 1;
         Mathf.Round(WillAmount);
         if (WillAmount > 99)
         {
             WillAmount = 99;
         }
+        if (WillGained > 99)
+        {
+            WillGained = 99;
+        }
         Debug.Log(WillAmount);
+        
     }
 }

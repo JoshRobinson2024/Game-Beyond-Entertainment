@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public Image HealthBar;
     public WillGaining WillGaining;
+    public SceneManagement sceneManagement;
     private void Start()
     {
         maxHealth = 50;
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             cam.transform.parent = null;
             sprite.SetActive(false);
             WillGaining.calculateDisplay();
+            sceneManagement.LoadDeathScreen();
         }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         if (Input.GetKeyDown(KeyCode.Space))

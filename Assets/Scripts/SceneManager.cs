@@ -21,4 +21,8 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Boss fight");
     }
+    public void LoadDeathScreen()
+    {
+        SceneManager.LoadScene("WillGaining");
+    }
 }

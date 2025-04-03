@@ -683,6 +683,10 @@ PrefabInstance:
       propertyPath: WillGaining
       value: 
       objectReference: {fileID: 1209653170}
+    - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: sceneManagement
+      value: 
+      objectReference: {fileID: 1209653171}
     m_RemovedComponents:
     - {fileID: 7525979529135992529, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
     - {fileID: 244754639396281096, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
@@ -3204,6 +3208,7 @@ GameObject:
   - component: {fileID: 1209653165}
   - component: {fileID: 1209653169}
   - component: {fileID: 1209653170}
+  - component: {fileID: 1209653171}
   m_Layer: 5
   m_Name: Screen canvas
   m_TagString: Untagged
@@ -3344,6 +3349,19 @@ MonoBehaviour:
   TimeSurvived: 0
   DamageDealt: 0
   BossHealth: {fileID: 673951936}
+  DeathInfo: {fileID: 0}
+--- !u!114 &1209653171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209653164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d302c6be27292443b9e2cbdedc3b2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1384819284
 GameObject:
   m_ObjectHideFlags: 0
