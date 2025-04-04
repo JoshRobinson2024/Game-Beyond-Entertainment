@@ -5,15 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/First battle.unity
     guid: e29a06e28c39ebd40a4e3cdd856f1034
   - enabled: 1
-    path: Assets/Scenes/Boss fight.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/InteractionSelect.unity
     guid: fa83a2daf1c2c5e41b8b56a2a45840fd
+  - enabled: 1
+    path: Assets/Scenes/Boss fight.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/WillGaining.unity
     guid: 4f20741f1be4c22429f2781e93c06f20
