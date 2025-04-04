@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 
 public class ObjectGrab : MonoBehaviour
@@ -43,7 +43,7 @@ public class ObjectGrab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EController.activeInHierarchy&& Input.GetKeyDown(KeyCode.E)&& grabbedObject!= true)
+        if (EController.activeInHierarchy&& Input.GetKeyDown(KeyCode.E)&& grabbedObject!= true && ObjectDamage.Grabbable == true)
         {
             EController.SetActive(false);
             grabbedObject = true;
@@ -54,7 +54,7 @@ public class ObjectGrab : MonoBehaviour
             controllerRB.freezeRotation = true;
             InvokeRepeating("ControllerFollow", 0, Time.deltaTime);
         }
-        else if(EGuitar.activeInHierarchy && Input.GetKeyDown(KeyCode.E))
+        else if(EGuitar.activeInHierarchy && Input.GetKeyDown(KeyCode.E) && grabbedObject != true && GuitarDamage.GuitarGrabbable == true)
         {
             EGuitar.SetActive(false);
             grabbedObject = true;
@@ -64,7 +64,7 @@ public class ObjectGrab : MonoBehaviour
             guitarRB.freezeRotation = true;
             InvokeRepeating("GuitarFollow", 0, Time.deltaTime);
         }
-        else if(EJournal.activeInHierarchy&& Input.GetKeyDown(KeyCode.E))
+        else if(EJournal.activeInHierarchy&& Input.GetKeyDown(KeyCode.E) && grabbedObject != true && JournalDamage.JournalGrabbable == true)
         {
             EJournal.SetActive(false);
             grabbedObject = true;
@@ -146,16 +146,16 @@ public class ObjectGrab : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("controller"))
+        if (collision.gameObject.name.Equals("controller") && grabbedObject != true && ObjectDamage.Grabbable == true)
         {
             EController.SetActive(true);
 
         }
-        else if (collision.gameObject.name.Equals("guitar"))
+        else if (collision.gameObject.name.Equals("guitar") && grabbedObject != true && GuitarDamage.GuitarGrabbable == true)
         {
             EGuitar.SetActive(true);
         }
-        else if (collision.gameObject.name.Equals("journal"))
+        else if (collision.gameObject.name.Equals("journal") && grabbedObject != true && GuitarDamage.GuitarGrabbable == true)
         {
             EJournal.SetActive(true);
         }

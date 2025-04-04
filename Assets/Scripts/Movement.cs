@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
+        rb = GetComponent<Rigidbody2D>();
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {

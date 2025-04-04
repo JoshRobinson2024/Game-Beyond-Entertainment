@@ -14,6 +14,10 @@ public class GuitarDamage : MonoBehaviour
     public Image HealthBar;
     public float currentGuitarHealth;
     public static float Guitarhealth;
+    public Color brokenColour;
+    public static bool GuitarGrabbable = true;
+    public ObjectDamage CDamage;
+    public JournalDamage JDamage;
     private void Start()
     {
         Guitarhealth = 5;
@@ -26,24 +30,66 @@ public class GuitarDamage : MonoBehaviour
         Damaging = true;
         rend.color = damagingColour;
     }
-
+    public void heal()
+    {
+        if (currentGuitarHealth < Guitarhealth)
+        {
+            currentGuitarHealth += 1;
+            HealthBar.fillAmount = currentGuitarHealth / Guitarhealth;
+            if (currentGuitarHealth == Guitarhealth)
+            {
+                rend.color = neutralColour;
+                GuitarGrabbable = true;
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Damaging && collision.gameObject.CompareTag("Boss"))
+        if (Damaging && collision.gameObject.CompareTag("Boss") && currentGuitarHealth > 2)
         {
             health.damage(guitarStrength);
             Debug.Log("hit");
             LoseHealth(1);
             health.damage(guitarStrength);
+            CDamage.heal();
+            JDamage.heal();
+        }
+        else if (Damaging && collision.gameObject.CompareTag("Boss") && currentGuitarHealth == 2)
+        {
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(guitarStrength / 2);
+            CDamage.heal();
+            JDamage.heal();
+        }
+        else if (Damaging && collision.gameObject.CompareTag("Boss") && currentGuitarHealth == 1)
+        {
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(guitarStrength / 4);
+            CDamage.heal();
+            JDamage.heal();
         }
         else if (Damaging && collision.gameObject.CompareTag("Wall"))
         {
 
             Debug.Log("hit");
             LoseHealth(1);
+            CDamage.heal();
+            JDamage.heal();
         }
         Damaging = false;
         rend.color = neutralColour;
+        if (currentGuitarHealth == 0)
+        {
+            GuitarGrabbable = false;
+            rend.color = brokenColour;
+        }
+        
     }
     public void GainGuitarStrangth(int guitarStrengthtoGain)
     {

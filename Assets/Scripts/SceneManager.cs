@@ -25,4 +25,8 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("WillGaining");
     }
+    public void loadInteractionSelect()
+    {
+        SceneManager.LoadScene("InteractionSelect");
+    }
 }

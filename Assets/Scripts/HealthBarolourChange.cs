@@ -49,12 +49,20 @@ public class HealthBarolourChange : MonoBehaviour
         {
             ControllerBar.color = low;
         }
+        else if (ObjectDamage.Grabbable == false)
+        {
+            ControllerBar.color = low;
+        }
         else
         {
             ControllerBar.color = natural;
         }
-
+        
         if (GuitarDamage.currentGuitarHealth == 1)
+        {
+            GuitarBar.color = low;
+        }
+        else if (GuitarDamage.GuitarGrabbable == false)
         {
             GuitarBar.color = low;
         }
@@ -64,6 +72,10 @@ public class HealthBarolourChange : MonoBehaviour
         }
 
         if (JournalDamage.currentJournalHealth == 1)
+        {
+            JournalBar.color = low;
+        }
+        else if (JournalDamage.JournalGrabbable == false)
         {
             JournalBar.color = low;
         }

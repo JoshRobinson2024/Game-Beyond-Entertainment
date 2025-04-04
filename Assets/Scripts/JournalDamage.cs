@@ -14,6 +14,11 @@ public class JournalDamage : MonoBehaviour
     public Image HealthBar;
     public float currentJournalHealth;
     public static float Journalhealth;
+    
+    public Color brokenColour;
+    public static bool JournalGrabbable = true;
+    public ObjectDamage CDamage;
+    public GuitarDamage GDamage;
     private void Start()
     {
         Journalhealth = 5;
@@ -26,25 +31,67 @@ public class JournalDamage : MonoBehaviour
         Damaging = true;
         rend.color = damagingColour;
     }
-
+    public void heal()
+    {
+        if (currentJournalHealth < Journalhealth)
+        {
+            currentJournalHealth += 1;
+            HealthBar.fillAmount = currentJournalHealth / Journalhealth;
+            if (currentJournalHealth == Journalhealth)
+            {
+                rend.color = neutralColour;
+                JournalGrabbable = true;
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Damaging && collision.gameObject.CompareTag("Boss"))
+        if (Damaging && collision.gameObject.CompareTag("Boss") && currentJournalHealth > 2)
         {
             health.damage(journalStrength);
             Debug.Log("hit");
             LoseHealth(1);
             health.damage(journalStrength);
+            CDamage.heal();
+            GDamage.heal();
+        }
+        else if (Damaging && collision.gameObject.CompareTag("Boss") && currentJournalHealth == 2)
+        {
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(journalStrength / 2);
+            CDamage.heal();
+            GDamage.heal();
+        }
+        else if (Damaging && collision.gameObject.CompareTag("Boss") && currentJournalHealth == 1)
+        {
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(journalStrength / 4);
+            CDamage.heal();
+            GDamage.heal();
         }
         else if (Damaging && collision.gameObject.CompareTag("Wall"))
         {
 
             Debug.Log("hit");
             LoseHealth(1);
+            CDamage.heal();
+            GDamage.heal();
         }
         Damaging = false;
         
         rend.color = neutralColour;
+        if (currentJournalHealth == 0)
+        {
+            JournalGrabbable = false;
+            rend.color = brokenColour;
+        }
+        
     }
     public void journalStrengthGain(int journalStrengthtoGain)
     {

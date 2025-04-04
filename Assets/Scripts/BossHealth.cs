@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
+    public GameObject Boss;
     public Image HealthBar;
     public float maxHealth = 5000;
     public float health = 5000;
@@ -18,7 +19,10 @@ public class BossHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health <= 0)
+        {
+            Destroy(Boss);
+        }
     }
     public void damage(int strength)
     {

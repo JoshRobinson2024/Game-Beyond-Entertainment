@@ -12,17 +12,32 @@ public class ObjectDamage : MonoBehaviour
     public Color damagingColour;
     public SpriteRenderer rend;
     public Color neutralColour;
+    public Color brokenColour;
     public Image HealthBar;
-    public float currentControllerHealth;
-
+    public static float currentControllerHealth;
+    public static bool Grabbable = true;
+    public GuitarDamage GDamage;
+    public JournalDamage JDamage;
     private void Start()
     {
         Controllerhealth = 5;
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
-        Strength = 250;
+        Strength = 1000;
     }
-    
+    public void heal()
+    {
+        if (currentControllerHealth < Controllerhealth)
+        {
+            currentControllerHealth += 1;
+            HealthBar.fillAmount = currentControllerHealth / Controllerhealth;
+            if (currentControllerHealth == Controllerhealth)
+            {
+                rend.color = neutralColour;
+                Grabbable = true;
+            }
+        }
+    }
     public void ControllerDamage()
     {
         Damaging = true;
@@ -31,7 +46,7 @@ public class ObjectDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Damaging && collision.gameObject.CompareTag("Boss"))
+        if (Damaging && collision.gameObject.CompareTag("Boss") && currentControllerHealth > 2)
         {
             
             Debug.Log("hit");
@@ -39,9 +54,29 @@ public class ObjectDamage : MonoBehaviour
             Damaging = false;
             rend.color = neutralColour;
             health.damage(Strength);
+            GDamage.heal();
+            JDamage.heal();
         }
-        
-        
+        else if(Damaging && collision.gameObject.CompareTag("Boss") && currentControllerHealth == 2)
+        {
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(Strength/2);
+            GDamage.heal();
+            JDamage.heal();
+        }
+        else if (Damaging && collision.gameObject.CompareTag("Boss") && currentControllerHealth == 1)
+        {
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            health.damage(Strength / 4);
+            GDamage.heal();
+            JDamage.heal();
+        }
         else if (Damaging && collision.gameObject.CompareTag("Wall"))
         {
             
@@ -49,6 +84,13 @@ public class ObjectDamage : MonoBehaviour
             LoseHealth(1);
             Damaging = false;
             rend.color = neutralColour;
+            GDamage.heal();
+            JDamage.heal();
+        }
+        if (currentControllerHealth == 0)
+        {
+            Grabbable = false;
+            rend.color = brokenColour;
         }
         
     }

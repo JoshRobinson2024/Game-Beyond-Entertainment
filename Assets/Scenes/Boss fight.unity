@@ -155,9 +155,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 673951936}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: GDamage
+      value: 
+      objectReference: {fileID: 851564406}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: JDamage
+      value: 
+      objectReference: {fileID: 1046185751}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 359626286}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: brokenColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: brokenColour.b
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: brokenColour.g
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: brokenColour.r
+      value: 0.16981131
+      objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: neutralColour.a
       value: 1
@@ -613,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.86
+      value: -15.47
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1450,6 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5053e1a35729d4a989d4aeb8cad6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Boss: {fileID: 673951915}
   HealthBar: {fileID: 1679712750}
   maxHealth: 5000
   health: 5000
@@ -1460,7 +1485,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 723238469}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673951915}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d84b959b2d03c8743b1f535b6ff62aba, type: 3}
   m_Name: 
@@ -1750,7 +1775,7 @@ PrefabInstance:
       objectReference: {fileID: 673951929}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: darknesAnim
@@ -2236,9 +2261,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 673951936}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: CDamage
+      value: 
+      objectReference: {fileID: 33304548}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: JDamage
+      value: 
+      objectReference: {fileID: 1046185751}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 809488040}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: brokenColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: brokenColour.b
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: brokenColour.g
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: brokenColour.r
+      value: 0.16981131
+      objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: neutralColour.a
       value: 1
@@ -2770,9 +2819,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 673951936}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: CDamage
+      value: 
+      objectReference: {fileID: 33304548}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: GDamage
+      value: 
+      objectReference: {fileID: 851564406}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 509130310}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: brokenColour.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: brokenColour.b
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: brokenColour.g
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: brokenColour.r
+      value: 0.16981131
+      objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: neutralColour.a
       value: 1
@@ -3349,7 +3422,6 @@ MonoBehaviour:
   TimeSurvived: 0
   DamageDealt: 0
   BossHealth: {fileID: 673951936}
-  DeathInfo: {fileID: 0}
 --- !u!114 &1209653171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3695,7 +3767,7 @@ Transform:
   m_GameObject: {fileID: 1551822724}
   serializedVersion: 2
   m_LocalRotation: {x: -0.016808676, y: 0.0020970812, z: -0.00003518848, w: -0.9998566}
-  m_LocalPosition: {x: -0.02096253, y: -8.599666, z: -5.846643}
+  m_LocalPosition: {x: -0.02096253, y: -15.209666, z: -5.846643}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
