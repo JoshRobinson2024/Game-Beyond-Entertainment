@@ -28,12 +28,24 @@ public class Upgrade : MonoBehaviour
     {
         ObjectDamage.Strength += controllerToGain;
     }
+    public void gainControllerHealth(int healthToGain)
+    {
+        ObjectDamage.Controllerhealth += healthToGain;
+    }
     public void gainGuitar(int guitarToGain)
     {
         GuitarDamage.guitarStrength += guitarToGain;
     }
+    public void gainGuitarHealth(int healthToGain)
+    {
+        GuitarDamage.Guitarhealth += healthToGain;
+    }
     public void gainJournal(int journalToGain)
     {
         JournalDamage.journalStrength += journalToGain;
+    }
+    public void gainJournalHealth(int healthToGain)
+    {
+        JournalDamage.Journalhealth += healthToGain;
     }
 }

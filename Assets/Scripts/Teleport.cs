@@ -11,6 +11,7 @@ public class Teleport : MonoBehaviour
     public int fakeout;
     public Spawner spawner;
     public FakeoutRing ring;
+    public PlayerMovement mov;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,54 @@ public class Teleport : MonoBehaviour
     {
         fakeout = Random.Range(0, 5);
     }
+    public void randomiseLocation()
+    {
+        placeToTeleport = Random.Range(0, TeleportList.Count);
+        if (TeleportList[placeToTeleport] == TeleportList[0] && mov.centreDisabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[1] && mov.tp1Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[2] && mov.tp2Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[3] && mov.tp3Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[4] && mov.tp4Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[5] && mov.tp5Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[6] && mov.tp6Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[7] && mov.tp7Disabled)
+        {
+            randomiseLocation();
+        }
+        else if (TeleportList[placeToTeleport] == TeleportList[8] && mov.tp8Disabled)
+        {
+            randomiseLocation();
+        }
+        else
+        {
+            Disappear();
+        }
+    }
     public void Disappear()
     {
         
-        placeToTeleport = Random.Range(0, TeleportList.Count);
+        
         boss.SetActive(false);
         time = Random.Range(0.5f, 1f);
         Invoke("appear", time);
@@ -51,7 +96,7 @@ public class Teleport : MonoBehaviour
             ring.randomise();
             ring.delayfire();
             ring.delaystop();
-            Debug . Log(fakeout);
+            //Debug . Log(fakeout);
             spawner.wait();
         }
     }

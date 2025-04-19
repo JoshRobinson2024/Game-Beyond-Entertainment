@@ -57,7 +57,7 @@ public class FakeoutRing : MonoBehaviour
     public void teleporting()
     {
         CancelInvoke("FireBul");
-        teleport.Invoke("Disappear", 0.7f);
+        teleport.Invoke("randomiseLocation", 0.7f);
     }
     public void delaystop()
     {

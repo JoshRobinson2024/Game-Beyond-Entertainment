@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor;
+
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -27,6 +27,9 @@ public class Spawner : MonoBehaviour
     public Teleport teleport;
     public int attacksToteleport;
     public int attacksDone = 0;
+    public Laser laser;
+    public RotatingLaser rotLaser;
+    private int laserAttkSelect;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +52,7 @@ public class Spawner : MonoBehaviour
             else
             {
                 attkSelected = Random.Range(1, 8);
+                laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
                 if (attkSelected != usedAttack)
                 {
@@ -89,35 +93,35 @@ public class Spawner : MonoBehaviour
     }
     private void Attk7()
     {
-        attacksDone +=1;
+        attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
         Debug.Log("Multiringattack");
-        
+
         fire.randomise();
-        
+
         fire.delayfire();
 
         fire.delaystop();
     }
     private void Attk6()
     {
-        attacksDone +=1;
+        attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
         Debug.Log("double spiral");
-        
+
         spiral.randomise();
         spiral.firing();
-         
+
     }
     private void Attk5()
     {
-        attacksDone +=1;
+        attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
         Debug.Log("cannonbalrog");
-        
+
         howlongtoshoot = Random.Range(4, 7);
         shooter.Fire();
         shooter2.Fire();
@@ -125,13 +129,13 @@ public class Spawner : MonoBehaviour
         Invoke("endSpiral", howlongtoshoot);
         howlongtoshoot = Random.Range(4, 7);
         Invoke("endSpiral2", howlongtoshoot);
-        
+
 
 
     }
     private void Attk4()
     {
-        attacksDone +=1;
+        attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
         spray.randomise();
@@ -140,52 +144,82 @@ public class Spawner : MonoBehaviour
     }
     private void Attk3()
     {
-        attacksDone +=1;
+        attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
         ring.DelayFire();
-        
+
     }
     private void Attk2()
     {
-        /*attacksDone +=1;
-        if (isDark == false)
-        {
-            removalTime = Random.Range(20, 30);
-            attkInProgress = true;
-            isDark = true;
-            darkness.SetActive(true);
-            
-            Invoke("removeDarknessAnim", removalTime - 5);
-            Invoke("removeDarkness", removalTime);
-            wait();
-        }*/
-        
+        attacksDone +=1;
+        attkInProgress = true;
+        rotLaser.randomise();
+        rotLaser.Rotationpart1();
     }
     private void Attk1()
     {
-
-        //...
+        attacksDone += 1;
+        attkInProgress = true;
         
+        if (laserAttkSelect == 0)
+        {
+            laser.playertrack1();
+        }
+        else
+        {
+            laser.randomise();
+            laser.randomRotationpart1();
+        }
+        
+
+
     }
     private void tp()
     {
+        attkInProgress = true;
+        laser.laser1.SetActive(false);
+        laser.laser2.SetActive(false);
+        laser.laser3.SetActive(false);
+        laser.laser4.SetActive(false);
+        laser.laser5.SetActive(false);
+        laser.laser6.SetActive(false);
+        laser.laser7.SetActive(false);
+        laser.laser8.SetActive(false);
+        rotLaser.laser1.SetActive(false);
+        rotLaser.laser2.SetActive(false);
+        rotLaser.laser3.SetActive(false);
         teleport.randomise();
-        attkInProgress=true;
+        
         attacksDone = 0;
         attacksToteleport = Random.Range(1, 4);
-        teleport.Disappear();
+        teleport.randomiseLocation();
         
     }
     private void Reset()
     {
+        laser.laser1.SetActive(false);
+        laser.laser2.SetActive(false);
+        laser.laser3.SetActive(false);
+        laser.laser4.SetActive(false);
+        laser.laser5.SetActive(false);
+        laser.laser6.SetActive(false);
+        laser.laser7.SetActive(false);
+        laser.laser8.SetActive(false);
+        rotLaser.laser1.SetActive(false);
+        rotLaser.laser2.SetActive(false);
+        rotLaser.laser3.SetActive(false);
         reuse = Random.Range(0, 2);
-        if (reuse == 0)
+        if (attkSelected == 1)
+        {
+            usedAttack = 1;
+        }
+        else if (reuse == 0)
         {
             usedAttack = attkSelected;
         }
         attkInProgress = false;
-        
+        //Debug.Log(attkInProgress);
     }
     public void wait()
     {
@@ -193,6 +227,7 @@ public class Spawner : MonoBehaviour
         waitTime = Random.Range(0.5f, 1.5f);
         
         Invoke("Reset", waitTime);
+
     }
     public void endSpiral()
     {

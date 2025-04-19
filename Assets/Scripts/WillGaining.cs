@@ -57,22 +57,22 @@ public class WillGaining : MonoBehaviour
         Debug.Log(BossHealth.Agression);
         if (TimeSurvived >= DamageDealt && TimeSurvived >= BossHealth.Agression)
         {
-            WillAmount += DamageDealt * BossHealth.Agression;
-            WillGained = DamageDealt * BossHealth.Agression;
+            WillAmount += DamageDealt + BossHealth.Agression;
+            WillGained = DamageDealt + BossHealth.Agression;
             Debug.Log(WillAmount);
             Debug.Log("Ignore time");
         }
         else if(TimeSurvived <= DamageDealt && BossHealth.Agression <= DamageDealt)
         {
-            WillAmount += TimeSurvived * BossHealth.Agression;
-            WillGained = TimeSurvived * BossHealth.Agression;
+            WillAmount += TimeSurvived + BossHealth.Agression;
+            WillGained = TimeSurvived + BossHealth.Agression;
             Debug.Log("Ignore Damage");
             Debug.Log(WillAmount);
         }
         else if (TimeSurvived <= BossHealth.Agression && BossHealth.Agression >= DamageDealt)
         {
-            WillAmount += TimeSurvived * DamageDealt;
-            WillGained = TimeSurvived * DamageDealt;
+            WillAmount += TimeSurvived + DamageDealt;
+            WillGained = TimeSurvived + DamageDealt;
             Debug.Log(WillAmount);
             Debug.Log("IgnoreAgression");
         }

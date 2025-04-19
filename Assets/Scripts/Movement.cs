@@ -26,6 +26,17 @@ public class PlayerMovement : MonoBehaviour
     public Image HealthBar;
     public WillGaining WillGaining;
     public SceneManagement sceneManagement;
+
+    public bool centreDisabled = false;
+    public bool tp1Disabled = false;
+    public bool tp2Disabled = false;
+    public bool tp3Disabled = false;
+    public bool tp4Disabled = false;
+    public bool tp5Disabled = false;
+    public bool tp6Disabled = false;
+    public bool tp7Disabled = false;
+    public bool tp8Disabled = false;
+
     private void Start()
     {
         maxHealth = 50;
@@ -48,6 +59,81 @@ public class PlayerMovement : MonoBehaviour
                 
             }
 
+        }
+        if (collision.gameObject.name.Equals("centreTeleportDenial"))
+        {
+            centreDisabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport1Denial"))
+        {
+            tp1Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport2Denial"))
+        {
+            tp2Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport3Denial"))
+        {
+            tp3Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport4Denial"))
+        {
+            tp4Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport5Denial"))
+        {
+            tp5Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport6Denial"))
+        {
+            tp6Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport7Denial"))
+        {
+            tp7Disabled = true;
+        }
+        if (collision.gameObject.name.Equals("teleport8Denial"))
+        {
+            tp8Disabled = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("centreTeleportDenial"))
+        {
+            centreDisabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport1Denial"))
+        {
+            tp1Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport2Denial"))
+        {
+            tp2Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport3Denial"))
+        {
+            tp3Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport4Denial"))
+        {
+            tp4Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport5Denial"))
+        {
+            tp5Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport6Denial"))
+        {
+            tp6Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport7Denial"))
+        {
+            tp7Disabled = false;
+        }
+        if (collision.gameObject.name.Equals("teleport8Denial"))
+        {
+            tp8Disabled = false;
         }
     }
     private void loseIFrames()

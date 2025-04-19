@@ -213,13 +213,14 @@ MonoBehaviour:
   dashSpeed: 15
   dashLength: 0.5
   dashCooldown: 1
-  maxHealth: 0
-  defense: 0
   currentHealth: 0
   healthToLose: 0
   iFrames: 0
   sprite: {fileID: 0}
   cam: {fileID: 0}
+  HealthBar: {fileID: 0}
+  WillGaining: {fileID: 0}
+  sceneManagement: {fileID: 0}
 --- !u!114 &244754639396281096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,8 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc9aec4b6d9d3b44bf039b91f98a3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  defense: 0
   currentHealth: 0
   healthToLose: 0
   iFrames: 0
