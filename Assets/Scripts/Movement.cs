@@ -37,13 +37,18 @@ public class PlayerMovement : MonoBehaviour
     public bool tp7Disabled = false;
     public bool tp8Disabled = false;
 
+    Animator anim;
+
     private void Start()
     {
+        
         maxHealth = 50;
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        anim.SetBool("Dead", false);
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
@@ -140,19 +145,24 @@ public class PlayerMovement : MonoBehaviour
     {
         iFrames = false;
     }
-    
+    public void Death()
+    {
+        sceneManagement.LoadDeathScreen();
+    }
     void Update()
     {
         if (currentHealth <= 0)
         {
             Debug.Log("death...");
             Destroy (rb);
+
             cam.transform.parent = null;
-            sprite.SetActive(false);
+            anim.SetBool("Dead", true);
             WillGaining.calculateDisplay();
-            sceneManagement.LoadDeathScreen();
+            Invoke("Death", 1.5f);
         }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
@@ -192,6 +202,16 @@ public class PlayerMovement : MonoBehaviour
             forceToApply = Vector2.zero;
         }
         rb.velocity = moveForce;
+        anim.SetFloat("MoveX", moveForce.x);
+        anim.SetFloat("MoveY", moveForce.y);
+        if(moveForce.x == 0 && moveForce.y == 0)
+        {
+            anim.SetBool("Moving", false);
+        }
+        else
+        {
+            anim.SetBool("Moving", true);
+        }
     }
 
     
