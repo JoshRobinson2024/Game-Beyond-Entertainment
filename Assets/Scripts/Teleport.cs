@@ -12,10 +12,12 @@ public class Teleport : MonoBehaviour
     public Spawner spawner;
     public FakeoutRing ring;
     public PlayerMovement mov;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -73,10 +75,10 @@ public class Teleport : MonoBehaviour
     }
     public void Disappear()
     {
+
+        anim.SetBool("TeleportExit", true);
         
-        
-        boss.SetActive(false);
-        time = Random.Range(0.5f, 1f);
+        time = Random.Range(1f, 1.5f);
         Invoke("appear", time);
     }
     public void appear()

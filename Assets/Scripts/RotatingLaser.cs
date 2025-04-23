@@ -75,16 +75,16 @@ public class RotatingLaser : MonoBehaviour
         reverse = Random.Range(0, 2);
         if (reverse == 0)
         {
-            speedZ =  -speedZ;
+            speedZ = Random.Range(-0.02f, -0.06f);
         }
     }
     public void Rotationpart1()
     {
-        speedZ = Random.Range(0.1f, 0.2f);
+        speedZ = Random.Range(0.06f, 0.1f);
         reverse = Random.Range(0, 2);
         if (reverse == 0)
         {
-            speedZ = -speedZ;
+            speedZ = Random.Range(-0.1f, -0.1f);
         }
         laser1.SetActive(false);
         laser2.SetActive(false);
