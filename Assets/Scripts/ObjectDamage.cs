@@ -24,6 +24,11 @@ public class ObjectDamage : MonoBehaviour
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
         Strength = 250;
+        
+        
+        rend.color = neutralColour;
+        Grabbable = true;
+        
     }
     public void heal()
     {

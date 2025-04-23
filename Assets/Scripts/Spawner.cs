@@ -98,11 +98,15 @@ public class Spawner : MonoBehaviour
         usedAttack = 0;
         Debug.Log("Multiringattack");
 
+        fire.times = Random.Range(1, 4);
+
         fire.randomise();
 
         fire.delayfire();
 
         fire.delaystop();
+
+
     }
     private void Attk6()
     {

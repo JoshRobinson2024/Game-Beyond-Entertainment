@@ -163,12 +163,21 @@ public class ObjectGrab : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-        
-        EController.SetActive(false);
-        EGuitar.SetActive(false);
-        EJournal.SetActive(false);
-        
+        if (collision.gameObject.name.Equals("controller"))
+        {
+            EController.SetActive(false);
+
+        }
+        else if (collision.gameObject.name.Equals("guitar"))
+        {
+            EGuitar.SetActive(false);
+        }
+        else if (collision.gameObject.name.Equals("journal"))
+        {
+            EJournal.SetActive(false);
+        }
+
+
     }
     
     

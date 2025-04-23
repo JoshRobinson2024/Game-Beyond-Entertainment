@@ -71,11 +71,11 @@ public class RotatingLaser : MonoBehaviour
     public void randomise()
     {
         timesFired = Random.Range(2, 4);
-        speedZ = Random.Range(0.1f, 0.2f);
+        speedZ = Random.Range(0.02f, 0.06f);
         reverse = Random.Range(0, 2);
         if (reverse == 0)
         {
-            speedZ = - -speedZ;
+            speedZ =  -speedZ;
         }
     }
     public void Rotationpart1()

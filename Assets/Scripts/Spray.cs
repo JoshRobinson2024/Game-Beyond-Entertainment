@@ -10,13 +10,7 @@ public class Spray : MonoBehaviour
     private Vector2 bulletMoveDirections;
     public Spawner spawner;
     public RandomRing ring;
-    private float ringDelay1;
-    private float ringDelay2;
-    private float ringDelay3;
-    private int fire1;
-    private int fire2;
-    private int fire3;
-    private int fire4;
+    
     // Start is called before the first frame update
 
     private void FireSpray()
@@ -51,72 +45,24 @@ public class Spray : MonoBehaviour
     {
 
         InvokeRepeating("FireSpray", 0f, timeToShoot);
-        if(fire1 == 0)
-        {
-            Invoke("RingFire1", ringDelay1);
-        }
-        if(fire2 == 0)
-        {
-            Invoke("RingFire2", ringDelay2);
-        }
-        if (fire3 == 0)
-        {
-            Invoke("RingFire3", ringDelay3);
-        }
-        if (fire4 == 0)
-        {
-            Invoke("RingFire4", timeToShoot);
-        }
+        
         Invoke("cease", wait);
     }
     public void randomise()
     {
         
-        timeToShoot = Random.Range(0.03f, 0.06f);
+        timeToShoot = Random.Range(0.03f, 0.05f);
     }
     private void cease()
     {
         CancelInvoke("FireSpray");
         spawner.wait();
     }
-    public void RingFire1()
-    {
-
-        CancelInvoke("FireSpray");
-        ring.Invoke("FireBul", 0.3f);
-        timeToShoot = Random.Range(0.03f, 0.06f);
-        InvokeRepeating("FireSpray", 0.6f, timeToShoot);
-    }
-    public void RingFire2()
-    {
-        CancelInvoke("FireSpray");
-        ring.Invoke("FireBul", 0.3f);
-        timeToShoot = Random.Range(0.03f, 0.06f);
-        InvokeRepeating("FireSpray", 0.6f, timeToShoot);
-    }
-    public void RingFire3()
-    {
-        CancelInvoke("FireSpray");
-        ring.Invoke("FireBul", 0.3f);
-        timeToShoot = Random.Range(0.03f, 0.06f);
-        InvokeRepeating("FireSpray", 0.6f, timeToShoot);
-    }
-    public void RingFire4()
-    {
-        CancelInvoke("FireSpray");
-        ring.Invoke("FireBul", 0.3f);
-        timeToShoot = Random.Range(0.03f, 0.06f);
-        
-    }
+    
     public void randomiseTime()
     {
-        ringDelay1 = Random.Range(2, 4);
-        ringDelay2 = Random.Range(5, 7);
-        ringDelay3 = Random.Range(8, 10);
+        
         wait = Random.Range(10, 12);
-        fire1 = Random.Range(0, 2);
-        fire2 = Random.Range(0, 2);
-        fire3 = Random.Range(0, 2);
-        fire4 = Random.Range(0, 2);
+        
     }
 }

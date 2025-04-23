@@ -13,7 +13,8 @@ public class Fire : MonoBehaviour
     
     private Vector2 bulletMoveDirection;
     private float delay = 0.6f;
-    
+
+    public int times;
 
     private float timesshot;
     public Spawner spawner;
@@ -51,7 +52,15 @@ public class Fire : MonoBehaviour
     public void stop()
     {
         CancelInvoke("FireBul");
-        spawner.wait();
+        if (times == 0)
+        {
+            spawner.wait();
+        }
+        else
+        {
+            times -= 1;
+            Invoke("refire", Random.Range(0.5f, 1f));
+        }
     }
     public void delaystop()
     {
@@ -62,5 +71,13 @@ public class Fire : MonoBehaviour
         
         timesshot = Random.Range(3, 6);
         delay = Random.Range(0.15f, 0.35f);
+    }
+    public void refire()
+    {
+        randomise();
+
+        delayfire();
+
+        delaystop();
     }
 }
