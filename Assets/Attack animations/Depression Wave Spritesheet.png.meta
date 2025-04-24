@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 33a8f91a8735b5c45a4328fc0a3e720f
+guid: a60d85a62bf9f39498d10a5d400b3dfe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,7 +124,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,7 +137,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_0
+      name: Depression Wave Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 354fbcb33b86f4a498f48d9afc53023c
-      internalID: -516088874
+      spriteID: f61e3d80a905e124f96925e7dde202cb
+      internalID: 1217630447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_1
+      name: Depression Wave Spritesheet_1
       rect:
         serializedVersion: 2
         x: 305
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 454944ead205c0b47916c7cfe93f46a8
-      internalID: -1104535356
+      spriteID: efde2f49e9344ae478425ac8bbac2fe5
+      internalID: -777681112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_2
+      name: Depression Wave Spritesheet_2
       rect:
         serializedVersion: 2
         x: 610
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a6a775b87b03d745b067042b0d1be73
-      internalID: -1571428382
+      spriteID: 76f92724d3639f44a9ef4ea48bbebdf8
+      internalID: -606326532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_3
+      name: Depression Wave Spritesheet_3
       rect:
         serializedVersion: 2
         x: 915
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1768b6bbe0578934e91cd47d71a69e2b
-      internalID: 1611708514
+      spriteID: 33b52fa15d25ca444a43e75434e96460
+      internalID: 1692188965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_4
+      name: Depression Wave Spritesheet_4
       rect:
         serializedVersion: 2
         x: 1220
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0734139f5e05d7b4fa131df3060c8780
-      internalID: -1842704122
+      spriteID: 6188ced13f19af04cb66b06ab0745db5
+      internalID: -749953734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_5
+      name: Depression Wave Spritesheet_5
       rect:
         serializedVersion: 2
         x: 1525
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 596248ce6a9c29941b8ae70017eadd1e
-      internalID: 601165379
+      spriteID: 9eef88d57edf6af4f8dc4eec28ce4b13
+      internalID: -2007569981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_6
+      name: Depression Wave Spritesheet_6
       rect:
         serializedVersion: 2
         x: 1830
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44ef1128f34653640983e41ee52c72c8
-      internalID: -640288115
+      spriteID: b9ae3d61393e3a24280a79772b605b7d
+      internalID: 1709349876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_7
+      name: Depression Wave Spritesheet_7
       rect:
         serializedVersion: 2
         x: 2135
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +310,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7be136c285740544b6677b204ae86af
-      internalID: -124098080
+      spriteID: d4404241b3919634f8e45b41a1ff67ee
+      internalID: -808622597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_8
+      name: Depression Wave Spritesheet_8
       rect:
         serializedVersion: 2
         x: 2440
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,20 +331,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d98bf7216d0a7a42b00c9a70372fbdd
-      internalID: 21824647
+      spriteID: 47830e43e90ffbd4b9055e421274dfa9
+      internalID: -555612876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_9
+      name: Depression Wave Spritesheet_9
       rect:
         serializedVersion: 2
         x: 2745
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,20 +352,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a189d8dfa6cfad44891a5873500dadaa
-      internalID: 775371333
+      spriteID: dba6b739fe134044b9e736a2610c2986
+      internalID: -1250417609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_10
+      name: Depression Wave Spritesheet_10
       rect:
         serializedVersion: 2
         x: 3050
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,20 +373,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14fd63672a8ebfa42b0dd1494f163cc0
-      internalID: -945872343
+      spriteID: 3a2a1dc9e9f695d44b0afa33fdf44e5d
+      internalID: 1561246370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_11
+      name: Depression Wave Spritesheet_11
       rect:
         serializedVersion: 2
         x: 3355
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,20 +394,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e5a7bfaeac05ba41a873aff23d78117
-      internalID: 2121709189
+      spriteID: b353a0cb8fe153542957718d8f828bee
+      internalID: 447546701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_12
+      name: Depression Wave Spritesheet_12
       rect:
         serializedVersion: 2
         x: 3660
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,20 +415,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb1a899f76c8b724ba06f29ebe924970
-      internalID: -339098811
+      spriteID: 18b2a9a2f8d68bd45bb8832b1ab6d9aa
+      internalID: 1597829954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_13
+      name: Depression Wave Spritesheet_13
       rect:
         serializedVersion: 2
         x: 3965
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,20 +436,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52e13e7df6d8a9a4583dd01a6860bcd7
-      internalID: 1128541585
+      spriteID: aff8db627d8b0f04caa797ac8f673817
+      internalID: -24323375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_14
+      name: Depression Wave Spritesheet_14
       rect:
         serializedVersion: 2
         x: 4270
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,20 +457,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3dd3938063ba6e42a9f5aaed403abfb
-      internalID: 1974111280
+      spriteID: 3b8e874489baf1b4caf93121051c80fd
+      internalID: -1865107981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_15
+      name: Depression Wave Spritesheet_15
       rect:
         serializedVersion: 2
         x: 4575
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,20 +478,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce0dec05fcf1d849854a37e28df7f49
-      internalID: 1030509373
+      spriteID: c794a93a6bbe35f4ca6000f9675929b4
+      internalID: -427432720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_16
+      name: Depression Wave Spritesheet_16
       rect:
         serializedVersion: 2
         x: 4880
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,20 +499,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82810446eaa1e394481f9ad5a25f99f5
-      internalID: -1628867640
+      spriteID: 33d6b046c9e569f4597fed3966caf0bb
+      internalID: -1562083788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_17
+      name: Depression Wave Spritesheet_17
       rect:
         serializedVersion: 2
         x: 5185
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,20 +520,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5f6d59e28a64a0499cee7cd7c789f0b
-      internalID: 1152051177
+      spriteID: 8b9795f759ba1b542812023b62039074
+      internalID: -1573221175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_18
+      name: Depression Wave Spritesheet_18
       rect:
         serializedVersion: 2
         x: 5490
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,20 +541,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbb0b37a66f4a4e4aa1e923c301cc2a9
-      internalID: 1615281824
+      spriteID: 5e414dc2a4ca8324ca0736d9c6afe301
+      internalID: 990142859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_19
+      name: Depression Wave Spritesheet_19
       rect:
         serializedVersion: 2
         x: 5795
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,20 +562,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c40e191bb185db41a6c19df7b332da2
-      internalID: 817984058
+      spriteID: 93d1627ecafe04a4a838316042985658
+      internalID: -184111465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_20
+      name: Depression Wave Spritesheet_20
       rect:
         serializedVersion: 2
         x: 6100
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,20 +583,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3218a463ecc07d840b717dfb89fa2319
-      internalID: 182050329
+      spriteID: e9b1cddf75f9a54429f48bb8d3e3e238
+      internalID: -394461058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_21
+      name: Depression Wave Spritesheet_21
       rect:
         serializedVersion: 2
         x: 6405
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,20 +604,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d092a013cbb5ca147b91cae0f83caed6
-      internalID: 1390594785
+      spriteID: 3a194758ac68e5f48b1ff4c8bb73407a
+      internalID: -1694086810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_22
+      name: Depression Wave Spritesheet_22
       rect:
         serializedVersion: 2
         x: 6710
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,20 +625,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1d7ffa4daa234747a37f42ca256dde6
-      internalID: 659496227
+      spriteID: 1c5ce6da1eee86249a5ffa043c6ddab9
+      internalID: -1488639150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_23
+      name: Depression Wave Spritesheet_23
       rect:
         serializedVersion: 2
         x: 7015
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,20 +646,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d1f762f61b6ecd4da816d901f206ba7
-      internalID: -1762225700
+      spriteID: eb2641baad4a4de4283760baf601dd30
+      internalID: -2002974183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_24
+      name: Depression Wave Spritesheet_24
       rect:
         serializedVersion: 2
         x: 7320
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,20 +667,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd7486bb26d93144a8c448cfb5e84606
-      internalID: 491954256
+      spriteID: 9da09438640d9d14aaa4a54faf912e08
+      internalID: 558124563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_25
+      name: Depression Wave Spritesheet_25
       rect:
         serializedVersion: 2
         x: 7625
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -688,20 +688,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2e74a0beda291c418c0e401d48ff171
-      internalID: 776066930
+      spriteID: 9b1b57d438c94cc40b647f5b5bac1988
+      internalID: 243229363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_26
+      name: Depression Wave Spritesheet_26
       rect:
         serializedVersion: 2
         x: 7930
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -709,20 +709,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52a90c000e1c30b4e83632a446911614
-      internalID: -1785349821
+      spriteID: bc4cb053ba686f443ad37a45a80e48b8
+      internalID: 273105217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_27
+      name: Depression Wave Spritesheet_27
       rect:
         serializedVersion: 2
         x: 8235
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,20 +730,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21217df65a898d847a958091e170760f
-      internalID: 446357194
+      spriteID: e2ac5609d11f4cc409a6f7c7a1f3815c
+      internalID: 1174485193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_28
+      name: Depression Wave Spritesheet_28
       rect:
         serializedVersion: 2
         x: 8540
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -751,20 +751,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fcf2365ddb8d714dbabcbe0f083a44b
-      internalID: -954782072
+      spriteID: 10e91ec81e9e1d249a511a6579dd5fbd
+      internalID: 1584336838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_29
+      name: Depression Wave Spritesheet_29
       rect:
         serializedVersion: 2
         x: 8845
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -772,20 +772,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8f1aabb7bf19c42ac3d83109027772
-      internalID: 574314306
+      spriteID: d1d38a7d1e89f0b40b1fbbcfb80efb21
+      internalID: -848702109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_30
+      name: Depression Wave Spritesheet_30
       rect:
         serializedVersion: 2
         x: 9150
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -793,20 +793,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffdec8dbd5d63654890704fb1aeeaf0e
-      internalID: 1361757655
+      spriteID: 46aca64a87f54c94d86f6b955ca53d7a
+      internalID: 1688148600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_31
+      name: Depression Wave Spritesheet_31
       rect:
         serializedVersion: 2
         x: 9455
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,20 +814,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56a1aca46c884fc46999261f7c217118
-      internalID: -1316513010
+      spriteID: 2146527958b3cbe4dac233c0c11d6af0
+      internalID: 315103530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_32
+      name: Depression Wave Spritesheet_32
       rect:
         serializedVersion: 2
         x: 9760
         y: 0
         width: 305
-        height: 305
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -835,29 +835,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48b5f3e23197de4f822c51c3cccf1d2
-      internalID: -2004260368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Depression Teleport-Fakeout Spritesheet_33
-      rect:
-        serializedVersion: 2
-        x: 10065
-        y: 0
-        width: 305
-        height: 305
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7967db5877b5d854f9fb4d82c54398aa
-      internalID: -1949887157
+      spriteID: 095fc244a32cdf74eae4f0146c94fdfb
+      internalID: 1389082010
       vertices: []
       indices: 
       edges: []
@@ -873,40 +852,39 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Depression Teleport-Fakeout Spritesheet_0: -516088874
-      Depression Teleport-Fakeout Spritesheet_1: -1104535356
-      Depression Teleport-Fakeout Spritesheet_10: -945872343
-      Depression Teleport-Fakeout Spritesheet_11: 2121709189
-      Depression Teleport-Fakeout Spritesheet_12: -339098811
-      Depression Teleport-Fakeout Spritesheet_13: 1128541585
-      Depression Teleport-Fakeout Spritesheet_14: 1974111280
-      Depression Teleport-Fakeout Spritesheet_15: 1030509373
-      Depression Teleport-Fakeout Spritesheet_16: -1628867640
-      Depression Teleport-Fakeout Spritesheet_17: 1152051177
-      Depression Teleport-Fakeout Spritesheet_18: 1615281824
-      Depression Teleport-Fakeout Spritesheet_19: 817984058
-      Depression Teleport-Fakeout Spritesheet_2: -1571428382
-      Depression Teleport-Fakeout Spritesheet_20: 182050329
-      Depression Teleport-Fakeout Spritesheet_21: 1390594785
-      Depression Teleport-Fakeout Spritesheet_22: 659496227
-      Depression Teleport-Fakeout Spritesheet_23: -1762225700
-      Depression Teleport-Fakeout Spritesheet_24: 491954256
-      Depression Teleport-Fakeout Spritesheet_25: 776066930
-      Depression Teleport-Fakeout Spritesheet_26: -1785349821
-      Depression Teleport-Fakeout Spritesheet_27: 446357194
-      Depression Teleport-Fakeout Spritesheet_28: -954782072
-      Depression Teleport-Fakeout Spritesheet_29: 574314306
-      Depression Teleport-Fakeout Spritesheet_3: 1611708514
-      Depression Teleport-Fakeout Spritesheet_30: 1361757655
-      Depression Teleport-Fakeout Spritesheet_31: -1316513010
-      Depression Teleport-Fakeout Spritesheet_32: -2004260368
-      Depression Teleport-Fakeout Spritesheet_33: -1949887157
-      Depression Teleport-Fakeout Spritesheet_4: -1842704122
-      Depression Teleport-Fakeout Spritesheet_5: 601165379
-      Depression Teleport-Fakeout Spritesheet_6: -640288115
-      Depression Teleport-Fakeout Spritesheet_7: -124098080
-      Depression Teleport-Fakeout Spritesheet_8: 21824647
-      Depression Teleport-Fakeout Spritesheet_9: 775371333
+      Depression Wave Spritesheet_0: 1217630447
+      Depression Wave Spritesheet_1: -777681112
+      Depression Wave Spritesheet_10: 1561246370
+      Depression Wave Spritesheet_11: 447546701
+      Depression Wave Spritesheet_12: 1597829954
+      Depression Wave Spritesheet_13: -24323375
+      Depression Wave Spritesheet_14: -1865107981
+      Depression Wave Spritesheet_15: -427432720
+      Depression Wave Spritesheet_16: -1562083788
+      Depression Wave Spritesheet_17: -1573221175
+      Depression Wave Spritesheet_18: 990142859
+      Depression Wave Spritesheet_19: -184111465
+      Depression Wave Spritesheet_2: -606326532
+      Depression Wave Spritesheet_20: -394461058
+      Depression Wave Spritesheet_21: -1694086810
+      Depression Wave Spritesheet_22: -1488639150
+      Depression Wave Spritesheet_23: -2002974183
+      Depression Wave Spritesheet_24: 558124563
+      Depression Wave Spritesheet_25: 243229363
+      Depression Wave Spritesheet_26: 273105217
+      Depression Wave Spritesheet_27: 1174485193
+      Depression Wave Spritesheet_28: 1584336838
+      Depression Wave Spritesheet_29: -848702109
+      Depression Wave Spritesheet_3: 1692188965
+      Depression Wave Spritesheet_30: 1688148600
+      Depression Wave Spritesheet_31: 315103530
+      Depression Wave Spritesheet_32: 1389082010
+      Depression Wave Spritesheet_4: -749953734
+      Depression Wave Spritesheet_5: -2007569981
+      Depression Wave Spritesheet_6: 1709349876
+      Depression Wave Spritesheet_7: -808622597
+      Depression Wave Spritesheet_8: -555612876
+      Depression Wave Spritesheet_9: -1250417609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

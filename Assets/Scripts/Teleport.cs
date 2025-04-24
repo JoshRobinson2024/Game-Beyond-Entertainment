@@ -18,6 +18,9 @@ public class Teleport : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetBool("TeleportEnter", false);
+        anim.SetBool("TeleportFakeout", false);
+        anim.SetBool("TeleportExit", false);
     }
 
     // Update is called once per frame
@@ -77,20 +80,22 @@ public class Teleport : MonoBehaviour
     {
 
         anim.SetBool("TeleportExit", true);
-        
-        time = Random.Range(1f, 1.5f);
+        anim.SetBool("TeleportFakeout", false);
+        time = Random.Range(0.7f, 1.2f);
         Invoke("appear", time);
     }
     public void appear()
     {
         boss.transform.position = TeleportList[placeToTeleport].transform.position;
-        boss.SetActive(true);
+        
         if(fakeout > 0)
         {
+            anim.SetBool("TeleportFakeout", true);
             Debug.Log(fakeout);
             ring.randomise();
             ring.delayfire();
             ring.delayteleport();
+            
             fakeout = fakeout - 1;
         }
         else
@@ -99,11 +104,14 @@ public class Teleport : MonoBehaviour
             ring.delayfire();
             ring.delaystop();
             //Debug . Log(fakeout);
+            anim.SetBool("TeleportExit", false);
+            anim.SetBool("TeleportEnter", true);
             spawner.wait();
+            Invoke("Reset", 1);
         }
     }
-    public void FindClosest()
+    public void Reset()
     {
-        
+        anim.SetBool("TeleportEnter", false);
     }
 }
