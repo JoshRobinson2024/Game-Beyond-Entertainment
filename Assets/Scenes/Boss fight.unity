@@ -252,11 +252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558089161478204918, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.09
+      value: -21.84
       objectReference: {fileID: 0}
     - target: {fileID: 7558089161478204918, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.68
+      value: -17.8
       objectReference: {fileID: 0}
     - target: {fileID: 7558089161478204918, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2942,6 +2942,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 832267855}
+    - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: boss
       value: 
       objectReference: {fileID: 673951915}
@@ -3673,6 +3677,7 @@ GameObject:
   - component: {fileID: 832267853}
   - component: {fileID: 832267852}
   - component: {fileID: 832267854}
+  - component: {fileID: 832267855}
   m_Layer: 7
   m_Name: Boss sprite
   m_TagString: Untagged
@@ -3798,6 +3803,19 @@ MonoBehaviour:
   ring: {fileID: 673951943}
   mov: {fileID: 1594251386}
   anim: {fileID: 832267852}
+--- !u!114 &832267855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832267850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22289225dea4c7a45b3e906ebd9fc7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 832267852}
 --- !u!1001 &851564405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3916,11 +3934,11 @@ PrefabInstance:
       objectReference: {fileID: 1594251380}
     - target: {fileID: 7561117158231209928, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08
+      value: -8.88
       objectReference: {fileID: 0}
     - target: {fileID: 7561117158231209928, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.86
+      value: 14.15
       objectReference: {fileID: 0}
     - target: {fileID: 7561117158231209928, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4581,11 +4599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8210446020364906982, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.95
+      value: 25.31
       objectReference: {fileID: 0}
     - target: {fileID: 8210446020364906982, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 8210446020364906982, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: m_LocalPosition.z

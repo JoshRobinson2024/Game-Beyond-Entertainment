@@ -30,10 +30,12 @@ public class Spawner : MonoBehaviour
     public Laser laser;
     public RotatingLaser rotLaser;
     private int laserAttkSelect;
+    public BossAnimatorControl anim;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
         attacksToteleport = Random.Range(1, 4);
         darkness.SetActive(false);
     }
@@ -100,13 +102,17 @@ public class Spawner : MonoBehaviour
 
         fire.times = Random.Range(1, 4);
 
+        Invoke("Attk7Fire", 0.5f);
+
+        anim.wave();
+    }
+    private void Attk7Fire()
+    {
         fire.randomise();
 
         fire.delayfire();
 
         fire.delaystop();
-
-
     }
     private void Attk6()
     {
@@ -142,6 +148,11 @@ public class Spawner : MonoBehaviour
         attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
+        Invoke("Attk4Fire", 0.5f);
+        anim.ult();
+    }
+    private void Attk4Fire()
+    {
         spray.randomise();
         spray.randomiseTime();
         spray.firing();
@@ -151,13 +162,18 @@ public class Spawner : MonoBehaviour
         attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
-        ring.DelayFire();
-
+        ring.Invoke("DelayFire", 0.5f);
+        anim.wave();
     }
     private void Attk2()
     {
         attacksDone +=1;
         attkInProgress = true;
+        Invoke("Attk2Fire", 0.5f);
+        anim.ult();
+    }
+    private void Attk2Fire()
+    {
         rotLaser.randomise();
         rotLaser.Rotationpart1();
     }
@@ -165,7 +181,11 @@ public class Spawner : MonoBehaviour
     {
         attacksDone += 1;
         attkInProgress = true;
-        
+        anim.ult();
+        Invoke("Attk1Fire", 0.5f);
+    }
+    private void Attk1Fire()
+    {
         if (laserAttkSelect == 0)
         {
             laser.playertrack1();
@@ -175,9 +195,6 @@ public class Spawner : MonoBehaviour
             laser.randomise();
             laser.randomRotationpart1();
         }
-        
-
-
     }
     private void tp()
     {
@@ -229,7 +246,8 @@ public class Spawner : MonoBehaviour
     {
         //Debug.Log(attacksDone);
         waitTime = Random.Range(0.5f, 1.5f);
-        
+        anim.stopWaving();
+        anim.stopUlt();
         Invoke("Reset", waitTime);
 
     }

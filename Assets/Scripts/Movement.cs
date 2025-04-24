@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
@@ -147,7 +147,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
+        
         sceneManagement.LoadDeathScreen();
+        WillGaining.calculateDisplay();
     }
     void Update()
     {
@@ -155,11 +157,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("death...");
             Destroy (rb);
-
+            WillGaining.CancelInvoke("CountTime");
             cam.transform.parent = null;
             anim.SetBool("Dead", true);
-            WillGaining.calculateDisplay();
             Invoke("Death", 1.5f);
+            currentHealth = 1;
+
         }
         PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         

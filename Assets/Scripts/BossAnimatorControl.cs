@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BossAnimatorControl : MonoBehaviour
 {
-    Animator anim;
+    public Animator anim;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
+
     public void wave()
     {
         anim.SetBool("Waving", true);
@@ -18,4 +19,14 @@ public class BossAnimatorControl : MonoBehaviour
     {
         anim.SetBool("Waving", false);
     }
+
+    public void ult()
+    {
+        anim.SetBool("Ult", true);
+    }
+    public void stopUlt()
+    {
+        anim.SetBool("Ult", false);
+    }
+
 }
