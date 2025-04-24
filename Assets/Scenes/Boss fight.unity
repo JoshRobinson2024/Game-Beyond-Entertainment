@@ -2186,6 +2186,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2302,6 +2303,33 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9044ef733a99ffa4aa7a986bb5e9a7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrostAmount: 0.26
+  EdgeSharpness: 1
+  minFrost: 0
+  maxFrost: 1
+  seethroughness: 0.2
+  distortion: 0.1
+  Frost: {fileID: 2800000, guid: 210743b88c99bcf45b28c3a4a4a3e178, type: 3}
+  FrostNormals: {fileID: 2800000, guid: 065247d136abaa042a330ab6a7b030fc, type: 3}
+  Shader: {fileID: 4800000, guid: db8aebe950ae3794aae5ed890f38549b, type: 3}
+  material: {fileID: 900512568}
+  colour:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
 --- !u!1 &525003280
 GameObject:
   m_ObjectHideFlags: 3
@@ -3055,7 +3083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: m_TagString
@@ -4246,6 +4274,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884658753}
   m_CullTransparentMesh: 1
+--- !u!21 &900512568
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom/ImageBlendEffect
+  m_Shader: {fileID: 4800000, guid: db8aebe950ae3794aae5ed890f38549b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BlendTex:
+        m_Texture: {fileID: 2800000, guid: 210743b88c99bcf45b28c3a4a4a3e178, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 065247d136abaa042a330ab6a7b030fc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &942273942
 GameObject:
   m_ObjectHideFlags: 0

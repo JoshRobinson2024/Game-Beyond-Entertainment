@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 896cf9e9c5dd14540ad6a65aac2d1399
+guid: 19a26bcae79685a4f946596fb9cdbd2c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,68 +93,16 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character run downwardsssss-Sheet_0
+      name: character run DOWN_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 155
+        width: 160
         height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,19 +111,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce1f0e1f1ce83b847bb33ed33628fd00
-      internalID: -1437712843
+      spriteID: 90142730ee360ad48b6a0e70707c29fd
+      internalID: 824500412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character run downwardsssss-Sheet_1
+      name: character run DOWN_1
       rect:
         serializedVersion: 2
-        x: 155
+        x: 160
         y: 0
-        width: 155
+        width: 160
         height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,19 +132,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17c56c856f489af4eb0a416c6df4c7c6
-      internalID: -670582805
+      spriteID: bcf9527685dc2bf4d8d17676f03b42ec
+      internalID: 15056737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character run downwardsssss-Sheet_2
+      name: character run DOWN_2
       rect:
         serializedVersion: 2
-        x: 310
+        x: 320
         y: 0
-        width: 155
+        width: 160
         height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -205,19 +153,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 044a644f9ae06c041b9940114ebe3014
-      internalID: 1946101616
+      spriteID: 9b7c65104d65043469047b5525e7f3e7
+      internalID: 648742333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character run downwardsssss-Sheet_3
+      name: character run DOWN_3
       rect:
         serializedVersion: 2
-        x: 465
+        x: 480
         y: 0
-        width: 155
+        width: 160
         height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a9d8e5b5f68b71408c232f15189909f
-      internalID: 758254096
+      spriteID: 82f735883c88f9a4485786b0b495ee6d
+      internalID: -1798729980
       vertices: []
       indices: 
       edges: []
@@ -243,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character run downwardsssss-Sheet_0: -1437712843
-      character run downwardsssss-Sheet_1: -670582805
-      character run downwardsssss-Sheet_2: 1946101616
-      character run downwardsssss-Sheet_3: 758254096
+      character run DOWN_0: 824500412
+      character run DOWN_1: 15056737
+      character run DOWN_2: 648742333
+      character run DOWN_3: -1798729980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

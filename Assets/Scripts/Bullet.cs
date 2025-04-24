@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
     private Vector2 moveDirection;
     public float bulletLife = 5f;
     
+    public TrailRenderer trailRenderer;
+
     /*
     void Awake()
     {
@@ -22,8 +24,12 @@ public class Bullet : MonoBehaviour
     {
         //Debug.Log("Awake");
         Invoke("Destroy", 5f);
+        Invoke("Trail", 0.25f);
     }
-
+    private void Trail()
+    {
+        trailRenderer.emitting = true;
+    }
     private void Update()
     {
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
@@ -36,6 +42,7 @@ public class Bullet : MonoBehaviour
     {
         
         gameObject.SetActive(false);
+        trailRenderer.emitting = false;
     }
     private void OnDisable()
     {
