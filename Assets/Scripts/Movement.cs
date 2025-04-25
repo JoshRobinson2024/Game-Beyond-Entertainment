@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public Image HealthBar;
     public WillGaining WillGaining;
     public SceneManagement sceneManagement;
+    public bool isDead;
 
     public bool centreDisabled = false;
     public bool tp1Disabled = false;
@@ -39,16 +40,25 @@ public class PlayerMovement : MonoBehaviour
 
     Animator anim;
 
+    public GameObject dashRefresh;
+    private bool firstDash;
+
+    public TrailRenderer trailRenderer;
+
     private void Start()
     {
-        
+        firstDash = false;
+        trailRenderer.emitting = false;
         maxHealth = 50;
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
+        
         anim = GetComponent<Animator>();
         anim.SetBool("Dead", false);
+        isDead = false;
+        dashRefresh.SetActive(false);
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
@@ -156,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("death...");
-            Destroy (rb);
+            isDead = true;
             WillGaining.CancelInvoke("CountTime");
             cam.transform.parent = null;
             anim.SetBool("Dead", true);
@@ -164,17 +174,26 @@ public class PlayerMovement : MonoBehaviour
             currentHealth = 1;
 
         }
-        PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        
+        if (!isDead)
+        {
+            PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        }
+        else
+        {
+            PlayerInput = new Vector2(0, 0);
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
+                
                 Debug.Log("Dashhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+                
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 iFrames = true;
-                Invoke("loseIFrames", 0.5f);
+                Invoke("loseIFrames", dashLength);
+                trailRenderer.emitting = true;
             }
         }
         if (dashCounter > 0)
@@ -182,7 +201,10 @@ public class PlayerMovement : MonoBehaviour
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
             {
+                firstDash = true;
+                dashRefresh.SetActive(false);
                 activeMoveSpeed = moveSpeed;
+                trailRenderer.emitting = false;
                 dashCoolCounter = dashCooldown;
                
             }
@@ -193,7 +215,10 @@ public class PlayerMovement : MonoBehaviour
             dashCoolCounter -= Time.deltaTime;
 
         }
-
+        if (dashCoolCounter <= 0 && firstDash)
+        {
+            dashRefresh.SetActive(true);
+        }
     }
     void FixedUpdate()
     {

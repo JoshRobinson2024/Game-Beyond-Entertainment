@@ -18,14 +18,16 @@ public class ObjectDamage : MonoBehaviour
     public static bool Grabbable = true;
     public GuitarDamage GDamage;
     public JournalDamage JDamage;
+    public TrailRenderer trailRend;
+
     private void Start()
     {
         Controllerhealth = 5;
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
         Strength = 250;
-        
-        
+
+        trailRend.emitting = false;
         rend.color = neutralColour;
         Grabbable = true;
         
@@ -47,6 +49,7 @@ public class ObjectDamage : MonoBehaviour
     {
         Damaging = true;
         rend.color = damagingColour;
+        trailRend.emitting = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -97,6 +100,7 @@ public class ObjectDamage : MonoBehaviour
             Grabbable = false;
             rend.color = brokenColour;
         }
+        trailRend.emitting = false;
         
     }
     public void gainStrength(int strengthToGain)

@@ -269,6 +269,9 @@ MonoBehaviour:
   teleport: {fileID: 0}
   attacksToteleport: 0
   attacksDone: 0
+  laser: {fileID: 0}
+  rotLaser: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &4632159185948639465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +287,7 @@ MonoBehaviour:
   bulletsAmount: 10
   startAngle: 0
   endAngle: 360
+  times: 0
   spawner: {fileID: 6683858716733289835}
 --- !u!114 &6715148450820135244
 MonoBehaviour:
@@ -400,7 +404,7 @@ PolygonCollider2D:
       - {x: 2.6866486, y: 0.04608774}
       - {x: 2.4225166, y: 0.8312584}
       - {x: 1.352139, y: 1.8254989}
-      - {x: 1.3901559, y: 3.5793846}
+      - {x: 1.2783669, y: 3.6688159}
       - {x: -0.013958186, y: 3.7837036}
       - {x: -1.3038703, y: 3.6072078}
       - {x: -1.4030526, y: 2.1776223}

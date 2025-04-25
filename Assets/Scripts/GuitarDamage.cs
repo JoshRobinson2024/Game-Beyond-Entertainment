@@ -18,17 +18,22 @@ public class GuitarDamage : MonoBehaviour
     public static bool GuitarGrabbable = true;
     public ObjectDamage CDamage;
     public JournalDamage JDamage;
+
+    public TrailRenderer TrailRenderer;
+
     private void Start()
     {
         Guitarhealth = 5;
         currentGuitarHealth = Guitarhealth;
         rend = GetComponent<SpriteRenderer>();
         guitarStrength = 250;
+        TrailRenderer.emitting = false;
     }
     public void GDamage()
     {
         Damaging = true;
         rend.color = damagingColour;
+        TrailRenderer.emitting = true;
     }
     public void heal()
     {
@@ -89,7 +94,7 @@ public class GuitarDamage : MonoBehaviour
             GuitarGrabbable = false;
             rend.color = brokenColour;
         }
-        
+        TrailRenderer.emitting = false;
     }
     public void GainGuitarStrangth(int guitarStrengthtoGain)
     {

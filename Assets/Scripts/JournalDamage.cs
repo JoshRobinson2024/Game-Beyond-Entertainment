@@ -19,17 +19,22 @@ public class JournalDamage : MonoBehaviour
     public static bool JournalGrabbable = true;
     public ObjectDamage CDamage;
     public GuitarDamage GDamage;
+
+    public TrailRenderer TrailRenderer;
+
     private void Start()
     {
         Journalhealth = 5;
         currentJournalHealth = Journalhealth;
         rend = GetComponent<SpriteRenderer>();
         journalStrength = 250;
+        TrailRenderer.emitting = false;
     }
     public void JDamage()
     {
         Damaging = true;
         rend.color = damagingColour;
+        TrailRenderer.emitting = true;
     }
     public void heal()
     {
@@ -91,7 +96,7 @@ public class JournalDamage : MonoBehaviour
             JournalGrabbable = false;
             rend.color = brokenColour;
         }
-        
+        TrailRenderer.emitting = false;
     }
     public void journalStrengthGain(int journalStrengthtoGain)
     {

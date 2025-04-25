@@ -143,7 +143,7 @@ public class Laser : MonoBehaviour
     }
     public void playertrack1()
     {
-        delay = Random.Range(0.4f, 0.5f);
+        delay = Random.Range(0.7f, 1f);
         rotation1 = Random.Range(0, 360);
         rotation2 = Random.Range(0, 360);
         rotation3 = Random.Range(0, 360);
