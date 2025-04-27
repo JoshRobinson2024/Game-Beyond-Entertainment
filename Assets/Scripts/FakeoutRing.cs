@@ -14,7 +14,8 @@ public class FakeoutRing : MonoBehaviour
     private Vector2 bulletMoveDirection;
     private float delay = 0.6f;
 
-
+    public AudioClip ShootNoise;
+    public AudioSource ShootSource;
     private float timesshot;
     public Teleport teleport;
     public void FireBul()
@@ -40,12 +41,12 @@ public class FakeoutRing : MonoBehaviour
             angle += angleStep;
 
         }
-
+        
 
     }
     public void delayfire()
     {
-
+        ShootSource.PlayOneShot(ShootNoise);
         InvokeRepeating("FireBul", 0f, delay);
     }
     public void stop()

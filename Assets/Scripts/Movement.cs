@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public WillGaining WillGaining;
     public SceneManagement sceneManagement;
     public bool isDead;
+    public Collider2D playerCol;
 
     public bool centreDisabled = false;
     public bool tp1Disabled = false;
@@ -45,8 +46,16 @@ public class PlayerMovement : MonoBehaviour
 
     public TrailRenderer trailRenderer;
 
+    public AudioClip BossMusic;
+    public AudioSource BossSound;
+    public AudioClip HitSound;
+    public AudioSource HitPlayer;
+    public AudioClip DeathSFX;
+    public AudioSource DeathSFXPlayer;
     private void Start()
     {
+        playerCol.enabled = true;
+        HitPlayer.enabled = true;
         firstDash = false;
         trailRenderer.emitting = false;
         maxHealth = 50;
@@ -60,6 +69,13 @@ public class PlayerMovement : MonoBehaviour
         isDead = false;
         dashRefresh.SetActive(false);
     }
+    public void PlayDamageSound()
+    {
+        if (!isDead)
+        {
+            HitPlayer.PlayOneShot(HitSound);
+        }
+    }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Bullet"))
@@ -71,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log(currentHealth.ToString());
                 Invoke("loseIFrames", 0.67f);
                 HealthBar.fillAmount = currentHealth / maxHealth;
-                
+                Invoke("PlayDamageSound", 0.1f);
             }
 
         }
@@ -165,12 +181,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            playerCol.enabled = false;
             Debug.Log("death...");
+            HitPlayer.enabled = false;
+            BossSound.Stop();
             isDead = true;
             WillGaining.CancelInvoke("CountTime");
             cam.transform.parent = null;
             anim.SetBool("Dead", true);
-            Invoke("Death", 1.5f);
+            DeathSFXPlayer.PlayOneShot(DeathSFX);
+            Invoke("Death", 4f);
             currentHealth = 1;
 
         }

@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     public GameObject[] bullets;
     public Fire fire;
     public float waitTime;
-    public Spiral spiral;
+    
     public SingleSpiral shooter;
     public SingleSpiral shooter2;
     public bool spiral1off = false;
@@ -35,11 +35,14 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        attkInProgress = true;
+        Invoke("tp", 0.1f);
         attacksToteleport = Random.Range(1, 4);
         darkness.SetActive(false);
+
     }
 
+    
     
     void Update()
     {
@@ -119,11 +122,13 @@ public class Spawner : MonoBehaviour
         attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
-        Debug.Log("double spiral");
-
-        spiral.randomise();
-        spiral.firing();
-
+        
+        anim.ult();
+        Invoke("Attk6Fire", 0.5f);
+    }
+    public void Attk6Fire()
+    {
+        laser.playertrack1();
     }
     private void Attk5()
     {
@@ -181,20 +186,21 @@ public class Spawner : MonoBehaviour
     {
         attacksDone += 1;
         attkInProgress = true;
+        usedAttack = 0;
         anim.ult();
         Invoke("Attk1Fire", 0.5f);
     }
     private void Attk1Fire()
     {
-        if (laserAttkSelect == 0)
-        {
-            laser.playertrack1();
-        }
-        else
-        {
-            laser.randomise();
-            laser.randomRotationpart1();
-        }
+
+        laser.randomise();
+        laser.randomRotationpart1();
+
+
+
+
+
+
     }
     private void tp()
     {

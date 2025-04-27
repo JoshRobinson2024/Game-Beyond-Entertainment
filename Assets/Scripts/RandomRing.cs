@@ -10,6 +10,8 @@ public class RandomRing : MonoBehaviour
     private float delay = 0;
     private int timesshot = 0;
     private float angle = 0;
+    public AudioClip ShootNoise;
+    public AudioSource ShootSource;
     public void FireBul()
     {
         delay = Random.Range(0.7f, 1.4f);
@@ -33,7 +35,7 @@ public class RandomRing : MonoBehaviour
 
         }
 
-
+        ShootSource.PlayOneShot(ShootNoise);
     }
     public void DelayFire()
     {

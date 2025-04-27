@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
@@ -13,6 +14,8 @@ public class Bullet : MonoBehaviour
     
     public TrailRenderer trailRenderer;
 
+    
+
     /*
     void Awake()
     {
@@ -22,9 +25,11 @@ public class Bullet : MonoBehaviour
     */
     private void OnEnable()
     {
+        
         //Debug.Log("Awake");
         Invoke("Destroy", 5f);
         Invoke("Trail", 0.25f);
+        
     }
     private void Trail()
     {

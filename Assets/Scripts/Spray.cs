@@ -10,7 +10,8 @@ public class Spray : MonoBehaviour
     private Vector2 bulletMoveDirections;
     public Spawner spawner;
     public RandomRing ring;
-    
+    public AudioClip ShootNoise;
+    public AudioSource ShootSource;
     // Start is called before the first frame update
 
     private void FireSpray()
@@ -30,7 +31,9 @@ public class Spray : MonoBehaviour
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+            ShootSource.volume = 0.05f;
 
+            ShootSource.PlayOneShot(ShootNoise);
 
         }
         for (int i = 0; i <= 125; i += 1)
@@ -55,6 +58,7 @@ public class Spray : MonoBehaviour
     }
     private void cease()
     {
+        ShootSource.volume = 0.5f;
         CancelInvoke("FireSpray");
         spawner.wait();
     }

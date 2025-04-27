@@ -31,8 +31,8 @@ public class ObjectGrab : MonoBehaviour
 
     public Vector2 direction;
 
-    
-
+    public AudioClip throwing;
+    public AudioSource throwPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -207,6 +207,7 @@ public class ObjectGrab : MonoBehaviour
     public void ControllerThrow()
     {
         whatObject = "nothing";
+        throwPlayer.PlayOneShot(throwing);
         controllerRB.AddForce(direction * 100);
         Controllercol.GetComponent<CapsuleCollider2D>().enabled = true;
         damage.ControllerDamage();
@@ -214,6 +215,7 @@ public class ObjectGrab : MonoBehaviour
     public void GuitarThrow()
     {
         whatObject = "nothing";
+        throwPlayer.PlayOneShot(throwing);
         guitarRB.AddForce(direction * 100);
         Guitarcol.GetComponent<PolygonCollider2D>().enabled = true;
         gDamage.GDamage();
@@ -221,6 +223,7 @@ public class ObjectGrab : MonoBehaviour
     public void JournalThrow()
     {
         whatObject = "nothing";
+        throwPlayer.PlayOneShot(throwing);
         journalRB.AddForce(direction * 100);
         Journalcol.GetComponent<CapsuleCollider2D>().enabled = true;
         jDamage.JDamage();

@@ -10,6 +10,8 @@ public class BossHealth : MonoBehaviour
     public float maxHealth = 5000;
     public float health = 5000;
     public float Agression = 0;
+    public AudioClip DamageSound;
+    public AudioSource DamageSoundPlayer;
     void Start()
     {
         health = maxHealth;
@@ -30,6 +32,7 @@ public class BossHealth : MonoBehaviour
         health -= strength;
         HealthBar.fillAmount = health / maxHealth;
         Agression += 1;
+        DamageSoundPlayer.PlayOneShot(DamageSound);
     }
     
 }

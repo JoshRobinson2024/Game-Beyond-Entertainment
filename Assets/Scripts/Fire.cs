@@ -18,6 +18,9 @@ public class Fire : MonoBehaviour
 
     private float timesshot;
     public Spawner spawner;
+
+    public AudioClip ShootNoise;
+    public AudioSource ShootSource;
     public void FireBul()
     {
         bulletsAmount = Random.Range(15, 25);
@@ -41,8 +44,8 @@ public class Fire : MonoBehaviour
             angle += angleStep;
             
         }
-        
-        
+
+        ShootSource.PlayOneShot(ShootNoise);
     }
     public void delayfire()
     {

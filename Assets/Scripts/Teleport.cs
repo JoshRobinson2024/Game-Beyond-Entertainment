@@ -14,9 +14,18 @@ public class Teleport : MonoBehaviour
     public PlayerMovement mov;
 
     public Animator anim;
+
+    public AudioClip teleport;
+    public AudioSource teleportSource;
+    public AudioSource teleportEnter;
+    public AudioSource teleportExit;
+    public AudioClip TeleportEnters;
+    public AudioClip TeleportExits;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         anim = GetComponent<Animator>();
         anim.SetBool("TeleportEnter", false);
         anim.SetBool("TeleportFakeout", false);
@@ -78,7 +87,7 @@ public class Teleport : MonoBehaviour
     }
     public void Disappear()
     {
-
+        teleportExit.PlayOneShot(TeleportExits);
         anim.SetBool("TeleportExit", true);
         anim.SetBool("TeleportFakeout", false);
         time = Random.Range(0.7f, 1.2f);
@@ -90,6 +99,7 @@ public class Teleport : MonoBehaviour
         
         if(fakeout > 0)
         {
+            teleportSource.PlayOneShot(teleport);
             anim.SetBool("TeleportFakeout", true);
             Debug.Log(fakeout);
             ring.randomise();
@@ -100,6 +110,7 @@ public class Teleport : MonoBehaviour
         }
         else
         {
+            teleportEnter.PlayOneShot(TeleportEnters);
             ring.randomise();
             ring.delayfire();
             ring.delaystop();

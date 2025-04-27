@@ -14,6 +14,8 @@ public class SingleSpiral : MonoBehaviour
 
     public Spawner spawner;
 
+    public AudioClip ShootNoise;
+    public AudioSource ShootSource;
 
     // Start is called before the first frame update
     public void Fire()
@@ -62,7 +64,8 @@ public class SingleSpiral : MonoBehaviour
             //if x = 250:
             // rerandomise 
             // x = 0
-
+            
+            ShootSource.PlayOneShot(ShootNoise);
         }
         for (int i = 0; i <= 200; i += 1)
         {

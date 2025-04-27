@@ -143,7 +143,7 @@ public class Laser : MonoBehaviour
     }
     public void playertrack1()
     {
-        delay = Random.Range(0.7f, 1f);
+        delay = Random.Range(1f, 1.3f);
         rotation1 = Random.Range(0, 360);
         rotation2 = Random.Range(0, 360);
         rotation3 = Random.Range(0, 360);
@@ -171,7 +171,7 @@ public class Laser : MonoBehaviour
     }
     public void playerTrack2()
     {
-        delay = Random.Range(0.2f, 0.4f);
+        
         laser2.transform.position = Player.transform.position;
         laser2.transform.Rotate(0, 0, rotation2);
         laser2.SetActive(true);
@@ -191,7 +191,7 @@ public class Laser : MonoBehaviour
     }
     public void playerTrack3()
     {
-        delay = Random.Range(0.3f, 0.6f);
+        
         laser3.transform.position = Player.transform.position;
         laser3.transform.Rotate(0, 0, rotation3);
         laser3.SetActive(true);
@@ -211,7 +211,7 @@ public class Laser : MonoBehaviour
     }
     public void playerTrack4()
     {
-        delay = Random.Range(0.05f, 0.1f);
+        
         laser4.transform.position = Player.transform.position;
         laser4.transform.Rotate(0, 0, rotation4);
         laser4.SetActive(true);
@@ -231,7 +231,7 @@ public class Laser : MonoBehaviour
     }
     public void playerTrack5()
     {
-        delay = Random.Range(0.2f, 0.5f);
+        
         laser5.transform.position = Player.transform.position;
         laser5.transform.Rotate(0, 0, rotation5);
         laser5.SetActive(true);
@@ -251,7 +251,7 @@ public class Laser : MonoBehaviour
     }
     public void playerTrack6()
     {
-        delay = Random.Range(0.3f, 0.7f);
+        
         laser6.transform.position = Player.transform.position;
         laser6.transform.Rotate(0, 0, rotation6);
         laser6.SetActive(true);
@@ -271,7 +271,7 @@ public class Laser : MonoBehaviour
     }
     public void playerTrack7()
     {
-        delay = Random.Range(0.2f, 0.3f);
+        
         laser7.transform.position = Player.transform.position;
         laser7.transform.Rotate(0, 0, rotation7);
         laser7.SetActive(true);
