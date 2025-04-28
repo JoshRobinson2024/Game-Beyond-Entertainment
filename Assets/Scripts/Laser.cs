@@ -24,8 +24,9 @@ public class Laser : MonoBehaviour
     public Collider2D laser7col;
     public GameObject laser8;
     public Collider2D laser8col;
-    
-    
+
+    public AudioClip LaserSound;
+    public AudioSource LaserSource;
     
 
     
@@ -102,7 +103,7 @@ public class Laser : MonoBehaviour
     }
     public void activateLaser()
     {
-
+        LaserSource.PlayOneShot(LaserSound);
         laser1col.enabled = true;
         laser2col.enabled = true;
         laser3col.enabled = true;
@@ -143,7 +144,7 @@ public class Laser : MonoBehaviour
     }
     public void playertrack1()
     {
-        delay = Random.Range(1f, 1.3f);
+        delay = Random.Range(0.7f, 1f);
         rotation1 = Random.Range(0, 360);
         rotation2 = Random.Range(0, 360);
         rotation3 = Random.Range(0, 360);
@@ -159,6 +160,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate1()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser1col.enabled = true;
         Invoke("laserDeactivate1", 0.7f);
         Invoke("playerTrack2", delay);
@@ -179,6 +181,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate2()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser2col.enabled = true;
         Invoke("laserDeactivate2", 0.7f);
         Invoke("playerTrack3", delay);
@@ -199,6 +202,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate3()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser3col.enabled = true;
         Invoke("laserDeactivate3", 0.7f);
         Invoke("playerTrack4", delay);
@@ -219,6 +223,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate4()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser4col.enabled = true;
         Invoke("laserDeactivate4", 0.7f);
         Invoke("playerTrack5", delay);
@@ -239,6 +244,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate5()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser5col.enabled = true;
         Invoke("laserDeactivate5", 0.7f);
         Invoke("playerTrack6", delay);
@@ -259,6 +265,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate6()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser6col.enabled = true;
         Invoke("laserDeactivate6", 0.7f);
         Invoke("playerTrack7", delay);
@@ -280,6 +287,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate7()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser7col.enabled = true;
         Invoke("laserDeactivate7", 0.7f);
         Invoke("playerTrack8", delay);
@@ -300,6 +308,7 @@ public class Laser : MonoBehaviour
     }
     public void laserActivate8()
     {
+        LaserSource.PlayOneShot(LaserSound);
         laser8col.enabled = true;
         Invoke("laserDeactivate8", 0.7f);
         spawner.wait();

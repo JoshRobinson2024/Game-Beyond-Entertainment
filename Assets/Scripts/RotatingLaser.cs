@@ -26,6 +26,8 @@ public class RotatingLaser : MonoBehaviour
 
     private float timesFired;
 
+    public AudioClip LaserSound;
+    public AudioSource LaserSource;
 
     public Spawner spawner;
 
@@ -112,7 +114,7 @@ public class RotatingLaser : MonoBehaviour
     }
     public void activateLaser()
     {
-
+        LaserSource.PlayOneShot(LaserSound);
         laser1col.enabled = true;
         laser2col.enabled = true;
         laser3col.enabled = true;

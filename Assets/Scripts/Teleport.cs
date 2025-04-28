@@ -39,6 +39,8 @@ public class Teleport : MonoBehaviour
     }
     public void randomise()
     {
+
+        teleportExit.PlayOneShot(TeleportExits);
         fakeout = Random.Range(0, 5);
     }
     public void randomiseLocation()
@@ -87,7 +89,7 @@ public class Teleport : MonoBehaviour
     }
     public void Disappear()
     {
-        teleportExit.PlayOneShot(TeleportExits);
+        
         anim.SetBool("TeleportExit", true);
         anim.SetBool("TeleportFakeout", false);
         time = Random.Range(0.7f, 1.2f);
