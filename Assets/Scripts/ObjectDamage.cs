@@ -19,6 +19,8 @@ public class ObjectDamage : MonoBehaviour
     public GuitarDamage GDamage;
     public JournalDamage JDamage;
     public TrailRenderer trailRend;
+    public GameObject Controller;
+    private Vector2 ControllerRespawnPos; 
 
     private void Start()
     {
@@ -26,7 +28,7 @@ public class ObjectDamage : MonoBehaviour
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
         Strength = 250;
-
+        ControllerRespawnPos = Controller.transform.position;
         trailRend.emitting = false;
         rend.color = neutralColour;
         Grabbable = true;
@@ -92,6 +94,17 @@ public class ObjectDamage : MonoBehaviour
             LoseHealth(1);
             Damaging = false;
             rend.color = neutralColour;
+            GDamage.heal();
+            JDamage.heal();
+        }
+        if (collision.gameObject.CompareTag("OutOfBounds"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            Controller.transform.position = ControllerRespawnPos;
             GDamage.heal();
             JDamage.heal();
         }

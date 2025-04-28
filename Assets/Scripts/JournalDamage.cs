@@ -19,11 +19,13 @@ public class JournalDamage : MonoBehaviour
     public static bool JournalGrabbable = true;
     public ObjectDamage CDamage;
     public GuitarDamage GDamage;
-
+    private Vector2 JournalRespawnPos;
     public TrailRenderer TrailRenderer;
+    public GameObject Journal;
 
     private void Start()
     {
+        JournalRespawnPos = Journal.transform.position;
         Journalhealth = 5;
         currentJournalHealth = Journalhealth;
         rend = GetComponent<SpriteRenderer>();
@@ -87,6 +89,17 @@ public class JournalDamage : MonoBehaviour
             LoseHealth(1);
             CDamage.heal();
             GDamage.heal();
+        }
+        if (collision.gameObject.CompareTag("OutOfBounds"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            Journal.transform.position = JournalRespawnPos;
+            GDamage.heal();
+            CDamage.heal();
         }
         Damaging = false;
         

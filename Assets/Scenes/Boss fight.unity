@@ -171,6 +171,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2075337295}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
+      propertyPath: Controller
+      value: 
+      objectReference: {fileID: 2075337292}
+    - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: brokenColour.a
       value: 1
       objectReference: {fileID: 0}
@@ -900,7 +904,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &212974792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,7 +1094,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &284155751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1450,18 @@ PrefabInstance:
     - target: {fileID: 2486800369990408817, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486800369990408817, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486800369990408817, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486800369990408817, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2486800369990408817, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_SortingOrder
@@ -2110,7 +2126,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &502815693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +2193,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &509130308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2793,8 +2809,11 @@ MonoBehaviour:
   laser7col: {fileID: 766110874}
   laser8: {fileID: 2137905190}
   laser8col: {fileID: 2137905191}
-  LaserSound: {fileID: 8300000, guid: b5c37b002bad99747a16885cb7925431, type: 3}
+  LaserSound: {fileID: 8300000, guid: 45c599df646afc1408530e94d64dfb62, type: 3}
   LaserSource: {fileID: 673951982}
+  tp: {fileID: 832267854}
+  timesFired: 0
+  teleporting: 0
   spawner: {fileID: 673951941}
 --- !u!4 &673951967 stripped
 Transform:
@@ -2820,7 +2839,7 @@ MonoBehaviour:
   laser2col: {fileID: 2121317303}
   laser3: {fileID: 1685396767}
   laser3col: {fileID: 1685396769}
-  LaserSound: {fileID: 8300000, guid: b5c37b002bad99747a16885cb7925431, type: 3}
+  LaserSound: {fileID: 8300000, guid: 45c599df646afc1408530e94d64dfb62, type: 3}
   LaserSource: {fileID: 673951982}
   spawner: {fileID: 673951941}
   reverse: 0
@@ -3029,10 +3048,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b5c37b002bad99747a16885cb7925431, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45c599df646afc1408530e94d64dfb62, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
-  m_Pitch: 0.5
+  m_Volume: 0.5
+  m_Pitch: 1.3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3115,6 +3134,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &673951984 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2271269544647100211, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+  m_PrefabInstance: {fileID: 723238469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &714940525
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,7 +3785,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &782758042
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,7 +4277,9 @@ MonoBehaviour:
   fakeout: 0
   spawner: {fileID: 673951941}
   ring: {fileID: 673951943}
+  laser: {fileID: 673951960}
   mov: {fileID: 1594251386}
+  col: {fileID: 673951984}
   anim: {fileID: 832267852}
   teleport: {fileID: 8300000, guid: 35a57e26d6834364fa17cb66744e4ce8, type: 3}
   teleportSource: {fileID: 832267858}
@@ -4261,6 +4287,7 @@ MonoBehaviour:
   teleportExit: {fileID: 832267856}
   TeleportEnters: {fileID: 8300000, guid: c3f98fb4159c4e6429427440e1d10dc0, type: 3}
   TeleportExits: {fileID: 8300000, guid: 415dcba70b21a8c4fad05da7c554518a, type: 3}
+  whichAttack: 0
 --- !u!114 &832267855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4586,6 +4613,10 @@ PrefabInstance:
       propertyPath: rend
       value: 
       objectReference: {fileID: 1586844871}
+    - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
+      propertyPath: Guitar
+      value: 
+      objectReference: {fileID: 1586844870}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: health
       value: 
@@ -5131,7 +5162,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &967914606
 GameObject:
   m_ObjectHideFlags: 0
@@ -5198,7 +5229,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &972123265
 GameObject:
   m_ObjectHideFlags: 0
@@ -5335,6 +5366,10 @@ PrefabInstance:
       propertyPath: GDamage
       value: 
       objectReference: {fileID: 851564406}
+    - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
+      propertyPath: Journal
+      value: 
+      objectReference: {fileID: 2026405331}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: HealthBar
       value: 
@@ -5623,7 +5658,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &1067925249
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,7 +5725,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 14
 --- !u!1 &1081274268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,7 +6373,7 @@ GameObject:
   - component: {fileID: 1396742636}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Wall
+  m_TagString: OutOfBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6476,8 +6511,8 @@ Transform:
   m_GameObject: {fileID: 1396742635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: 39.6, z: 0}
-  m_LocalScale: {x: -132.22481, y: 1, z: 1}
+  m_LocalPosition: {x: 0.42, y: 34.1191, z: 0}
+  m_LocalScale: {x: -132.22481, y: 11.961959, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8295,7 +8330,7 @@ GameObject:
   - component: {fileID: 2059348482}
   m_Layer: 0
   m_Name: Square (7)
-  m_TagString: Wall
+  m_TagString: OutOfBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8433,8 +8468,8 @@ Transform:
   m_GameObject: {fileID: 2059348481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49.7, y: -0.8, z: 0}
-  m_LocalScale: {x: 1, y: 137.13214, z: 1}
+  m_LocalPosition: {x: -44.5743, y: -0.8, z: 0}
+  m_LocalScale: {x: 11.2514, y: 137.13214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8453,7 +8488,7 @@ GameObject:
   - component: {fileID: 2073596260}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Wall
+  m_TagString: OutOfBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8591,8 +8626,8 @@ Transform:
   m_GameObject: {fileID: 2073596259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -38.1, z: 0}
-  m_LocalScale: {x: -132.22481, y: 1, z: 1}
+  m_LocalPosition: {x: 0.42, y: -33.7977, z: 0}
+  m_LocalScale: {x: -132.22481, y: 9.6047, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8884,7 +8919,7 @@ GameObject:
   - component: {fileID: 2131714948}
   m_Layer: 0
   m_Name: Square (6)
-  m_TagString: Wall
+  m_TagString: OutOfBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9022,8 +9057,8 @@ Transform:
   m_GameObject: {fileID: 2131714947}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.3, y: -0.8, z: 0}
-  m_LocalScale: {x: 1, y: 137.13214, z: 1}
+  m_LocalPosition: {x: 41.9276, y: -0.8, z: 0}
+  m_LocalScale: {x: 7.7449, y: 137.13214, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

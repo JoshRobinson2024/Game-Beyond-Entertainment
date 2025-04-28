@@ -27,10 +27,11 @@ public class Laser : MonoBehaviour
 
     public AudioClip LaserSound;
     public AudioSource LaserSource;
-    
 
+    public Teleport tp;
     
-    private float timesFired;
+    public float timesFired;
+    public bool teleporting;
 
     private float delay;
 
@@ -72,6 +73,7 @@ public class Laser : MonoBehaviour
     
     public void randomise()
     {
+        teleporting = false;
         timesFired = Random.Range(2, 4);
     }
     public void randomRotationpart1()
@@ -128,16 +130,21 @@ public class Laser : MonoBehaviour
         laser6col.enabled = false;
         laser7col.enabled = false;
         laser8col.enabled = false;
-        
-        if (timesFired == 0)
+
+        if (timesFired == 0 && !teleporting)
         {
-            
+
             spawner.wait();
+        }
+        else if (timesFired == 0 && teleporting)
+        {
+            tp.Invoke("randomiseLocation", 0.7f);
+            teleporting = false;
         }
         else
         {
             timesFired -= 1;
-            
+
             Invoke("randomRotationpart1", 0.3f);
         }
         
@@ -311,16 +318,17 @@ public class Laser : MonoBehaviour
         LaserSource.PlayOneShot(LaserSound);
         laser8col.enabled = true;
         Invoke("laserDeactivate8", 0.7f);
-        spawner.wait();
+        
     }
     public void laserDeactivate8()
     {
         laser8col.enabled = false;
-
-        Invoke("Reset", 1);
+        
+        Invoke("Reset", 0.5f);
     }
     public void Reset()
     {
+        spawner.wait();
         laser1.transform.position = rotator.transform.position;
         laser1.transform.Rotate(0, 0, 360 - rotation1);
         laser2.transform.position = rotator.transform.position;

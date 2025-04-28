@@ -74,7 +74,17 @@ public class PlayerMovement : MonoBehaviour
         if (!isDead)
         {
             HitPlayer.PlayOneShot(HitSound);
+            BossSound.volume = 0.7f;
+            BossSound.pitch = 0.85f;
+            BossSound.reverbZoneMix = 0.5f;
+            Invoke("MusicRecover", 1f);
         }
+    }
+    public void MusicRecover()
+    {
+        BossSound.volume = 0.9f;
+        BossSound.pitch = 1;
+        BossSound.reverbZoneMix = 1;
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
@@ -179,6 +189,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        
         if (currentHealth <= 0)
         {
             playerCol.enabled = false;

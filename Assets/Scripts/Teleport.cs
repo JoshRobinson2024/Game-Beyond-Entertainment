@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class Teleport : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class Teleport : MonoBehaviour
     public int fakeout;
     public Spawner spawner;
     public FakeoutRing ring;
+    public Laser laser;
     public PlayerMovement mov;
-
+    public Collider2D col;
     public Animator anim;
 
     public AudioClip teleport;
@@ -21,6 +23,8 @@ public class Teleport : MonoBehaviour
     public AudioSource teleportExit;
     public AudioClip TeleportEnters;
     public AudioClip TeleportExits;
+
+    public int whichAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +43,7 @@ public class Teleport : MonoBehaviour
     }
     public void randomise()
     {
-
+        
         teleportExit.PlayOneShot(TeleportExits);
         fakeout = Random.Range(0, 5);
     }
@@ -89,7 +93,8 @@ public class Teleport : MonoBehaviour
     }
     public void Disappear()
     {
-        
+        whichAttack = Random.Range(1, 3);
+        col.enabled = false;
         anim.SetBool("TeleportExit", true);
         anim.SetBool("TeleportFakeout", false);
         time = Random.Range(0.7f, 1.2f);
@@ -98,8 +103,8 @@ public class Teleport : MonoBehaviour
     public void appear()
     {
         boss.transform.position = TeleportList[placeToTeleport].transform.position;
-        
-        if(fakeout > 0)
+        col.enabled = true;
+        if(fakeout > 0 && whichAttack == 1)
         {
             teleportSource.PlayOneShot(teleport);
             anim.SetBool("TeleportFakeout", true);
@@ -108,6 +113,18 @@ public class Teleport : MonoBehaviour
             ring.delayfire();
             ring.delayteleport();
             
+            fakeout = fakeout - 1;
+        }
+        else if (fakeout > 0 && whichAttack == 2)
+        {
+            teleportSource.PlayOneShot(teleport);
+            anim.SetBool("TeleportFakeout", true);
+            Debug.Log(fakeout);
+            laser.timesFired = 0;
+            laser.teleporting = true;
+            laser.randomRotationpart1();
+
+
             fakeout = fakeout - 1;
         }
         else

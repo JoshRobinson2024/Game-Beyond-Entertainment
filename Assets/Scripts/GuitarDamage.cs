@@ -18,11 +18,12 @@ public class GuitarDamage : MonoBehaviour
     public static bool GuitarGrabbable = true;
     public ObjectDamage CDamage;
     public JournalDamage JDamage;
-
+    private Vector2 GuitarRespawnPos;
     public TrailRenderer TrailRenderer;
-
+    public GameObject Guitar;
     private void Start()
     {
+        GuitarRespawnPos = Guitar.transform.position;
         Guitarhealth = 5;
         currentGuitarHealth = Guitarhealth;
         rend = GetComponent<SpriteRenderer>();
@@ -84,6 +85,17 @@ public class GuitarDamage : MonoBehaviour
 
             Debug.Log("hit");
             LoseHealth(1);
+            CDamage.heal();
+            JDamage.heal();
+        }
+        if (collision.gameObject.CompareTag("OutOfBounds"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
+            Damaging = false;
+            rend.color = neutralColour;
+            Guitar.transform.position = GuitarRespawnPos;
             CDamage.heal();
             JDamage.heal();
         }
