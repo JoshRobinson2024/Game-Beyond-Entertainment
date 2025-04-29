@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource HitPlayer;
     public AudioClip DeathSFX;
     public AudioSource DeathSFXPlayer;
+    public AudioSource Transition;
+    public AudioClip transitionClip;
     private void Start()
     {
         playerCol.enabled = true;
@@ -99,6 +101,25 @@ public class PlayerMovement : MonoBehaviour
                 HealthBar.fillAmount = currentHealth / maxHealth;
                 Invoke("PlayDamageSound", 0.1f);
             }
+
+        }
+        if (collision.gameObject.name.Equals("quiet"))
+        {
+            BossSound.volume = 0.5f;
+        }
+        if (collision.gameObject.name.Equals("medium"))
+        {
+            BossSound.volume = 0.75f;
+        }
+        if (collision.gameObject.name.Equals("loud"))
+        {
+            BossSound.volume = 1f;
+        }
+
+        if (collision.gameObject.name.Equals("BossEnterTrigger"))
+        {
+            sceneManagement.Invoke("LoadBoss", 3f);
+            Transition.PlayOneShot(transitionClip);
 
         }
         if (collision.gameObject.name.Equals("centreTeleportDenial"))

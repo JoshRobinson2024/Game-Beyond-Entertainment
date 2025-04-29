@@ -93,7 +93,7 @@ public class Teleport : MonoBehaviour
     }
     public void Disappear()
     {
-        whichAttack = Random.Range(1, 3);
+        
         col.enabled = false;
         anim.SetBool("TeleportExit", true);
         anim.SetBool("TeleportFakeout", false);
@@ -104,7 +104,7 @@ public class Teleport : MonoBehaviour
     {
         boss.transform.position = TeleportList[placeToTeleport].transform.position;
         col.enabled = true;
-        if(fakeout > 0 && whichAttack == 1)
+        if(fakeout > 0 )
         {
             teleportSource.PlayOneShot(teleport);
             anim.SetBool("TeleportFakeout", true);
@@ -115,18 +115,7 @@ public class Teleport : MonoBehaviour
             
             fakeout = fakeout - 1;
         }
-        else if (fakeout > 0 && whichAttack == 2)
-        {
-            teleportSource.PlayOneShot(teleport);
-            anim.SetBool("TeleportFakeout", true);
-            Debug.Log(fakeout);
-            laser.timesFired = 0;
-            laser.teleporting = true;
-            laser.randomRotationpart1();
-
-
-            fakeout = fakeout - 1;
-        }
+        
         else
         {
             teleportEnter.PlayOneShot(TeleportEnters);
