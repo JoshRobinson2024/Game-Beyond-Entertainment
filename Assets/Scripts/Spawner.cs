@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     public int usedAttack = 0;
     public Spray spray;
     public RandomRing ring;
-    public GameObject darkness;
+    
     public float removalTime = 0f;
     public bool isDark = false;
     public Teleport teleport;
@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
         attkInProgress = true;
         Invoke("tp", 0.1f);
         attacksToteleport = Random.Range(1, 4);
-        darkness.SetActive(false);
+       
 
     }
 
@@ -270,7 +270,7 @@ public class Spawner : MonoBehaviour
     }
     public void removeDarkness()
     {
-        darkness.SetActive(false);
+        
         isDark = false;
     }
     

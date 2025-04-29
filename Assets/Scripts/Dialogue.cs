@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class DialogueController : MonoBehaviour
 {
@@ -11,22 +12,51 @@ public class DialogueController : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    public TMP_Text Text;
+    private float movePos;
+    private Vector2 posX;
 
-    private float movepos;
+    public bool inCorridor;
+    public bool phaseChange;
+    public bool Death;
+    public bool Final;
+    public bool interaction;
 
+    public List<GameObject> tpPoints;
+    private int tpPointUsed;
+    public AudioSource shadowVoice;
+    public AudioClip darkVoice;
     // Start is called before the first frame update
     void Start()
     {
-        movepos = Random.Range(-265, 265);
+        if (inCorridor)
+        {
+            index = Random.Range(0, lines.Length);
+            tpPointUsed = Random.Range(0, tpPoints.Count);
+            
+            Text.transform.position = tpPoints[tpPointUsed].transform.position;
+            Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+            
+        }
+        
+        else
+        {
+            
+            index = 0;
+        }
+
+        
+        
         textComponent.text = string.Empty;
         startDialogue();
-        gameObject.transform.position = new Vector2(0, movepos);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && interaction)
         {
             if (textComponent.text == lines[index])
             {
@@ -38,11 +68,35 @@ public class DialogueController : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+        
     }
 
     void startDialogue()
     {
-        index = 0;
+        if (phaseChange)
+        {
+            tpPointUsed = Random.Range(0, 4);
+
+            Text.transform.position = tpPoints[tpPointUsed].transform.position;
+            Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+            
+        }
+        else if (Death)
+        {
+            tpPointUsed = Random.Range(5, 9);
+
+            Text.transform.position = tpPoints[tpPointUsed].transform.position;
+            Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+            
+        }
+        else if (Final)
+        {
+            tpPointUsed = Random.Range(9, 14);
+
+            Text.transform.position = tpPoints[tpPointUsed].transform.position;
+            Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+            
+        }
         StartCoroutine(TypeLine());
         
         
@@ -51,6 +105,10 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        if (!interaction)
+        {
+            shadowVoice.PlayOneShot(darkVoice);
+        }
         
         foreach (char c in lines[index].ToCharArray())
         {

@@ -9,7 +9,7 @@ public class Spray : MonoBehaviour
     private float timeToShoot;
     private Vector2 bulletMoveDirections;
     public Spawner spawner;
-    public RandomRing ring;
+    
     public AudioClip ShootNoise;
     public AudioSource ShootSource;
     // Start is called before the first frame update
