@@ -52,8 +52,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource HitPlayer;
     public AudioClip DeathSFX;
     public AudioSource DeathSFXPlayer;
-    public AudioSource Transition;
-    public AudioClip transitionClip;
+    
     private void Start()
     {
         playerCol.enabled = true;
@@ -119,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.name.Equals("BossEnterTrigger"))
         {
             sceneManagement.Invoke("LoadBoss", 3f);
-            Transition.PlayOneShot(transitionClip);
+            sceneManagement.BossStart();
 
         }
         if (collision.gameObject.name.Equals("centreTeleportDenial"))

@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public AudioSource Transition;
+    public AudioClip transitionClip;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +20,14 @@ public class SceneManagement : MonoBehaviour
     {
         
     }
+    public void BossStart()
+    {
+        Transition.PlayOneShot(transitionClip);
+        anim.SetBool("FightEnter", true);
+    }
     public void LoadBoss()
     {
+
         SceneManager.LoadScene("Boss fight");
     }
     public void LoadDeathScreen()
