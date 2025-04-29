@@ -38,4 +38,20 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("InteractionSelect");
     }
+    public void LoadCorridor()
+    {
+        SceneManager.LoadScene("Corridor");
+    }
+    public void LoadFriend()
+    {
+
+    }
+    public void LoadParents()
+    {
+
+    }
+    public void LoadJournal()
+    {
+
+    }
 }

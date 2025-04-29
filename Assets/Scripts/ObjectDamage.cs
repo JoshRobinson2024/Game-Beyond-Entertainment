@@ -20,8 +20,8 @@ public class ObjectDamage : MonoBehaviour
     public JournalDamage JDamage;
     public TrailRenderer trailRend;
     public GameObject Controller;
-    private Vector2 ControllerRespawnPos; 
-
+    private Vector2 ControllerRespawnPos;
+    private bool broken;
     private void Start()
     {
         Controllerhealth = 5;
@@ -42,6 +42,7 @@ public class ObjectDamage : MonoBehaviour
             HealthBar.fillAmount = currentControllerHealth / Controllerhealth;
             if (currentControllerHealth == Controllerhealth)
             {
+                broken = true;
                 rend.color = neutralColour;
                 Grabbable = true;
             }
@@ -61,8 +62,7 @@ public class ObjectDamage : MonoBehaviour
             
             Debug.Log("hit");
             LoseHealth(1);
-            Damaging = false;
-            rend.color = neutralColour;
+            
             health.damage(Strength);
             GDamage.heal();
             JDamage.heal();
@@ -71,8 +71,7 @@ public class ObjectDamage : MonoBehaviour
         {
             Debug.Log("hit");
             LoseHealth(1);
-            Damaging = false;
-            rend.color = neutralColour;
+            
             health.damage(Strength/2);
             GDamage.heal();
             JDamage.heal();
@@ -81,8 +80,7 @@ public class ObjectDamage : MonoBehaviour
         {
             Debug.Log("hit");
             LoseHealth(1);
-            Damaging = false;
-            rend.color = neutralColour;
+            
             health.damage(Strength / 4);
             GDamage.heal();
             JDamage.heal();
@@ -92,8 +90,7 @@ public class ObjectDamage : MonoBehaviour
             
             Debug.Log("hit");
             LoseHealth(1);
-            Damaging = false;
-            rend.color = neutralColour;
+            
             GDamage.heal();
             JDamage.heal();
         }
@@ -102,19 +99,26 @@ public class ObjectDamage : MonoBehaviour
 
             Debug.Log("hit");
             LoseHealth(1);
-            Damaging = false;
-            rend.color = neutralColour;
+            
             Controller.transform.position = ControllerRespawnPos;
             GDamage.heal();
             JDamage.heal();
         }
         if (currentControllerHealth == 0)
         {
+            broken = true;
             Grabbable = false;
             rend.color = brokenColour;
+            DialogueController.broken = true;
         }
         trailRend.emitting = false;
-        
+        Damaging = false;
+
+        if (!broken)
+        {
+            
+            rend.color = neutralColour;
+        }
     }
     public void gainStrength(int strengthToGain)
     {

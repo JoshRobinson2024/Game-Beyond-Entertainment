@@ -21,7 +21,9 @@ public class DialogueController : MonoBehaviour
     public bool Death;
     public bool Final;
     public bool interaction;
-
+    private int repeat;
+    public static bool broken;
+    private bool brokenOnce;
     public List<GameObject> tpPoints;
     private int tpPointUsed;
     public AudioSource shadowVoice;
@@ -36,7 +38,7 @@ public class DialogueController : MonoBehaviour
             
             Text.transform.position = tpPoints[tpPointUsed].transform.position;
             Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
-            
+            Invoke ("startDialogue", 2);
         }
         
         else
@@ -48,7 +50,7 @@ public class DialogueController : MonoBehaviour
         
         
         textComponent.text = string.Empty;
-        startDialogue();
+        
 
 
     }
@@ -68,43 +70,93 @@ public class DialogueController : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+        if(broken && !brokenOnce)
+        {
+            brokenOnce = true;
+            startDialogue();
+        }
         
     }
 
-    void startDialogue()
+    public void startDialogue()
     {
-        if (phaseChange)
+        if (broken)
         {
-            tpPointUsed = Random.Range(0, 4);
-
+            index = Random.Range(15, 18);
+            textComponent.text = string.Empty;
             Text.transform.position = tpPoints[tpPointUsed].transform.position;
             Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+            StartCoroutine(TypeLine());
+            if (!inCorridor && !interaction)
+            {
+                Invoke("RemoveLine", 5);
+            }
+        }
+        else if (phaseChange && ! Death && !Final)
+        {
+            index = Random.Range(0, 5);
+            if (index == repeat)
+            {
+                index = Random.Range(0, 5);
+                startDialogue();
+            }
+            else
+            {
+                repeat = index;
+                textComponent.text = string.Empty;
+                Text.transform.position = tpPoints[tpPointUsed].transform.position;
+                Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+                StartCoroutine(TypeLine());
+                if (!inCorridor && !interaction)
+                {
+                    Invoke("RemoveLine", 5);
+                }
+            }
             
+
         }
         else if (Death)
         {
-            tpPointUsed = Random.Range(5, 9);
-
+            index = Random.Range(5, 10);
+            StopAllCoroutines();
+            textComponent.text = string.Empty;
             Text.transform.position = tpPoints[tpPointUsed].transform.position;
             Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
-            
+            StartCoroutine(TypeLine());
+            if (!inCorridor && !interaction)
+            {
+                Invoke("RemoveLine", 5);
+            }
         }
-        else if (Final)
+        else if (Final && !Death)
         {
-            tpPointUsed = Random.Range(9, 14);
-
+            index = Random.Range(10, 15);
+            textComponent.text = string.Empty;
             Text.transform.position = tpPoints[tpPointUsed].transform.position;
             Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
-            
+            StartCoroutine(TypeLine());
+            if (!inCorridor && !interaction)
+            {
+                Invoke("RemoveLine", 5);
+            }
         }
-        StartCoroutine(TypeLine());
+        else if (inCorridor)
+        {
+            StartCoroutine(TypeLine());
+            if (!inCorridor && !interaction)
+            {
+                Invoke("RemoveLine", 5);
+            }
+        }
         
         
-        
+
+
     }
 
     IEnumerator TypeLine()
     {
+        Text.enabled = true;
         if (!interaction)
         {
             shadowVoice.PlayOneShot(darkVoice);
@@ -129,9 +181,13 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
+            RemoveLine();
             
-            gameObject.SetActive(false);
         }
+    }
+    void RemoveLine()
+    {
+        Text.enabled = false;
     }
 }
 

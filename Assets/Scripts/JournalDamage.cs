@@ -22,7 +22,7 @@ public class JournalDamage : MonoBehaviour
     private Vector2 JournalRespawnPos;
     public TrailRenderer TrailRenderer;
     public GameObject Journal;
-
+    private bool broken;
     private void Start()
     {
         JournalRespawnPos = Journal.transform.position;
@@ -46,6 +46,7 @@ public class JournalDamage : MonoBehaviour
             HealthBar.fillAmount = currentJournalHealth / Journalhealth;
             if (currentJournalHealth == Journalhealth)
             {
+                broken = false;
                 rend.color = neutralColour;
                 JournalGrabbable = true;
             }
@@ -102,12 +103,17 @@ public class JournalDamage : MonoBehaviour
             CDamage.heal();
         }
         Damaging = false;
+        if (!broken)
+        {
+            rend.color = neutralColour;
+        }
         
-        rend.color = neutralColour;
         if (currentJournalHealth == 0)
         {
+            broken = true;
             JournalGrabbable = false;
             rend.color = brokenColour;
+            DialogueController.broken = true;
         }
         TrailRenderer.emitting = false;
     }

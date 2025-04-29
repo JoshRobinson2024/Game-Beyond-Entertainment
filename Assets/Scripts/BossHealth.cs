@@ -12,8 +12,15 @@ public class BossHealth : MonoBehaviour
     public float Agression = 0;
     public AudioClip DamageSound;
     public AudioSource DamageSoundPlayer;
+    public DialogueController dialogue;
+    public PlayerMovement mov;
+    public bool phase3;
     void Start()
     {
+        dialogue.Death = false;
+        dialogue.Final = false;
+        phase3 = false;
+        dialogue.phaseChange = false;
         health = maxHealth;
         Agression = 0;
     }
@@ -25,6 +32,28 @@ public class BossHealth : MonoBehaviour
         {
             Destroy(Boss);
         }
+        if (health / maxHealth <= 0.8f && !dialogue.phaseChange)
+        {
+            dialogue.phaseChange = true;
+            dialogue.startDialogue();
+
+        }
+        if (health / maxHealth <= 0.6f && !phase3)
+        {
+            phase3 = true;
+            dialogue.startDialogue();
+        }
+        if (health / maxHealth <= 0.4f && !dialogue.Final)
+        {
+            dialogue.Final = true;
+            dialogue.startDialogue();
+        }
+        if (mov.isDead && !dialogue.Death)
+        {
+            dialogue.Death = true;
+            dialogue.startDialogue();
+        }
+
     }
     public void damage(int strength)
     {

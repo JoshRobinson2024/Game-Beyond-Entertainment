@@ -1585,7 +1585,7 @@ PrefabInstance:
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: BossMusic
       value: 
-      objectReference: {fileID: 8300000, guid: a68ed03551294754692e04d98505183c, type: 3}
+      objectReference: {fileID: 8300000, guid: 1e6e383c08f9c8a4b9da17134daeb87a, type: 3}
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: BossSound
       value: 
@@ -2557,7 +2557,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571515798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.0848, y: 4.0848, z: 4.0848}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2565,8 +2565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 237.59, y: 0}
-  m_SizeDelta: {x: 316.32, y: 50}
+  m_AnchoredPosition: {x: -8.36, y: 0}
+  m_SizeDelta: {x: 436.74, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &571515800
 MonoBehaviour:
@@ -2857,6 +2857,9 @@ MonoBehaviour:
   Agression: 0
   DamageSound: {fileID: 8300000, guid: 9aa68b7ea44581e468c12f73e5128102, type: 3}
   DamageSoundPlayer: {fileID: 673951975}
+  dialogue: {fileID: 1209653172}
+  mov: {fileID: 1594251386}
+  phase3: 0
 --- !u!114 &673951941 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
@@ -6465,8 +6468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d302c6be27292443b9e2cbdedc3b2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Transition: {fileID: 0}
-  transitionClip: {fileID: 0}
+  Transition: {fileID: 1209653173}
+  transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 0}
 --- !u!114 &1209653172
 MonoBehaviour:
@@ -6491,16 +6494,19 @@ MonoBehaviour:
   - I told you that you'd never amount to anything
   - I am a cycle you can't break
   - This is what heppens when you keep trying
-  - Stop resisting, your future is set in stone
+  - Stop resisting, your future is set in stone...
   - I will not let you escape!
   - No one has ever escaped me!
   - You defy me?!
   - This battle has only just begun...
   - Why won't you accept the futility of your efforts?!
+  - You really gotta stop breaking those...
+  - Your efforts will always result in nothing
+  - See? Nothing can beat me...
   textSpeed: 0.03
   Text: {fileID: 571515800}
   inCorridor: 0
-  phaseChange: 1
+  phaseChange: 0
   Death: 0
   Final: 0
   interaction: 0
@@ -7577,7 +7583,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a68ed03551294754692e04d98505183c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1e6e383c08f9c8a4b9da17134daeb87a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.9
   m_Pitch: 1

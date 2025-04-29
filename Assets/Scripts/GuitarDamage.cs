@@ -21,6 +21,7 @@ public class GuitarDamage : MonoBehaviour
     private Vector2 GuitarRespawnPos;
     public TrailRenderer TrailRenderer;
     public GameObject Guitar;
+    private bool broken;
     private void Start()
     {
         GuitarRespawnPos = Guitar.transform.position;
@@ -44,6 +45,7 @@ public class GuitarDamage : MonoBehaviour
             HealthBar.fillAmount = currentGuitarHealth / Guitarhealth;
             if (currentGuitarHealth == Guitarhealth)
             {
+                broken = false;
                 rend.color = neutralColour;
                 GuitarGrabbable = true;
             }
@@ -99,12 +101,18 @@ public class GuitarDamage : MonoBehaviour
             CDamage.heal();
             JDamage.heal();
         }
+        if (!broken)
+        {
+            
+            rend.color = neutralColour;
+        }
         Damaging = false;
-        rend.color = neutralColour;
         if (currentGuitarHealth == 0)
         {
+            broken = true;
             GuitarGrabbable = false;
             rend.color = brokenColour;
+            DialogueController.broken = true;
         }
         TrailRenderer.emitting = false;
     }
