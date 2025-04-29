@@ -6345,9 +6345,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1451412659}
   lines:
-  - hello
-  - this
-  - is working
+  - Ah, we meet again
+  - So you're going to keep trying?
+  - You are a bold one to be this willing to suffer the same fate as last time
+  - Why do you do this to yourself?
+  - You know you can't beat me... Right?
+  - Your fate is sealed, stop resisting
+  - Do you understand what you are doing to yourself?
+  - All this is your fault, let me finish this
+  - "This is what\u2019s best for you"
+  - This would be much easier if you just accepted this
+  - I am a cycle
+  - You don't understand at all, do you?
+  - You can't break me
+  - You are on your own
+  - No one cares
+  - Nothing you do, will ever get rid of me...
   textSpeed: 0.03
 --- !u!1 &1226631938
 GameObject:
@@ -6989,8 +7002,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286282619
-  m_fontColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+    rgba: 4279900698
+  m_fontColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7014,8 +7027,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7043,7 +7056,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.69062805, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7064,17 +7077,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451412658}
-  m_LocalRotation: {x: -0, y: -0, z: 0.05670048, w: 0.99839133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.6605, y: 3.6605, z: 3.6605}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209653168}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: -57}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 265}
+  m_SizeDelta: {x: 512.74805, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1487809985 stripped
 GameObject:

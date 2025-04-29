@@ -12,11 +12,15 @@ public class DialogueController : MonoBehaviour
 
     private int index;
 
+    private float movepos;
+
     // Start is called before the first frame update
     void Start()
     {
+        movepos = Random.Range(-265, 265);
         textComponent.text = string.Empty;
         startDialogue();
+        gameObject.transform.position = new Vector2(0, movepos);
     }
 
     // Update is called once per frame
@@ -40,10 +44,14 @@ public class DialogueController : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+        
+        
+        
     }
 
     IEnumerator TypeLine()
     {
+        
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
@@ -53,8 +61,10 @@ public class DialogueController : MonoBehaviour
 
     void NextLine()
     {
+        
         if (index < lines.Length - 1)
         {
+            
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
