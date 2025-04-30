@@ -38,6 +38,7 @@ public class DialogueController : MonoBehaviour
     public string checkD;
     public ButtonManager button;
     public bool halt;
+    public bool Journal;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +73,10 @@ public class DialogueController : MonoBehaviour
         if (textComponent.text == lines[index]&& interaction)
         {
             arrow.SetActive(true);
+            if (Journal)
+            {
+                typingSource.Pause();
+            }
         }
         if (!halt)
         {
@@ -214,14 +219,19 @@ public class DialogueController : MonoBehaviour
             {
                 shadowVoice.PlayOneShot(darkVoice);
             }
+            if (Journal)
+            {
+                typingSource.Play();
+            }
             foreach (char c in lines[index].ToCharArray())
             {
                 textComponent.text += c;
                 yield return new WaitForSeconds(textSpeed);
-                if (interaction)
+                if (interaction && !Journal)
                 {
                     typingSource.PlayOneShot(typingSound);
                 }
+                
             }
         }
     }

@@ -48,10 +48,10 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadParents()
     {
-
+        SceneManager.LoadScene("Parent");
     }
     public void LoadJournal()
     {
-
+        SceneManager.LoadScene("Journal");
     }
 }
