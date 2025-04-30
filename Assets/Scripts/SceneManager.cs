@@ -44,7 +44,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadFriend()
     {
-
+        SceneManager.LoadScene("Friend");
     }
     public void LoadParents()
     {

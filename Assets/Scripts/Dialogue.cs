@@ -180,21 +180,26 @@ public class DialogueController : MonoBehaviour
     {
         if (lines[index] == checkA)
         {
+            Text.text = lines[index - 1];
             halt = true;
             button.ShowA();
         }
         else if (lines[index] == checkB)
         {
+            Text.text = lines[index - 1];
             halt = true;
             button.ShowB();
         }
         else if (lines[index] == checkC)
         {
+            Text.text = lines[index - 1];
             halt = true;
             button.ShowC();
         }
         else if (lines[index] == checkD)
         {
+
+            Text.text = lines[index - 1];
             halt = true;
             button.ShowD();
         }
@@ -241,10 +246,12 @@ public class DialogueController : MonoBehaviour
     {
         Text.enabled = false;
     }
-    public void moveOn()
+    public void moveOn(int newLine)
     {
+        textComponent.text = string.Empty;
+        index = newLine;
         halt = false;
-        NextLine();
+        StartCoroutine(TypeLine());
         arrow.SetActive(false);
     }
 }

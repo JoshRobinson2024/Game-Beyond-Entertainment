@@ -6,6 +6,10 @@ using UnityEngine;
 public class WillDIsplay : MonoBehaviour
 {
     public TMP_Text WillText;
+    
+    
+       
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,4 +21,6 @@ public class WillDIsplay : MonoBehaviour
     {
         WillText.text = "X " + WillGaining.WillAmount.ToString();
     }
+    
+
 }

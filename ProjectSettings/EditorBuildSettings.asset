@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Corridor.unity
     guid: aebf121227dbf72488db66bc9dc56d1a
+  - enabled: 1
+    path: Assets/Scenes/Friend.unity
+    guid: aa4022555da88494dbeb2864e4863501
   m_configObjects: {}
