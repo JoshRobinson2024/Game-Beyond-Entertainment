@@ -17,6 +17,7 @@ public class DialogueController : MonoBehaviour
     private Vector2 posX;
 
     public bool inCorridor;
+    public bool inBoss;
     public bool phaseChange;
     public bool Death;
     public bool Final;
@@ -28,6 +29,15 @@ public class DialogueController : MonoBehaviour
     private int tpPointUsed;
     public AudioSource shadowVoice;
     public AudioClip darkVoice;
+    public AudioSource typingSource;
+    public AudioClip typingSound;
+    public GameObject arrow;
+    public string checkA;
+    public string checkB;
+    public string checkC;
+    public string checkD;
+    public ButtonManager button;
+    public bool halt;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +51,11 @@ public class DialogueController : MonoBehaviour
             Invoke ("startDialogue", 2);
         }
         
-        else
+        else if (interaction)
         {
-            
+            arrow.SetActive (false);
             index = 0;
+            Invoke("startDialogue", 0.1f);
         }
 
         
@@ -58,16 +69,24 @@ public class DialogueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && interaction)
+        if (textComponent.text == lines[index]&& interaction)
         {
-            if (textComponent.text == lines[index])
+            arrow.SetActive(true);
+        }
+        if (!halt)
+        {
+            if (Input.GetMouseButtonDown(0) && interaction)
             {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
+                if (textComponent.text == lines[index])
+                {
+                    NextLine();
+                    arrow.SetActive(false);
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    textComponent.text = lines[index];
+                }
             }
         }
         if(broken && !brokenOnce)
@@ -148,7 +167,10 @@ public class DialogueController : MonoBehaviour
                 Invoke("RemoveLine", 5);
             }
         }
-        
+        else if (interaction)
+        {
+            StartCoroutine(TypeLine());
+        }
         
 
 
@@ -156,16 +178,46 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        Text.enabled = true;
-        if (!interaction)
+        if (lines[index] == checkA)
         {
-            shadowVoice.PlayOneShot(darkVoice);
+            halt = true;
+            button.ShowA();
         }
-        
-        foreach (char c in lines[index].ToCharArray())
+        else if (lines[index] == checkB)
         {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            halt = true;
+            button.ShowB();
+        }
+        else if (lines[index] == checkC)
+        {
+            halt = true;
+            button.ShowC();
+        }
+        else if (lines[index] == checkD)
+        {
+            halt = true;
+            button.ShowD();
+        }
+        else
+        {
+            Text.enabled = true;
+            if (inCorridor)
+            {
+                shadowVoice.PlayOneShot(darkVoice);
+            }
+            if (inBoss)
+            {
+                shadowVoice.PlayOneShot(darkVoice);
+            }
+            foreach (char c in lines[index].ToCharArray())
+            {
+                textComponent.text += c;
+                yield return new WaitForSeconds(textSpeed);
+                if (interaction)
+                {
+                    typingSource.PlayOneShot(typingSound);
+                }
+            }
         }
     }
 
@@ -188,6 +240,12 @@ public class DialogueController : MonoBehaviour
     void RemoveLine()
     {
         Text.enabled = false;
+    }
+    public void moveOn()
+    {
+        halt = false;
+        NextLine();
+        arrow.SetActive(false);
     }
 }
 
