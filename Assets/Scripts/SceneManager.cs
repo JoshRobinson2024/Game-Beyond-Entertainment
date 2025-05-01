@@ -54,6 +54,11 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Journal");
     }
+    public void LoadTutorial()
+    {
+        PlayerMovement.maxHealth = 20;
+        SceneManager.LoadScene("TheTutorial");
+    }
     public void LoadFirstBoss()
     {
         

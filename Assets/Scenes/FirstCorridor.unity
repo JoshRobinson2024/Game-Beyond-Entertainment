@@ -2402,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 67
+      value: -420.1
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4483,6 +4483,7 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   mov: {fileID: 0}
   phase3: 0
+  firstBoss: 0
 --- !u!114 &673951941 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
@@ -6349,6 +6350,7 @@ MonoBehaviour:
   mov: {fileID: 1594251386}
   col: {fileID: 673951984}
   anim: {fileID: 832267852}
+  FirstBoss: 0
   teleport: {fileID: 8300000, guid: 35a57e26d6834364fa17cb66744e4ce8, type: 3}
   teleportSource: {fileID: 832267858}
   teleportEnter: {fileID: 832267857}

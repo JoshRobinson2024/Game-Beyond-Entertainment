@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private bool firstDash;
     public bool dash;
     public TrailRenderer trailRenderer;
-
+    public bool firstLoss;
     public AudioClip BossMusic;
     public AudioSource BossSound;
     public AudioClip HitSound;
@@ -213,9 +213,16 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
+        if (firstLoss)
+        {
+            sceneManagement.LoadTutorial();
+        }
+        else
+        {
+            sceneManagement.LoadDeathScreen();
+            WillGaining.calculateDisplay();
+        }
         
-        sceneManagement.LoadDeathScreen();
-        WillGaining.calculateDisplay();
     }
     void Update()
     {
@@ -238,6 +245,10 @@ public class PlayerMovement : MonoBehaviour
         if (!isDead && !locked)
         {
             PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+            if (TutorialDialogueController.movedCheck && ObjectGrab.grabbed)
+            {
+                TutorialDialogueController.moved = true;
+            }
         }
         else if (dash)
         {
@@ -251,7 +262,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
-                
+                if (TutorialDialogueController.dashCheck)
+                {
+                    TutorialDialogueController.dashed = true;
+                }
                 Debug.Log("Dashhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
                 
                 activeMoveSpeed = dashSpeed;

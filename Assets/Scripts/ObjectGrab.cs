@@ -27,6 +27,8 @@ public class ObjectGrab : MonoBehaviour
     public GuitarDamage gDamage;
     public JournalDamage jDamage;
 
+    public static bool grabbed;
+
     public string whatObject = "nothin'";
 
     public Vector2 direction;
@@ -47,6 +49,15 @@ public class ObjectGrab : MonoBehaviour
     {
         if (EController.activeInHierarchy&& Input.GetKeyDown(KeyCode.E)&& grabbedObject!= true && ObjectDamage.Grabbable == true)
         {
+            if (TutorialDialogueController.movedCheck)
+            {
+                grabbed = true;
+            }
+            
+            if (TutorialDialogueController.PickedupCheck)
+            {
+                TutorialDialogueController.Pickedup = true;
+            }
             EController.SetActive(false);
             grabbedObject = true;
             whatObject = "Controller";
@@ -206,6 +217,10 @@ public class ObjectGrab : MonoBehaviour
     }
     public void ControllerThrow()
     {
+        if (TutorialDialogueController.thrownCheck)
+        {
+            TutorialDialogueController.thrown = true;
+        }
         whatObject = "nothing";
         throwPlayer.PlayOneShot(throwing);
         controllerRB.AddForce(direction * 100);

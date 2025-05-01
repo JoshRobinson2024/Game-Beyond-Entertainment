@@ -65,10 +65,21 @@ public class FirstbattleDialogueController : MonoBehaviour
     {
         mov.dash = false;
         Invoke("NextLine", 2);
+        Invoke("appear",3);
     }
     public void dash()
     {
         mov.dash = true;
+    }
+    public void appear()
+    {
+        tp.SetBool("TeleportExit", false);
+        tp.SetBool("TeleportEnter", true);
+        Invoke("tpreset", 0.01f);
+    }
+    public void tpreset()
+    {
+        tp.SetBool("TeleportEnter", false);
     }
     public void NextLine()
     {
@@ -80,9 +91,9 @@ public class FirstbattleDialogueController : MonoBehaviour
         if (lines[index]==CheckA)
         {
             boss.bulletDodge();
-            
-            
-            Invoke("RemoveDash", 0.7f);
+
+            Invoke("dash", 1);
+            Invoke("RemoveDash", 1.7f);
             
 
             
@@ -91,7 +102,8 @@ public class FirstbattleDialogueController : MonoBehaviour
         {
             mov.locked = false;
             boss.locked = false;
-            tp.SetBool("TeleportEnter", false);
+            tp.SetBool("teleportExit", false);
+            tp.SetBool("TeleportEnter", true);
             mov.MusicStart();
         }
         else

@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstBoss.unity
     guid: 8de0614512d492342ba59ca7f28aab14
   - enabled: 1
+    path: Assets/Scenes/TheTutorial.unity
+    guid: 22263fac964cbc94a970654f766d1abb
+  - enabled: 1
     path: Assets/Scenes/InteractionSelect.unity
     guid: fa83a2daf1c2c5e41b8b56a2a45840fd
   - enabled: 1

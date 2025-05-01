@@ -53,18 +53,32 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         attkInProgress = true;
+        Invoke("lockCheck", 0.5f);
+        
+        
+        
+        
         
         attacksToteleport = Random.Range(1, 4);
        
 
     }
 
-    
+    public void lockCheck()
+    {
+        if (!locked)
+        {
+            tp();
+        }
+    }
     
     void Update()
     {
 
-        
+        if (locked)
+        {
+            attkInProgress = false;
+        }
         if (attkInProgress == false && !locked)
         {
             if(attacksDone == attacksToteleport)

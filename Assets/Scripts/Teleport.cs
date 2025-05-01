@@ -30,6 +30,9 @@ public class Teleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+                
+        anim = GetComponent<Animator>();
         if (FirstBoss)
         {
             anim.SetBool("TeleportExit", true);
@@ -38,9 +41,6 @@ public class Teleport : MonoBehaviour
         {
             anim.SetBool("TeleportExit", false);
         }
-                
-        anim = GetComponent<Animator>();
-        
         anim.SetBool("TeleportFakeout", false);
         anim.SetBool("TeleportEnter", false);
     }

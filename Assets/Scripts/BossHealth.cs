@@ -7,8 +7,8 @@ public class BossHealth : MonoBehaviour
 {
     public GameObject Boss;
     public Image HealthBar;
-    public float maxHealth = 5000;
-    public float health = 5000;
+    public float maxHealth = 1000;
+    public float health = 1000;
     public float Agression = 0;
     public AudioClip DamageSound;
     public AudioSource DamageSoundPlayer;
