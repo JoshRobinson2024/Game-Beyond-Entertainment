@@ -16,8 +16,20 @@ public class Upgrade : MonoBehaviour
     {
         
     }
-    public void gainHealth(int healthToGain)
+    public void gainHealth(float healthToGain)
     {
+        if(PlayerMovement.defense > 2)
+        {
+            healthToGain -= 1;
+        }
+        if (PlayerMovement.defense > 3)
+        {
+            healthToGain -= 1;
+        }
+        if (PlayerMovement.defense > 4)
+        {
+            healthToGain -= 1;
+        }
         PlayerMovement.maxHealth += healthToGain;
     }
     public void gainDefense(int defenseToGain)

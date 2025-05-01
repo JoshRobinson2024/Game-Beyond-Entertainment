@@ -52,14 +52,15 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource HitPlayer;
     public AudioClip DeathSFX;
     public AudioSource DeathSFXPlayer;
-    
+
+    public bool locked;
     private void Start()
     {
         playerCol.enabled = true;
         HitPlayer.enabled = true;
         firstDash = false;
         trailRenderer.emitting = false;
-        maxHealth = 50;
+        
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
@@ -120,6 +121,11 @@ public class PlayerMovement : MonoBehaviour
             sceneManagement.Invoke("LoadBoss", 3f);
             sceneManagement.BossStart();
 
+        }
+        else if (collision.gameObject.name.Equals("FirstBossEnterTrigger"))
+        {
+            sceneManagement.Invoke("LoadFirstBoss", 3f);
+            sceneManagement.BossStart();
         }
         if (collision.gameObject.name.Equals("centreTeleportDenial"))
         {
@@ -225,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
             currentHealth = 1;
 
         }
-        if (!isDead)
+        if (!isDead && ! locked)
         {
             PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         }
@@ -233,7 +239,7 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerInput = new Vector2(0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !locked)
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {

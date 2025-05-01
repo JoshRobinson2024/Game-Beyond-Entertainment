@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class FirstDialogueController : MonoBehaviour
+public class FirstbattleDialogueController : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    
+
     public string[] lines;
     public float textSpeed;
     public List<GameObject> tpPoints;
@@ -20,13 +20,13 @@ public class FirstDialogueController : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void startDialogue()
@@ -53,7 +53,7 @@ public class FirstDialogueController : MonoBehaviour
 
     public void NextLine()
     {
-        
+
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
         tpPointUsed = Random.Range(0, tpPoints.Count);
@@ -61,11 +61,11 @@ public class FirstDialogueController : MonoBehaviour
         {
             Invoke("RemoveLine", 4);
         }
-        else 
+        else
         {
             Invoke("RemoveLine", 7);
         }
-        
+
         Text.transform.position = tpPoints[tpPointUsed].transform.position;
         Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
 
@@ -73,7 +73,7 @@ public class FirstDialogueController : MonoBehaviour
     }
     public void RemoveLine()
     {
-        if(index == 3)
+        if (index == 3)
         {
             index = 4;
             NextLine();
@@ -82,8 +82,8 @@ public class FirstDialogueController : MonoBehaviour
         {
             textComponent.text = string.Empty;
         }
-        
+
     }
-    
+
 }
 

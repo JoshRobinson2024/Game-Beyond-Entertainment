@@ -2857,7 +2857,7 @@ MonoBehaviour:
   Agression: 0
   DamageSound: {fileID: 8300000, guid: 9aa68b7ea44581e468c12f73e5128102, type: 3}
   DamageSoundPlayer: {fileID: 673951975}
-  dialogue: {fileID: 1209653172}
+  dialogue: {fileID: 0}
   mov: {fileID: 1594251386}
   phase3: 0
 --- !u!114 &673951941 stripped
@@ -6312,8 +6312,8 @@ GameObject:
   - component: {fileID: 1209653169}
   - component: {fileID: 1209653170}
   - component: {fileID: 1209653171}
-  - component: {fileID: 1209653172}
   - component: {fileID: 1209653173}
+  - component: {fileID: 1209653174}
   m_Layer: 5
   m_Name: Screen canvas
   m_TagString: Untagged
@@ -6471,70 +6471,6 @@ MonoBehaviour:
   Transition: {fileID: 1209653173}
   transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 0}
---- !u!114 &1209653172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209653164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 945575e67a29039429a41b80c595a1c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 571515800}
-  lines:
-  - Hmph... well met...
-  - You can't beat me...
-  - You will never get rid of me
-  - I won't be so soft on you anymore...
-  - Nobody cares about you
-  - Can't you see? You can't escape me...
-  - I told you that you'd never amount to anything
-  - I am a cycle you can't break
-  - This is what heppens when you keep trying
-  - Stop resisting, your future is set in stone...
-  - I will not let you escape!
-  - You don't understand this is for your own good!
-  - You defy me?!
-  - This battle has only just begun...
-  - Why won't you accept the futility of your efforts?!
-  - You might want to stop breaking those...
-  - Your efforts will always result in nothing
-  - See? Nothing can beat me...
-  textSpeed: 0.03
-  Text: {fileID: 571515800}
-  inCorridor: 0
-  inBoss: 0
-  phaseChange: 0
-  Death: 0
-  Final: 0
-  interaction: 0
-  tpPoints:
-  - {fileID: 1337532621}
-  - {fileID: 1389235898}
-  - {fileID: 573888719}
-  - {fileID: 1395465132}
-  - {fileID: 1939721952}
-  - {fileID: 948502635}
-  - {fileID: 2107738423}
-  - {fileID: 1531931636}
-  - {fileID: 888141324}
-  - {fileID: 1257366419}
-  - {fileID: 25487771}
-  shadowVoice: {fileID: 1209653173}
-  darkVoice: {fileID: 8300000, guid: e291a1c8b2d1fc34cbf58c55cf6f5df9, type: 3}
-  typingSource: {fileID: 0}
-  typingSound: {fileID: 0}
-  arrow: {fileID: 0}
-  checkA: 
-  checkB: 
-  checkC: 
-  checkD: 
-  button: {fileID: 0}
-  halt: 0
-  Journal: 0
 --- !u!82 &1209653173
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6631,6 +6567,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1209653174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209653164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca05b5edfa9fb84987f282f365899e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 571515800}
+  lines:
+  - Don't say I didn't warn you...
+  - (attack)
+  - (attack)
+  textSpeed: 0.03
+  tpPoints:
+  - {fileID: 1337532621}
+  - {fileID: 1389235898}
+  - {fileID: 573888719}
+  - {fileID: 1395465132}
+  - {fileID: 1939721952}
+  - {fileID: 948502635}
+  - {fileID: 2107738423}
+  - {fileID: 1531931636}
+  - {fileID: 888141324}
+  - {fileID: 1257366419}
+  - {fileID: 25487771}
+  shadowVoice: {fileID: 1209653173}
+  darkVoice: {fileID: 8300000, guid: e291a1c8b2d1fc34cbf58c55cf6f5df9, type: 3}
+  index: 0
+  Text: {fileID: 571515800}
 --- !u!1 &1226631938
 GameObject:
   m_ObjectHideFlags: 0

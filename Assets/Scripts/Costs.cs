@@ -47,7 +47,7 @@ public class Costs : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        WillGaining.WillAmount = 1;
+        
         
     }
     private void Update()

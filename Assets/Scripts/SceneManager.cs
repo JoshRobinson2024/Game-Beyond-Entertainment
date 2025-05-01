@@ -54,4 +54,23 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Journal");
     }
+    public void LoadFirstBoss()
+    {
+        PlayerMovement.maxHealth = 100;
+        PlayerMovement.defense = 0;
+        ObjectDamage.Controllerhealth = 2;
+        ObjectDamage.Strength = 3;
+        GuitarDamage.guitarStrength = 2;
+        GuitarDamage.Guitarhealth = 3;
+        JournalDamage.Journalhealth = 4;
+        JournalDamage.journalStrength = 1;
+        Costs.GamesCost = 1;
+        Costs.GuitarCost = 1;
+        Costs.JournalCost = 1;
+        Costs.ControllerHealthCost = 1;
+        Costs.GuitarHealthCost = 1;
+        Costs.JournalHealthCost = 1;
+        Costs.DoubleJournalHealthCost = 2;
+        SceneManager.LoadScene("FirstBoss");
+    }
 }
