@@ -52,7 +52,7 @@ public class Costs : MonoBehaviour
     }
     private void Update()
     {
-        DreamJournalCost = (JournalCost * 2) - 1;
+        DreamJournalCost = (JournalCost * 2);
         if(DreamJournalCost <= 0)
         {
             DreamJournalCost = 0;
