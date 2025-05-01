@@ -20,7 +20,7 @@ public class FirstDialogueController : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        
+        PlayerMovement.maxHealth = 100;
     }
 
     // Update is called once per frame

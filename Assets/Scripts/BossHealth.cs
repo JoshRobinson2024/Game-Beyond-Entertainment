@@ -15,14 +15,19 @@ public class BossHealth : MonoBehaviour
     public DialogueController dialogue;
     public PlayerMovement mov;
     public bool phase3;
+    public bool firstBoss;
     void Start()
     {
-        dialogue.Death = false;
-        dialogue.Final = false;
-        phase3 = false;
-        dialogue.phaseChange = false;
-        health = maxHealth;
-        Agression = 0;
+        if (!firstBoss) 
+        {
+            dialogue.Death = false;
+            dialogue.Final = false;
+            phase3 = false;
+            dialogue.phaseChange = false;
+            health = maxHealth;
+            Agression = 0;
+        }
+        
     }
 
     // Update is called once per frame
@@ -30,25 +35,33 @@ public class BossHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(Boss);
+            if (firstBoss)
+            {
+                health = 1;
+            }
+            else 
+            {
+                Destroy(Boss);
+            }
+            
         }
-        if (health / maxHealth <= 0.8f && !dialogue.phaseChange)
+        if (health / maxHealth <= 0.8f && !dialogue.phaseChange && !firstBoss)
         {
             dialogue.phaseChange = true;
             dialogue.startDialogue();
 
         }
-        if (health / maxHealth <= 0.6f && !phase3)
+        if (health / maxHealth <= 0.6f && !phase3 && !firstBoss)
         {
             phase3 = true;
             dialogue.startDialogue();
         }
-        if (health / maxHealth <= 0.4f && !dialogue.Final)
+        if (health / maxHealth <= 0.4f && !dialogue.Final && !firstBoss)
         {
             dialogue.Final = true;
             dialogue.startDialogue();
         }
-        if (mov.isDead && !dialogue.Death)
+        if (mov.isDead && !dialogue.Death && !firstBoss)
         {
             dialogue.Death = true;
             dialogue.startDialogue();

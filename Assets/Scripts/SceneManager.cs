@@ -56,7 +56,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadFirstBoss()
     {
-        PlayerMovement.maxHealth = 100;
+        
         PlayerMovement.defense = 0;
         ObjectDamage.Controllerhealth = 2;
         ObjectDamage.Strength = 3;

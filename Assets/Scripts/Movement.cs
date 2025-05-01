@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject dashRefresh;
     private bool firstDash;
-
+    public bool dash;
     public TrailRenderer trailRenderer;
 
     public AudioClip BossMusic;
@@ -70,6 +70,10 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("Dead", false);
         isDead = false;
         dashRefresh.SetActive(false);
+    }
+    public void MusicStart()
+    {
+        BossSound.Play();
     }
     public void PlayDamageSound()
     {
@@ -231,9 +235,13 @@ public class PlayerMovement : MonoBehaviour
             currentHealth = 1;
 
         }
-        if (!isDead && ! locked)
+        if (!isDead && !locked)
         {
             PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        }
+        else if (dash)
+        {
+            PlayerInput = new Vector2(1, 0).normalized;
         }
         else
         {
@@ -264,6 +272,43 @@ public class PlayerMovement : MonoBehaviour
                 trailRenderer.emitting = false;
                 dashCoolCounter = dashCooldown;
                
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+
+        }
+        if (dashCoolCounter <= 0 && firstDash)
+        {
+            dashRefresh.SetActive(true);
+        }
+        if (dash)
+        {
+            if (dashCoolCounter <= 0 && dashCounter <= 0)
+            {
+
+                Debug.Log("Dashhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+                iFrames = true;
+                Invoke("loseIFrames", dashLength);
+                trailRenderer.emitting = true;
+            }
+        }
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                firstDash = true;
+                dashRefresh.SetActive(false);
+                activeMoveSpeed = moveSpeed;
+                trailRenderer.emitting = false;
+                dashCoolCounter = dashCooldown;
+
             }
         }
 

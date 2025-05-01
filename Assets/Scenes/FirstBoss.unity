@@ -2857,9 +2857,10 @@ MonoBehaviour:
   Agression: 0
   DamageSound: {fileID: 8300000, guid: 9aa68b7ea44581e468c12f73e5128102, type: 3}
   DamageSoundPlayer: {fileID: 673951975}
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 1209653175}
   mov: {fileID: 1594251386}
   phase3: 0
+  firstBoss: 1
 --- !u!114 &673951941 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
@@ -3626,6 +3627,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: ShootNoise
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f72a9357386f3b4ba24d2de5d75026d, type: 3}
+    - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: ShootSource
+      value: 
+      objectReference: {fileID: 673951976}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: darknesAnim
       value: 
@@ -4480,6 +4489,7 @@ MonoBehaviour:
   mov: {fileID: 1594251386}
   col: {fileID: 673951984}
   anim: {fileID: 832267852}
+  FirstBoss: 1
   teleport: {fileID: 8300000, guid: 35a57e26d6834364fa17cb66744e4ce8, type: 3}
   teleportSource: {fileID: 832267858}
   teleportEnter: {fileID: 832267857}
@@ -6314,6 +6324,7 @@ GameObject:
   - component: {fileID: 1209653171}
   - component: {fileID: 1209653173}
   - component: {fileID: 1209653174}
+  - component: {fileID: 1209653175}
   m_Layer: 5
   m_Name: Screen canvas
   m_TagString: Untagged
@@ -6583,7 +6594,9 @@ MonoBehaviour:
   lines:
   - Don't say I didn't warn you...
   - (attack)
-  - (attack)
+  - You're a bold one...
+  - Very well...
+  - (Fight)
   textSpeed: 0.03
   tpPoints:
   - {fileID: 1337532621}
@@ -6601,6 +6614,77 @@ MonoBehaviour:
   darkVoice: {fileID: 8300000, guid: e291a1c8b2d1fc34cbf58c55cf6f5df9, type: 3}
   index: 0
   Text: {fileID: 571515800}
+  mov: {fileID: 1594251386}
+  CheckA: (attack)
+  CheckB: (Fight)
+  boss: {fileID: 673951941}
+  tp: {fileID: 832267852}
+  BossSprite: {fileID: 832267853}
+--- !u!114 &1209653175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209653164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945575e67a29039429a41b80c595a1c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 571515800}
+  lines:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  textSpeed: 0
+  Text: {fileID: 571515800}
+  inCorridor: 0
+  inBoss: 0
+  phaseChange: 0
+  Death: 0
+  Final: 0
+  interaction: 0
+  tpPoints: []
+  shadowVoice: {fileID: 0}
+  darkVoice: {fileID: 0}
+  typingSource: {fileID: 0}
+  typingSound: {fileID: 0}
+  arrow: {fileID: 571515798}
+  checkA: 
+  checkB: 
+  checkC: 
+  checkD: 
+  button: {fileID: 0}
+  halt: 0
+  Journal: 0
 --- !u!1 &1226631938
 GameObject:
   m_ObjectHideFlags: 0
@@ -7565,7 +7649,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1e6e383c08f9c8a4b9da17134daeb87a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.9
   m_Pitch: 1
   Loop: 1

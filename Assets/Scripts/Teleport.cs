@@ -16,7 +16,8 @@ public class Teleport : MonoBehaviour
     public PlayerMovement mov;
     public Collider2D col;
     public Animator anim;
-
+    public bool FirstBoss;
+    
     public AudioClip teleport;
     public AudioSource teleportSource;
     public AudioSource teleportEnter;
@@ -29,11 +30,19 @@ public class Teleport : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (FirstBoss)
+        {
+            anim.SetBool("TeleportExit", true);
+        }
+        else
+        {
+            anim.SetBool("TeleportExit", false);
+        }
+                
         anim = GetComponent<Animator>();
-        anim.SetBool("TeleportEnter", false);
+        
         anim.SetBool("TeleportFakeout", false);
-        anim.SetBool("TeleportExit", false);
+        anim.SetBool("TeleportEnter", false);
     }
 
     // Update is called once per frame

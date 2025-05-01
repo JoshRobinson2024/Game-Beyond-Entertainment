@@ -6,6 +6,23 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField]
+    private int bulletsAmount = 1;
+
+    
+
+
+    private Vector2 bulletMoveDirection;
+    
+
+    public int times = 1;
+
+    
+    
+
+    public AudioClip ShootNoise;
+    public AudioSource ShootSource;
+    public bool locked;
     private bool attkInProgress = false;
     private int attkSelected;
     public GameObject[] bullets;
@@ -36,7 +53,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         attkInProgress = true;
-        Invoke("tp", 0.1f);
+        
         attacksToteleport = Random.Range(1, 4);
        
 
@@ -48,7 +65,7 @@ public class Spawner : MonoBehaviour
     {
 
         
-        if (attkInProgress == false)
+        if (attkInProgress == false && !locked)
         {
             if(attacksDone == attacksToteleport)
             {
@@ -273,6 +290,30 @@ public class Spawner : MonoBehaviour
         
         isDark = false;
     }
-    
+    public void bulletDodge()
+    {
+        
+        
+        
+        float angle = 180;
+        for (int i = 0; i < bulletsAmount + 1; i++)
+        {
+            float bulDirx = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
+            float bulDiry = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+
+            Vector3 bulMoveVector = new Vector3(bulDirx, bulDiry, 0f);
+            Vector2 bulDir = (bulMoveVector - transform.position).normalized;
+
+            GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
+            bul.transform.position = new Vector3(0, 10, 0);
+            bul.transform.rotation = transform.rotation;
+            bul.SetActive(true);
+            bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+            
+
+        }
+
+        ShootSource.PlayOneShot(ShootNoise);
+    }
 }
 

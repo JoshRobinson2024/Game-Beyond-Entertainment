@@ -17,11 +17,19 @@ public class FirstbattleDialogueController : MonoBehaviour
     public TMP_Text Text;
     private float movePos;
     public PlayerMovement mov;
+    public string CheckA;
+    public string CheckB;
+    public Spawner boss;
+    public Animator tp;
+    public SpriteRenderer BossSprite;
     // Start is called before the first frame update
     void Start()
     {
+        BossSprite.enabled = false;
+
         textComponent.text = string.Empty;
         mov.locked = true;
+        boss.locked = true;
         Invoke("startDialogue", 2);
     }
 
@@ -33,6 +41,7 @@ public class FirstbattleDialogueController : MonoBehaviour
 
     void startDialogue()
     {
+        BossSprite.enabled = true;
         index = 0;
         StartCoroutine(TypeLine());
         tpPointUsed = Random.Range(0, tpPoints.Count);
@@ -40,7 +49,7 @@ public class FirstbattleDialogueController : MonoBehaviour
         Text.transform.position = tpPoints[tpPointUsed].transform.position;
         Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
 
-        Invoke("Next", 5);
+        Invoke("NextLine", 3);
     }
 
     IEnumerator TypeLine()
@@ -52,20 +61,44 @@ public class FirstbattleDialogueController : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
     }
-
+    public void RemoveDash()
+    {
+        mov.dash = false;
+        Invoke("NextLine", 2);
+    }
+    public void dash()
+    {
+        mov.dash = true;
+    }
     public void NextLine()
     {
 
         textComponent.text = string.Empty;
-        StartCoroutine(TypeLine());
+        index++;
+        
         tpPointUsed = Random.Range(0, tpPoints.Count);
-        if (index == 3)
+        if (lines[index]==CheckA)
         {
-            Invoke("RemoveLine", 4);
+            boss.bulletDodge();
+            
+            
+            Invoke("RemoveDash", 0.7f);
+            
+
+            
+        }
+        else if (lines[index] == CheckB)
+        {
+            mov.locked = false;
+            boss.locked = false;
+            tp.SetBool("TeleportEnter", false);
+            mov.MusicStart();
         }
         else
         {
-            Invoke("RemoveLine", 7);
+
+            StartCoroutine(TypeLine());
+            Invoke("NextLine", 3);
         }
 
         Text.transform.position = tpPoints[tpPointUsed].transform.position;
