@@ -16,11 +16,13 @@ public class FirstbattleDialogueController : MonoBehaviour
     public int index;
     public TMP_Text Text;
     private float movePos;
+    public PlayerMovement mov;
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
-
+        mov.locked = true;
+        Invoke("startDialogue", 2);
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class FirstbattleDialogueController : MonoBehaviour
         Text.transform.position = tpPoints[tpPointUsed].transform.position;
         Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
 
-        Invoke("RemoveLine", 7);
+        Invoke("Next", 5);
     }
 
     IEnumerator TypeLine()
