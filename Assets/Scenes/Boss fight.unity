@@ -6500,12 +6500,13 @@ MonoBehaviour:
   - You defy me?!
   - This battle has only just begun...
   - Why won't you accept the futility of your efforts?!
-  - You really gotta stop breaking those...
+  - You might want to stop breaking those...
   - Your efforts will always result in nothing
   - See? Nothing can beat me...
   textSpeed: 0.03
   Text: {fileID: 571515800}
   inCorridor: 0
+  inBoss: 0
   phaseChange: 0
   Death: 0
   Final: 0
@@ -6524,6 +6525,16 @@ MonoBehaviour:
   - {fileID: 25487771}
   shadowVoice: {fileID: 1209653173}
   darkVoice: {fileID: 8300000, guid: e291a1c8b2d1fc34cbf58c55cf6f5df9, type: 3}
+  typingSource: {fileID: 0}
+  typingSound: {fileID: 0}
+  arrow: {fileID: 0}
+  checkA: 
+  checkB: 
+  checkC: 
+  checkD: 
+  button: {fileID: 0}
+  halt: 0
+  Journal: 0
 --- !u!82 &1209653173
 AudioSource:
   m_ObjectHideFlags: 0
