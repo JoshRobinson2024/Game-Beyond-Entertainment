@@ -88,7 +88,8 @@ public class TutorialDialogueController : MonoBehaviour
         {
             moved = false;
             
-            Invoke("NextLine", 3);
+            
+            Invoke("locking", 2.5f);
         }
         if(Pickedup && PickedupCheck)
         {
@@ -96,6 +97,11 @@ public class TutorialDialogueController : MonoBehaviour
             
             Invoke("NextLine", 0.1f);
         }
+    }
+    public void locking()
+    {
+        mov.locked = true;
+        NextLine();
     }
     public void startDialogue()
     {
@@ -159,7 +165,7 @@ public class TutorialDialogueController : MonoBehaviour
         {
             thrownCheck = false;
         }
-        
+        Debug.Log(index);
         shadowVoice.PlayOneShot(darkVoice);
         foreach (char c in lines[index].ToCharArray())
         {
@@ -182,7 +188,11 @@ public class TutorialDialogueController : MonoBehaviour
         }
         else
         {
-            manager.loadInteractionSelect();
+            if (!movedCheck)
+            {
+                manager.loadInteractionSelect();
+            }
+            
 
         }
     }

@@ -113,18 +113,22 @@ public class ObjectGrab : MonoBehaviour
         }*/
         else if (grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Vector2 mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            if (!TutorialDialogueController.movedCheck)
+            {
+                Vector2 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
-            Controller.transform.up = direction;
-            EController.SetActive(true);
-            grabbedObject = false;
+                Controller.transform.up = direction;
+                EController.SetActive(true);
+                grabbedObject = false;
+
+                controllerRB.freezeRotation = false;
+                CancelInvoke("ControllerFollow");
+                ControllerThrow();
+            }
             
-            controllerRB.freezeRotation = false;
-            CancelInvoke("ControllerFollow");
-            ControllerThrow();
         }
         else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.Mouse0))
         {
