@@ -74,27 +74,27 @@ public class TutorialDialogueController : MonoBehaviour
         }
         if (dashed && dashCheck)
         {
-            dashCheck = false;
+            
             dashed = false;
-            Invoke("NextLine", 2);
+            Invoke("NextLine", 1.7f);
         }
         if (thrownCheck && thrown)
         {
-            thrownCheck = false; 
+             
             thrown = false;
-            Invoke("NextLine", 2);
+            Invoke("NextLine", 0.2f);
         }
         if (moved && movedCheck)
         {
             moved = false;
-            movedCheck = false;
-            Invoke("NextLine", 2);
+            
+            Invoke("NextLine", 3);
         }
         if(Pickedup && PickedupCheck)
         {
             Pickedup = false;
-            PickedupCheck = false;
-            Invoke("NextLine", 2);
+            
+            Invoke("NextLine", 0.1f);
         }
     }
     public void startDialogue()
@@ -125,21 +125,41 @@ public class TutorialDialogueController : MonoBehaviour
             dashCheck = true;
             mov.locked = false;
         }
+        else
+        {
+            dashCheck = false;
+            
+        }
         if (lines[index] == Pickup)
         {
             PickedupCheck = true;
             mov.locked = false;
+        }
+        else
+        {
+            
+            PickedupCheck = false;
         }
         if (lines[index] == Move)
         {
             movedCheck = true;
             mov.locked = false;
         }
+        else
+        {
+            movedCheck = false;
+            
+        }
         if (lines[index] == Throw)
         {
             thrownCheck = true;
             mov.locked = false;
         }
+        else
+        {
+            thrownCheck = false;
+        }
+        
         shadowVoice.PlayOneShot(darkVoice);
         foreach (char c in lines[index].ToCharArray())
         {
@@ -151,6 +171,8 @@ public class TutorialDialogueController : MonoBehaviour
     }
     public void NextLine()
     {
+        
+
         if (index < lines.Length - 1)
         {
             mov.locked = true;
