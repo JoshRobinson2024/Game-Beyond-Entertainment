@@ -14,7 +14,7 @@ public class ObjectGrab : MonoBehaviour
     public GameObject Guitar;
     public GameObject Journal;
     public GameObject player;
-
+    public bool Tutorial;
     public Rigidbody2D controllerRB;
     public Rigidbody2D guitarRB;
     public Rigidbody2D journalRB;
@@ -49,7 +49,7 @@ public class ObjectGrab : MonoBehaviour
     {
         if (EController.activeInHierarchy&& Input.GetKeyDown(KeyCode.E)&& grabbedObject!= true && ObjectDamage.Grabbable == true)
         {
-            if (TutorialDialogueController.movedCheck)
+            if (TutorialDialogueController.PickedupCheck)
             {
                 grabbed = true;
             }
@@ -111,24 +111,43 @@ public class ObjectGrab : MonoBehaviour
             journalRB.freezeRotation = false;
             CancelInvoke("JournalFollow");
         }*/
-        else if (grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.Mouse0))
+        else if (grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.Mouse0) && !Tutorial)
         {
-            if (!TutorialDialogueController.movedCheck)
-            {
-                Vector2 mousePosition = Input.mousePosition;
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
-                direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-
-                Controller.transform.up = direction;
-                EController.SetActive(true);
-                grabbedObject = false;
-
-                controllerRB.freezeRotation = false;
-                CancelInvoke("ControllerFollow");
-                ControllerThrow();
-            }
             
+            
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+            Controller.transform.up = direction;
+            EController.SetActive(true);
+            grabbedObject = false;
+
+            controllerRB.freezeRotation = false;
+            CancelInvoke("ControllerFollow");
+            ControllerThrow();
+            
+            
+        }
+        else if (grabbedObject == true && whatObject == "Controller" && Input.GetKeyDown(KeyCode.Mouse0) && Tutorial && TutorialDialogueController.thrownCheck)
+        {
+
+
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+
+            Controller.transform.up = direction;
+            EController.SetActive(true);
+            grabbedObject = false;
+
+            controllerRB.freezeRotation = false;
+            CancelInvoke("ControllerFollow");
+            ControllerThrow();
+
+
         }
         else if (grabbedObject == true && whatObject == "Guitar" && Input.GetKeyDown(KeyCode.Mouse0))
         {

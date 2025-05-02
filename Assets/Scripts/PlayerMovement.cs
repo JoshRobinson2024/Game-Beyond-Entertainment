@@ -245,9 +245,10 @@ public class PlayerMovement : MonoBehaviour
         if (!isDead && !locked)
         {
             PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-            if (TutorialDialogueController.movedCheck)
+            if (TutorialDialogueController.movedCheck && ObjectGrab.grabbed)
             {
                 TutorialDialogueController.moved = true;
+                
             }
         }
         else if (dash)

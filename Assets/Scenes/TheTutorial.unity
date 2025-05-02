@@ -7509,6 +7509,7 @@ MonoBehaviour:
   Guitar: {fileID: 1586844870}
   Journal: {fileID: 2026405331}
   player: {fileID: 1594251374}
+  Tutorial: 1
   controllerRB: {fileID: 1609065967}
   guitarRB: {fileID: 54172399}
   journalRB: {fileID: 2039878397}

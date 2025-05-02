@@ -84,24 +84,24 @@ public class TutorialDialogueController : MonoBehaviour
             thrown = false;
             Invoke("NextLine", 0.2f);
         }
-        if (moved && movedCheck)
+        if (moved && movedCheck && ObjectGrab.grabbed)
         {
             moved = false;
-            
+            ObjectGrab.grabbed = false;
             
             Invoke("locking", 2.5f);
         }
         if(Pickedup && PickedupCheck)
         {
             Pickedup = false;
-            
-            Invoke("NextLine", 0.1f);
+
+            NextLine();
         }
     }
     public void locking()
     {
         mov.locked = true;
-        NextLine();
+        Invoke("NextLine", 0.5f);
     }
     public void startDialogue()
     {
@@ -158,8 +158,7 @@ public class TutorialDialogueController : MonoBehaviour
         }
         if (lines[index] == Throw)
         {
-            thrownCheck = true;
-            mov.locked = false;
+            Invoke("ThrowCheck", 2);
         }
         else
         {
@@ -174,6 +173,11 @@ public class TutorialDialogueController : MonoBehaviour
             
 
         }
+    }
+    public void throwCheckUnlock()
+    {
+        thrownCheck = true;
+        mov.locked = false;
     }
     public void NextLine()
     {
