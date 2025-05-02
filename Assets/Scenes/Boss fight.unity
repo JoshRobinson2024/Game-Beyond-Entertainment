@@ -2852,14 +2852,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss: {fileID: 673951915}
   HealthBar: {fileID: 1679712750}
-  maxHealth: 5000
-  health: 5000
+  maxHealth: 1000
+  health: 1000
   Agression: 0
   DamageSound: {fileID: 8300000, guid: 9aa68b7ea44581e468c12f73e5128102, type: 3}
   DamageSoundPlayer: {fileID: 673951975}
   dialogue: {fileID: 1209653172}
   mov: {fileID: 1594251386}
   phase3: 0
+  firstBoss: 0
 --- !u!114 &673951941 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
@@ -4480,6 +4481,7 @@ MonoBehaviour:
   mov: {fileID: 1594251386}
   col: {fileID: 673951984}
   anim: {fileID: 832267852}
+  FirstBoss: 0
   teleport: {fileID: 8300000, guid: 35a57e26d6834364fa17cb66744e4ce8, type: 3}
   teleportSource: {fileID: 832267858}
   teleportEnter: {fileID: 832267857}
