@@ -38,7 +38,15 @@ public class RotatingLaser : MonoBehaviour
     [SerializeField] float speedZ;
     void Update()
     {
-        rotator.transform.Rotate(360 * speedX * Time.deltaTime, 360 * speedY * Time.deltaTime, 360 * speedZ * Time.deltaTime);
+        if (Spawner.firstBattle || Spawner.furyMode)
+        {
+            rotator.transform.Rotate(360 * speedX * Time.deltaTime, 360 * speedY * Time.deltaTime, 360 * speedZ * 2 *  Time.deltaTime);
+        }
+        else
+        {
+            rotator.transform.Rotate(360 * speedX * Time.deltaTime, 360 * speedY * Time.deltaTime, 360 * speedZ * Time.deltaTime);
+        }
+        
     }
 
 
@@ -148,7 +156,7 @@ public class RotatingLaser : MonoBehaviour
         {
             timesFired -= 1;
 
-            Invoke("Rotationpart1", 0.6f);
+            Invoke("Rotationpart1", 0.3f);
         }
 
     }

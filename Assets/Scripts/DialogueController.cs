@@ -42,6 +42,7 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        index = 0;
         if (inCorridor)
         {
             index = Random.Range(0, lines.Length);
@@ -70,7 +71,7 @@ public class DialogueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (textComponent.text == lines[index]&& interaction)
+        if (textComponent.text == lines[index] && interaction)
         {
             arrow.SetActive(true);
             if (Journal)
@@ -213,10 +214,14 @@ public class DialogueController : MonoBehaviour
             Text.enabled = true;
             if (inCorridor)
             {
+                shadowVoice.pitch = Random.Range(0.5f, 0.8f);
+                shadowVoice.panStereo = Random.Range(-1, 1);
                 shadowVoice.PlayOneShot(darkVoice);
             }
             if (inBoss)
             {
+                shadowVoice.pitch = Random.Range(0.5f, 0.8f);
+                shadowVoice.panStereo = Random.Range(-1, 1);
                 shadowVoice.PlayOneShot(darkVoice);
             }
             if (Journal)

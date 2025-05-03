@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public static bool phase2;
+    public static bool phase3;
+    public static bool furyMode;
+    public static bool firstBattle;
     [SerializeField]
     private int bulletsAmount = 1;
 
@@ -79,9 +83,9 @@ public class Spawner : MonoBehaviour
         {
             attkInProgress = false;
         }
-        if (attkInProgress == false && !locked)
+        if (attkInProgress == false && !locked && !firstBattle)
         {
-            if(attacksDone == attacksToteleport)
+            if (attacksDone == attacksToteleport)
             {
                 tp();
             }
@@ -118,6 +122,28 @@ public class Spawner : MonoBehaviour
                             break;
                     }
                 }
+            }
+        }
+        else if (firstBattle && !locked && !attkInProgress)
+        {
+            attkSelected = Random.Range(1, 6);
+            switch (attkSelected)
+            {
+                case 5:
+                    Attk5();
+                    break;
+                case 4:
+                    Attk6();
+                    break;
+                case 3:
+                    Attk4();
+                    break;
+                case 2:
+                    Attk2();
+                    break;
+                case 1:
+                    Attk1();
+                    break;
             }
         }
         if (spiral1off == true && spiral2off == true)

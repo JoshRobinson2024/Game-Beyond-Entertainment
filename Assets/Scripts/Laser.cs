@@ -75,6 +75,10 @@ public class Laser : MonoBehaviour
     {
         teleporting = false;
         timesFired = Random.Range(2, 4);
+        if(Spawner.firstBattle || Spawner.furyMode)
+        {
+            timesFired = 5;
+        }
     }
     public void randomRotationpart1()
     {
@@ -146,12 +150,17 @@ public class Laser : MonoBehaviour
             timesFired -= 1;
 
             Invoke("randomRotationpart1", 0.3f);
+            
         }
         
     }
     public void playertrack1()
     {
         delay = Random.Range(0.7f, 1f);
+        if(Spawner.firstBattle || Spawner.furyMode)
+        {
+            delay = 0.2f;
+        }
         rotation1 = Random.Range(0, 360);
         rotation2 = Random.Range(0, 360);
         rotation3 = Random.Range(0, 360);

@@ -42,7 +42,7 @@ public class WillGaining : MonoBehaviour
         
 
         
-        DamageDealt /= 50;
+        DamageDealt /= 10;
         BossHealth.Agression /= 3;
         TimeSurvived /= 30;
 
@@ -55,32 +55,32 @@ public class WillGaining : MonoBehaviour
         Debug.Log(TimeSurvived);
         Debug.Log(DamageDealt);
         Debug.Log(BossHealth.Agression);
-        if (TimeSurvived >= DamageDealt && TimeSurvived >= BossHealth.Agression)
+        if (TimeSurvived <= DamageDealt && TimeSurvived <= BossHealth.Agression)
         {
-            WillAmount += DamageDealt + BossHealth.Agression;
-            WillGained = DamageDealt + BossHealth.Agression;
+            WillAmount += TimeSurvived;
+            WillGained = TimeSurvived;
             Debug.Log(WillAmount);
-            Debug.Log("Ignore time");
+            
         }
-        else if(TimeSurvived <= DamageDealt && BossHealth.Agression <= DamageDealt)
+        else if(TimeSurvived >= DamageDealt && BossHealth.Agression >= DamageDealt)
         {
-            WillAmount += TimeSurvived + BossHealth.Agression;
-            WillGained = TimeSurvived + BossHealth.Agression;
-            Debug.Log("Ignore Damage");
+            WillAmount += DamageDealt;
+            WillGained = DamageDealt;
+            
             Debug.Log(WillAmount);
         }
-        else if (TimeSurvived <= BossHealth.Agression && BossHealth.Agression >= DamageDealt)
+        else if (TimeSurvived >= BossHealth.Agression && BossHealth.Agression <= DamageDealt)
         {
-            WillAmount += TimeSurvived + DamageDealt;
-            WillGained = TimeSurvived + DamageDealt;
+            WillAmount += BossHealth.Agression;
+            WillGained = BossHealth.Agression;
             Debug.Log(WillAmount);
-            Debug.Log("IgnoreAgression");
+            
         }
         else
         {
             Debug.Log("Failsafe");
-            WillAmount += 3;
-            WillGained = 3;
+            WillAmount += 1;
+            WillGained = 1;
         }
         WillAmount += 1;
         WillGained += 1;

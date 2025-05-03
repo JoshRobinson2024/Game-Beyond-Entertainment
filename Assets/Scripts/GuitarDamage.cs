@@ -25,10 +25,10 @@ public class GuitarDamage : MonoBehaviour
     private void Start()
     {
         GuitarRespawnPos = Guitar.transform.position;
-        Guitarhealth = 5;
+        
         currentGuitarHealth = Guitarhealth;
         rend = GetComponent<SpriteRenderer>();
-        guitarStrength = 250;
+        
         TrailRenderer.emitting = false;
     }
     public void GDamage()

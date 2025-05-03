@@ -2402,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8486,7 +8486,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -9942,6 +9942,7 @@ MonoBehaviour:
   Guitar: {fileID: 1586844870}
   Journal: {fileID: 2026405331}
   player: {fileID: 1594251374}
+  Tutorial: 0
   controllerRB: {fileID: 1609065967}
   guitarRB: {fileID: 54172399}
   journalRB: {fileID: 2039878397}
@@ -10108,10 +10109,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1af50a9e59f5ad34eb4a7352cf40e738, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1e6e383c08f9c8a4b9da17134daeb87a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
-  m_Pitch: 0.95
+  m_Pitch: 0.1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -11565,6 +11566,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1838494940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838494942}
+  - component: {fileID: 1838494941}
+  - component: {fileID: 1838494943}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1838494941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838494940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80ca294fc044bb4aa43dd547f54eee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickedTexture: {fileID: 2800000, guid: e57709d7ce00d0f4eb9c31c5eb20c979, type: 3}
+  normalTexture: {fileID: 2800000, guid: ea6663171769dcf43afe8c5e05ed397d, type: 3}
+  noMouse: 1
+  AnimatedCursor: {fileID: 1838494943}
+--- !u!4 &1838494942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838494940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.49422097, y: 1.3459847, z: -4.445213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1838494943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838494940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5115cf3d54c94a469c53418c99efab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorFrames:
+  - {fileID: 2800000, guid: ed2268ce8c89ec14a945017d1a05f82a, type: 3}
+  - {fileID: 2800000, guid: 9438c2bfb48088e4cbedeac3721887d4, type: 3}
+  - {fileID: 2800000, guid: a881abcf63ffec94096be96d4a7f64de, type: 3}
+  - {fileID: 2800000, guid: da8dfdc9c296bcd41872b3fd238ac23f, type: 3}
+  - {fileID: 2800000, guid: 5c301b470d48d784a8c90dae20cf9ca1, type: 3}
+  - {fileID: 2800000, guid: 71bbd5c460c0fee4b8e560dcebe3978b, type: 3}
+  - {fileID: 2800000, guid: 5c301b470d48d784a8c90dae20cf9ca1, type: 3}
+  - {fileID: 2800000, guid: da8dfdc9c296bcd41872b3fd238ac23f, type: 3}
+  - {fileID: 2800000, guid: a881abcf63ffec94096be96d4a7f64de, type: 3}
+  - {fileID: 2800000, guid: 9438c2bfb48088e4cbedeac3721887d4, type: 3}
+  frameRate: 0.1
 --- !u!1 &1846546257
 GameObject:
   m_ObjectHideFlags: 0
@@ -13251,3 +13325,4 @@ SceneRoots:
   - {fileID: 548452447}
   - {fileID: 2006334823}
   - {fileID: 349369269}
+  - {fileID: 1838494942}

@@ -26,10 +26,10 @@ public class JournalDamage : MonoBehaviour
     private void Start()
     {
         JournalRespawnPos = Journal.transform.position;
-        Journalhealth = 5;
+        
         currentJournalHealth = Journalhealth;
         rend = GetComponent<SpriteRenderer>();
-        journalStrength = 250;
+        
         TrailRenderer.emitting = false;
     }
     public void JDamage()

@@ -23,7 +23,14 @@ public class Fire : MonoBehaviour
     public AudioSource ShootSource;
     public void FireBul()
     {
-        bulletsAmount = Random.Range(15, 25);
+        if (Spawner.furyMode)
+        {
+            bulletsAmount = Random.Range(25, 35);
+        }
+        else
+        {
+            bulletsAmount = Random.Range(15, 25);
+        }
         startAngle = Random.Range(0, 360);
         endAngle = startAngle + 360;
         float angleStep = (endAngle - startAngle) / bulletsAmount;
@@ -74,6 +81,11 @@ public class Fire : MonoBehaviour
         
         timesshot = Random.Range(3, 6);
         delay = Random.Range(0.15f, 0.35f);
+        if (Spawner.furyMode)
+        {
+            timesshot = Random.Range(5, 8);
+            delay = Random.Range(0.1f, 0.2f);
+        }
     }
     public void refire()
     {

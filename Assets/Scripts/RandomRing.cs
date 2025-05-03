@@ -14,9 +14,19 @@ public class RandomRing : MonoBehaviour
     public AudioSource ShootSource;
     public void FireBul()
     {
-        delay = Random.Range(0.7f, 1.4f);
-        bulletsAmount = Random.Range(75, 85);
-        angle = Random.Range(0, 361);
+        if (Spawner.furyMode)
+        {
+            delay = Random.Range(0.5f, 0.7f);
+            bulletsAmount = Random.Range(100, 120);
+            angle = Random.Range(0, 361);
+        }
+        else
+        {
+            delay = Random.Range(0.7f, 1.4f);
+            bulletsAmount = Random.Range(75, 85);
+            angle = Random.Range(0, 361);
+        }
+        
         
         for (int i = 0; i < bulletsAmount + 1; i++)
         {
@@ -41,6 +51,11 @@ public class RandomRing : MonoBehaviour
     {
         timesshot = Random.Range(4, 7);
         delay = Random.Range(0.5f, 1.2f);
+        if (Spawner.furyMode)
+        {
+            timesshot = Random.Range(6, 8);
+            delay = Random.Range(0.5f, 0.7f);
+        }
         InvokeRepeating("FireBul", 0f, delay);
         Invoke("EndFiring", timesshot * delay);
     }

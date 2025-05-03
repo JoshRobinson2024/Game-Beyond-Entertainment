@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using Unity.Mathematics;
+
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
 
@@ -50,7 +50,7 @@ public class TutorialDialogueController : MonoBehaviour
     }
     private void Update()
     {
-        if (textComponent.text == lines[index] && !dashCheck && !PickedupCheck && !movedCheck && !thrownCheck)
+        if (textComponent.text == lines[index] && !dashCheck && !PickedupCheck && !movedCheck && !thrownCheck && !(lines[index] == Throw))
         {
             arrow.SetActive(true);
             
@@ -109,6 +109,7 @@ public class TutorialDialogueController : MonoBehaviour
     }
     IEnumerator TypeLine()
     {
+        textComponent.text = string.Empty;
         if (lines[index] == spawnController)
         {
             controller.SetActive(true);
@@ -158,13 +159,17 @@ public class TutorialDialogueController : MonoBehaviour
         }
         if (lines[index] == Throw)
         {
-            Invoke("ThrowCheck", 2);
+            
+            Invoke("throwCheckUnlock", 1);
         }
         else
         {
             thrownCheck = false;
         }
         Debug.Log(index);
+        shadowVoice.pitch = Random.Range(1.3f, 1.65f);
+        
+        shadowVoice.panStereo = Random.Range(-1f, 1f);
         shadowVoice.PlayOneShot(darkVoice);
         foreach (char c in lines[index].ToCharArray())
         {

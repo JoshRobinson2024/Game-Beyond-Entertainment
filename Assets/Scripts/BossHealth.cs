@@ -27,6 +27,10 @@ public class BossHealth : MonoBehaviour
             health = maxHealth;
             Agression = 0;
         }
+        else if (firstBoss) 
+        {
+            health = 5000;
+        }
         
     }
 

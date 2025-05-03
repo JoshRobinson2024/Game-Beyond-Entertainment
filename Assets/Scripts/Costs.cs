@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,10 @@ public class Costs : MonoBehaviour
     public static int HealthAndDefenseCost;
     public static int DreamJournalCost;
     public static int DoubleJournalHealthCost;
+    public int ControllerHealthMax = 4;
+    public int GuitarHealthMax = 6;
+    public int JournalHealthMax = 8;
+    
     public TMP_Text DoubleJournalHealthCostText;
     public TMP_Text DreamJournalCostText;
     public TMP_Text GamesCostText;
@@ -30,10 +35,15 @@ public class Costs : MonoBehaviour
     public TMP_Text GamesNotEnoughText;
     public TMP_Text GuitarNotEnoughText;
     public TMP_Text JournalNotEnoughText;
-    public TMP_Text GamesHealthNotEnoughtext;
+    public TMP_Text ControllerHealthNotEnoughtext;
     public TMP_Text GuitarhealthNotEnoughText;
     public TMP_Text JournalhealthnotEnoughtext;
     public TMP_Text HealthAndDefenseNotEnoughText;
+    public TMP_Text ControllerHealthMaxText;
+    public TMP_Text GuitarHealthMaxText;
+    public TMP_Text JournalHealthMaxText;
+    public TMP_Text DoubleJournalHealthMaxText;
+    
     public Button DreamJournalButton;
     public Button gamesButton;
     public Button guitarButton;
@@ -43,10 +53,14 @@ public class Costs : MonoBehaviour
     public Button journalHealthButton;
     public Button healthAndDefenseButton;
     public Button DoubleJournalHealthbutton;
-    
+    public Image will1;
+    public Image will2;
+    public Image will3;
+    public Image will4;
     // Start is called before the first frame update
     private void Start()
     {
+
         
         
     }
@@ -97,33 +111,87 @@ public class Costs : MonoBehaviour
             JournalNotEnoughText.enabled= false;
             journalButton.enabled = true;
         }
-        if (ControllerHealthCost > WillGaining.WillAmount)
+        if (ObjectDamage.Controllerhealth >= ControllerHealthMax)
         {
-            GamesHealthNotEnoughtext.enabled = true;
+            will1.enabled = false;
+            ControllerHealthCostText.enabled = false;
+            ControllerHealthNotEnoughtext.enabled = false;
+            ControllerHealthMaxText.enabled = true;
+            gamesHealthButton.enabled = false;
+        }
+        else if (ControllerHealthCost > WillGaining.WillAmount)
+        {
+            will1.enabled = true;
+            ControllerHealthCostText.enabled = true;
+            ControllerHealthMaxText.enabled = false;
+            ControllerHealthNotEnoughtext.enabled = true;
             gamesHealthButton.enabled = false;
         }
         else
         {
-            GamesHealthNotEnoughtext.enabled= false;
+            will1.enabled = true;
+            ControllerHealthCostText.enabled = true;
+            ControllerHealthMaxText.enabled = false;
+            ControllerHealthNotEnoughtext.enabled= false;
             gamesHealthButton.enabled = true;
         }
-        if (GuitarHealthCost > WillGaining.WillAmount)
+        if (GuitarDamage.Guitarhealth >= GuitarHealthMax)
         {
+            will2.enabled = false;
+            GuitarHealthCostText.enabled = false;
+            GuitarhealthNotEnoughText.enabled = false;
+            GuitarHealthMaxText.enabled = true;
+            guitarHealthButton.enabled = false;
+        }
+        else if (GuitarHealthCost > WillGaining.WillAmount)
+        {
+            will2.enabled = true;
+            GuitarHealthCostText.enabled = true;
+            GuitarHealthMaxText.enabled = false;
             GuitarhealthNotEnoughText.enabled = true;
             guitarHealthButton.enabled = false;
         }
         else
         {
+            will2.enabled = false;
+            GuitarHealthCostText.enabled= false;
+            GuitarHealthMaxText.enabled = false;
             GuitarhealthNotEnoughText.enabled = false;
             guitarHealthButton.enabled = true;
         }
-        if (JournalHealthCost > WillGaining.WillAmount)
+        if (JournalDamage.Journalhealth >= JournalHealthMax)
         {
+            will3.enabled = false;
+            JournalHealthCostText.enabled = false;
+            JournalhealthnotEnoughtext.enabled = false;
+            DoubleJournalHealthMaxText.enabled = true;
+            will4.enabled = false;
+            DoubleJournalHealthCostText.enabled = false;
+            JournalHealthMaxText.enabled = true;
+            journalHealthButton.enabled = false;
+            DoubleJournalHealthbutton.enabled = false;
+        }
+        else if (JournalHealthCost > WillGaining.WillAmount)
+        {
+            
+            DoubleJournalHealthMaxText.enabled = false;
+            will4.enabled = true;
+            DoubleJournalHealthCostText.enabled = true;
+            will2.enabled = true;
+            JournalHealthCostText.enabled = true;
+            JournalHealthMaxText.enabled = false;
             JournalhealthnotEnoughtext.enabled = true;
             journalHealthButton.enabled = false;
         }
         else
         {
+            
+            DoubleJournalHealthMaxText.enabled = false;
+            will4.enabled = true;
+            DoubleJournalHealthCostText.enabled = true;
+            will3.enabled = true;
+            JournalHealthCostText.enabled = true;
+            JournalHealthMaxText.enabled = false;
             JournalhealthnotEnoughtext.enabled= false;
             journalHealthButton.enabled = true;
         }
@@ -147,7 +215,12 @@ public class Costs : MonoBehaviour
             DreamJournalNotEnoughText.enabled = false;
             DreamJournalButton.enabled = true;
         }
-        if (DoubleJournalHealthCost > WillGaining.WillAmount)
+        if (JournalDamage.Journalhealth >= JournalHealthMax)
+        {
+            DoubleJournalHealthbutton.enabled = false;
+            DoubleJournalHealthNotEnoughText.enabled = false;
+        }
+        else if (DoubleJournalHealthCost > WillGaining.WillAmount)
         {
             DoubleJournalHealthNotEnoughText.enabled = true;
             DoubleJournalHealthbutton.enabled = false;
@@ -157,6 +230,7 @@ public class Costs : MonoBehaviour
             DoubleJournalHealthNotEnoughText.enabled = false;
             DoubleJournalHealthbutton.enabled = true;
         }
+        
     }
     public void SubtractWill(Button button)
     {
@@ -193,7 +267,7 @@ public class Costs : MonoBehaviour
         else if(button == healthAndDefenseButton)
         {
             WillGaining.WillAmount -= HealthAndDefenseCost;
-            HealthAndDefenseCost += 2;
+            HealthAndDefenseCost += 3;
         }
         else if (button == DreamJournalButton)
         {

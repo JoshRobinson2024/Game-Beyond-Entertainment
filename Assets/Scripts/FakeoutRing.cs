@@ -20,7 +20,15 @@ public class FakeoutRing : MonoBehaviour
     public Teleport teleport;
     public void FireBul()
     {
-        bulletsAmount = Random.Range(15, 20);
+        if (Spawner.furyMode)
+        {
+            bulletsAmount = Random.Range(25, 30);
+        }
+        else
+        {
+            bulletsAmount = Random.Range(15, 20);
+        }
+        
         startAngle = Random.Range(0, 360);
         endAngle = startAngle + 360;
         float angleStep = (endAngle - startAngle) / bulletsAmount;
@@ -73,6 +81,10 @@ public class FakeoutRing : MonoBehaviour
 
         timesshot = Random.Range(3, 5);
         delay = Random.Range(0.04f, 0.06f);
+        if (Spawner.furyMode)
+        {
+            timesshot = Random.Range(5, 6);
+        }
     }
 
 }

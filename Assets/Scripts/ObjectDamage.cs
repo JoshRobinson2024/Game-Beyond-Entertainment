@@ -24,10 +24,10 @@ public class ObjectDamage : MonoBehaviour
     private bool broken;
     private void Start()
     {
-        Controllerhealth = 5;
+        
         currentControllerHealth = Controllerhealth;
         rend = GetComponent<SpriteRenderer>();
-        Strength = 250;
+        
         ControllerRespawnPos = Controller.transform.position;
         trailRend.emitting = false;
         rend.color = neutralColour;

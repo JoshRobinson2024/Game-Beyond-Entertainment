@@ -213,6 +213,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
+        InteractionSelectDialogueController.changeLine = true;
         if (firstLoss)
         {
             sceneManagement.LoadTutorial();

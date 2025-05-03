@@ -54,6 +54,8 @@ public class FirstbattleDialogueController : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        shadowVoice.pitch = Random.Range(0.5f, 0.8f);
+        shadowVoice.panStereo = Random.Range(-1f, 1f);
         shadowVoice.PlayOneShot(darkVoice);
         foreach (char c in lines[index].ToCharArray())
         {

@@ -36,6 +36,11 @@ public class SingleSpiral : MonoBehaviour
         
         increment = Random.Range(20, 30);
         speed = Random.Range(0.05f, 0.08f);
+        if (Spawner.firstBattle || Spawner.furyMode)
+        {
+            increment = Random.Range(10, 20);
+            speed = Random.Range(0.025f, 0.03f);
+        }
         
     }
     private void FireSpiral()

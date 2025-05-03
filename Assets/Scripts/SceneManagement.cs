@@ -27,12 +27,13 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadBoss()
     {
-
+        
         SceneManager.LoadScene("Boss fight");
     }
     public void LoadDeathScreen()
     {
         SceneManager.LoadScene("WillGaining");
+        InteractionSelectDialogueController.dayNumber++;
     }
     public void loadInteractionSelect()
     {
@@ -40,28 +41,35 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadCorridor()
     {
+        
         SceneManager.LoadScene("Corridor");
     }
     public void LoadFriend()
     {
         SceneManager.LoadScene("Friend");
+        InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadParents()
     {
         SceneManager.LoadScene("Parent");
+        InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadJournal()
     {
         SceneManager.LoadScene("Journal");
+        InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadTutorial()
     {
+        Spawner.firstBattle = false;
         PlayerMovement.maxHealth = 20;
         SceneManager.LoadScene("TheTutorial");
+        InteractionSelectDialogueController.changeLine = true;
+        InteractionSelectDialogueController.dayNumber = 1;
     }
     public void LoadFirstBoss()
     {
-        
+        Spawner.firstBattle = true;
         PlayerMovement.defense = 0;
         ObjectDamage.Controllerhealth = 2;
         ObjectDamage.Strength = 3;
@@ -76,6 +84,7 @@ public class SceneManagement : MonoBehaviour
         Costs.GuitarHealthCost = 1;
         Costs.JournalHealthCost = 1;
         Costs.DoubleJournalHealthCost = 2;
+        Costs.HealthAndDefenseCost = 5;
         SceneManager.LoadScene("FirstBoss");
     }
 }
