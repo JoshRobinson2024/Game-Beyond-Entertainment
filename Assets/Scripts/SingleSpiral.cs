@@ -34,8 +34,8 @@ public class SingleSpiral : MonoBehaviour
     {
         //Debug.Log("redefining...");
         
-        increment = Random.Range(20, 30);
-        speed = Random.Range(0.05f, 0.08f);
+        increment = Random.Range(15, 25);
+        speed = Random.Range(0.04f, 0.065f);
         if (Spawner.firstBattle || Spawner.furyMode)
         {
             increment = Random.Range(10, 20);

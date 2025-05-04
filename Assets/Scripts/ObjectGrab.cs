@@ -61,7 +61,7 @@ public class ObjectGrab : MonoBehaviour
             EController.SetActive(false);
             grabbedObject = true;
             whatObject = "Controller";
-            
+            CustomMouse.aiming = true;
             controllerRB.velocity = new Vector2(0, 0);
             controllerRB.bodyType = RigidbodyType2D.Dynamic;
             controllerRB.freezeRotation = true;
@@ -71,6 +71,7 @@ public class ObjectGrab : MonoBehaviour
         {
             EGuitar.SetActive(false);
             grabbedObject = true;
+            CustomMouse.aiming = true;
             whatObject = "Guitar";
             guitarRB.velocity = new Vector2(0, 0);
             guitarRB.bodyType = RigidbodyType2D.Dynamic;
@@ -81,6 +82,7 @@ public class ObjectGrab : MonoBehaviour
         {
             EJournal.SetActive(false);
             grabbedObject = true;
+            CustomMouse.aiming = true;
             whatObject = "Journal";
             journalRB.velocity = new Vector2(0, 0);
             journalRB.bodyType = RigidbodyType2D.Dynamic;
@@ -244,6 +246,7 @@ public class ObjectGrab : MonoBehaviour
         {
             TutorialDialogueController.thrown = true;
         }
+        CustomMouse.aiming = false;
         whatObject = "nothing";
         throwPlayer.PlayOneShot(throwing);
         controllerRB.AddForce(direction * 100);
@@ -252,6 +255,7 @@ public class ObjectGrab : MonoBehaviour
     }
     public void GuitarThrow()
     {
+        CustomMouse.aiming = false;
         whatObject = "nothing";
         throwPlayer.PlayOneShot(throwing);
         guitarRB.AddForce(direction * 100);
@@ -260,6 +264,7 @@ public class ObjectGrab : MonoBehaviour
     }
     public void JournalThrow()
     {
+        CustomMouse.aiming = false;
         whatObject = "nothing";
         throwPlayer.PlayOneShot(throwing);
         journalRB.AddForce(direction * 100);

@@ -42,6 +42,10 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        phaseChange = false;
+        Death = false;
+        Final = false;
+        broken = false;
         index = 0;
         if (inCorridor)
         {
@@ -105,9 +109,15 @@ public class DialogueController : MonoBehaviour
 
     public void startDialogue()
     {
-        if (broken)
+        if (interaction)
         {
-            index = Random.Range(15, 18);
+            index = 0;
+            StartCoroutine(TypeLine());
+        }
+        else if (Death)
+        {
+            index = Random.Range(5, 10);
+            StopAllCoroutines();
             textComponent.text = string.Empty;
             Text.transform.position = tpPoints[tpPointUsed].transform.position;
             Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
@@ -117,7 +127,7 @@ public class DialogueController : MonoBehaviour
                 Invoke("RemoveLine", 5);
             }
         }
-        else if (phaseChange && ! Death && !Final)
+        else if (phaseChange && !Death && !Final)
         {
             index = Random.Range(0, 5);
             if (index == repeat)
@@ -137,21 +147,8 @@ public class DialogueController : MonoBehaviour
                     Invoke("RemoveLine", 5);
                 }
             }
-            
 
-        }
-        else if (Death)
-        {
-            index = Random.Range(5, 10);
-            StopAllCoroutines();
-            textComponent.text = string.Empty;
-            Text.transform.position = tpPoints[tpPointUsed].transform.position;
-            Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
-            StartCoroutine(TypeLine());
-            if (!inCorridor && !interaction)
-            {
-                Invoke("RemoveLine", 5);
-            }
+
         }
         else if (Final && !Death)
         {
@@ -165,6 +162,21 @@ public class DialogueController : MonoBehaviour
                 Invoke("RemoveLine", 5);
             }
         }
+        else if (broken)
+        {
+            index = Random.Range(15, 18);
+            textComponent.text = string.Empty;
+            Text.transform.position = tpPoints[tpPointUsed].transform.position;
+            Text.transform.rotation = tpPoints[tpPointUsed].transform.rotation;
+            StartCoroutine(TypeLine());
+            if (!inCorridor && !interaction)
+            {
+                Invoke("RemoveLine", 5);
+            }
+        }
+        
+        
+        
         else if (inCorridor)
         {
             StartCoroutine(TypeLine());
@@ -173,10 +185,7 @@ public class DialogueController : MonoBehaviour
                 Invoke("RemoveLine", 5);
             }
         }
-        else if (interaction)
-        {
-            StartCoroutine(TypeLine());
-        }
+        
         
 
 

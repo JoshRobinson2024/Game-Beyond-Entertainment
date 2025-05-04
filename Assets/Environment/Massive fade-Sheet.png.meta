@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8586990fd9e14d14abd3c61c7b33c71e
+guid: 43fa2e34d572ba74c9d6644452d9e7ac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion-Sheet_0
+      name: Massive fade-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04f9db9240a6ca4db1c393647eb7524
-      internalID: -950168226
+      spriteID: 1ef96885fda52704cb4a671bb37dc4db
+      internalID: -1513082235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_1
+      name: Massive fade-Sheet_1
       rect:
         serializedVersion: 2
-        x: 287
+        x: 800
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7f16fe8dbb1ab44a4ba1c32f036d5f
-      internalID: -128896571
+      spriteID: b8ede46adfc555343a292a2be3e3e9e7
+      internalID: 1033534443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_2
+      name: Massive fade-Sheet_2
       rect:
         serializedVersion: 2
-        x: 574
+        x: 1600
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b9327c505f3c874ab9fc4ea4d5559be
-      internalID: 330359683
+      spriteID: fc96759e6f38fb84f82b7416e2a5f059
+      internalID: -1820544184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_3
+      name: Massive fade-Sheet_3
       rect:
         serializedVersion: 2
-        x: 861
+        x: 2400
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a15ed3c9d3125e4099422badbefd08d
-      internalID: 1861732514
+      spriteID: 7f85b11878eb04646a9e096dbc5615fd
+      internalID: 1779973817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_4
+      name: Massive fade-Sheet_4
       rect:
         serializedVersion: 2
-        x: 1148
+        x: 3200
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 542812031691c714f94c4b52d18dce32
-      internalID: -543203090
+      spriteID: 6039a36bc2ba9a3499e8a24ef32b83d3
+      internalID: -243862600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_5
+      name: Massive fade-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1435
+        x: 4000
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71963261294d1754b995caa35922353a
-      internalID: -467906445
+      spriteID: d1bfca0e0c22d39419e46737a647cd22
+      internalID: 1193448718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_6
+      name: Massive fade-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1722
+        x: 4800
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc04fccd7459c245aa1eec5c6e44a26
-      internalID: -605818498
+      spriteID: f3ba7ba8d6e7fa048993f3472191f1a6
+      internalID: 169957972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_7
+      name: Massive fade-Sheet_7
       rect:
         serializedVersion: 2
-        x: 2009
+        x: 5600
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da17f678abd435748ab1148fdaba6050
-      internalID: 522986590
+      spriteID: 1582d6beeb9b84e43a84aa763f789116
+      internalID: -1735695257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_8
+      name: Massive fade-Sheet_8
       rect:
         serializedVersion: 2
-        x: 2296
+        x: 6400
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,29 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3c05a0b1e00324098e9a42763d5195
-      internalID: 1525215604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 2583
-        y: 0
-        width: 287
-        height: 266
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89d8605cba548524da7985df125f8092
-      internalID: 546991667
+      spriteID: 9e5e3c81374d727499b830d15ccdd215
+      internalID: 61643598
       vertices: []
       indices: 
       edges: []
@@ -317,16 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      explosion-Sheet_0: -950168226
-      explosion-Sheet_1: -128896571
-      explosion-Sheet_2: 330359683
-      explosion-Sheet_3: 1861732514
-      explosion-Sheet_4: -543203090
-      explosion-Sheet_5: -467906445
-      explosion-Sheet_6: -605818498
-      explosion-Sheet_7: 522986590
-      explosion-Sheet_8: 1525215604
-      explosion-Sheet_9: 546991667
+      Massive fade-Sheet_0: -1513082235
+      Massive fade-Sheet_1: 1033534443
+      Massive fade-Sheet_2: -1820544184
+      Massive fade-Sheet_3: 1779973817
+      Massive fade-Sheet_4: -243862600
+      Massive fade-Sheet_5: 1193448718
+      Massive fade-Sheet_6: 169957972
+      Massive fade-Sheet_7: -1735695257
+      Massive fade-Sheet_8: 61643598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

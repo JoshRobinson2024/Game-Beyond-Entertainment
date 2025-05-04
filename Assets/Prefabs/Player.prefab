@@ -208,11 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1011807570238648504}
-  moveSpeed: 7
+  moveSpeed: 11
   forceToApply: {x: 0, y: 0}
   PlayerInput: {x: 0, y: 0}
   forceDamping: 1.2
-  dashSpeed: 15
+  dashSpeed: 18
   dashLength: 0.5
   dashCooldown: 1
   currentHealth: 0
@@ -224,6 +224,7 @@ MonoBehaviour:
   WillGaining: {fileID: 0}
   sceneManagement: {fileID: 0}
   isDead: 0
+  playerCol: {fileID: 0}
   centreDisabled: 0
   tp1Disabled: 0
   tp2Disabled: 0
@@ -234,7 +235,16 @@ MonoBehaviour:
   tp7Disabled: 0
   tp8Disabled: 0
   dashRefresh: {fileID: 0}
+  dash: 0
   trailRenderer: {fileID: 0}
+  firstLoss: 0
+  BossMusic: {fileID: 0}
+  BossSound: {fileID: 0}
+  HitSound: {fileID: 0}
+  HitPlayer: {fileID: 0}
+  DeathSFX: {fileID: 0}
+  DeathSFXPlayer: {fileID: 0}
+  locked: 0
 --- !u!114 &244754639396281096
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -364,6 +364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df46a8d8eaa551458ed840afa580356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
+  moveSpeed: 15
   bulletLife: 7
   trailRenderer: {fileID: 7870938519867940390}

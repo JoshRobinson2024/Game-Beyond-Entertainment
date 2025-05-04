@@ -21,9 +21,9 @@ public class Spawner : MonoBehaviour
 
     public int times = 1;
 
-    
-    
 
+
+    public ExplosionLineAttack explosion;
     public AudioClip ShootNoise;
     public AudioSource ShootSource;
     public bool locked;
@@ -91,14 +91,17 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(1, 8);
+                //attkSelected = Random.Range(1, 9);
+                attkSelected = 8;
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
                 if (attkSelected != usedAttack)
                 {
                     switch (attkSelected)
                     {
-
+                        case 8:
+                            Attk8();
+                            break;
                         case 7:
                             Attk7();
                             break;
@@ -152,6 +155,14 @@ public class Spawner : MonoBehaviour
             spiral2off = false;
             wait(); 
         }
+    }
+    private void Attk8()
+    {
+        attacksDone += 1;
+        attkInProgress = true;
+        usedAttack = 0;
+        explosion.ExecuteExplosionLineAttack();
+        
     }
     private void Attk7()
     {
@@ -294,21 +305,30 @@ public class Spawner : MonoBehaviour
         rotLaser.laser2.SetActive(false);
         rotLaser.laser3.SetActive(false);
         reuse = Random.Range(0, 2);
-        if (attkSelected == 1)
-        {
-            usedAttack = 1;
-        }
-        else if (reuse == 0)
-        {
-            usedAttack = attkSelected;
-        }
+        //if (attkSelected == 1)
+        //{
+        //    usedAttack = 1;
+        //}
+        //else if (reuse == 0)
+        //{
+        //    usedAttack = attkSelected;
+        //}
         attkInProgress = false;
         //Debug.Log(attkInProgress);
     }
     public void wait()
     {
         //Debug.Log(attacksDone);
+
         waitTime = Random.Range(0.5f, 1.5f);
+        if (furyMode)
+        {
+            waitTime = 1.5f;
+        }
+        else if (firstBattle)
+        {
+            waitTime = 0.5f;
+        }
         anim.stopWaving();
         anim.stopUlt();
         Invoke("Reset", waitTime);

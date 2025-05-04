@@ -44,7 +44,7 @@ public class RotatingLaser : MonoBehaviour
         }
         else
         {
-            rotator.transform.Rotate(360 * speedX * Time.deltaTime, 360 * speedY * Time.deltaTime, 360 * speedZ * Time.deltaTime);
+            rotator.transform.Rotate(360 * speedX * Time.deltaTime, 360 * speedY * Time.deltaTime, 360 * speedZ *1.3f * Time.deltaTime);
         }
         
     }

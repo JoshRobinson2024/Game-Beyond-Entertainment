@@ -3,22 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SceneManagement : MonoBehaviour
 {
     public AudioSource Transition;
     public AudioClip transitionClip;
     public Animator anim;
+    public Animator fadeAnim;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
+        //remove after boss is done
+        PlayerMovement.maxHealth = 100;
+        ObjectDamage.Controllerhealth = 2;
+        ObjectDamage.Strength = 3;
+        GuitarDamage.guitarStrength = 2;
+        GuitarDamage.Guitarhealth = 3;
+        JournalDamage.Journalhealth = 4;
+        JournalDamage.journalStrength = 1;
+        fadeAnim.SetBool("FadeOut", false);
+    }
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void FadeOut()
+    {
+        fadeAnim.SetBool("FadeOut", true);
     }
     public void BossStart()
     {
@@ -37,24 +54,48 @@ public class SceneManagement : MonoBehaviour
     }
     public void loadInteractionSelect()
     {
+        FadeOut();
+        Invoke("DelayedLoadInteractionSelect", 1);
+    }
+    public void DelayedLoadInteractionSelect()
+    {
         SceneManager.LoadScene("InteractionSelect");
     }
     public void LoadCorridor()
     {
-        
+        FadeOut();
+        Invoke("DelayedLoadCorridor", 2);
+    }
+    public void DelayedLoadCorridor()
+    {
         SceneManager.LoadScene("Corridor");
     }
     public void LoadFriend()
+    {
+        FadeOut();
+        Invoke("DelayedLoadFriend", 1);
+    }
+    public void DelayedLoadFriend()
     {
         SceneManager.LoadScene("Friend");
         InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadParents()
     {
+        FadeOut();
+        Invoke("DelayedLoadParents", 1);
+    }
+    public void DelayedLoadParents()
+    {
         SceneManager.LoadScene("Parent");
         InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadJournal()
+    {
+        FadeOut();
+        Invoke("DelayedLoadJournal", 1);
+    }
+    public void DelayedLoadJournal()
     {
         SceneManager.LoadScene("Journal");
         InteractionSelectDialogueController.changeLine = false;

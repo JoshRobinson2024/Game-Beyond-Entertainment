@@ -124,12 +124,14 @@ public class PlayerMovement : MonoBehaviour
         {
             sceneManagement.Invoke("LoadBoss", 3f);
             sceneManagement.BossStart();
+            sceneManagement.FadeOut();
 
         }
         else if (collision.gameObject.name.Equals("FirstBossEnterTrigger"))
         {
             sceneManagement.Invoke("LoadFirstBoss", 3f);
             sceneManagement.BossStart();
+            sceneManagement.FadeOut();
         }
         if (collision.gameObject.name.Equals("centreTeleportDenial"))
         {
@@ -239,6 +241,7 @@ public class PlayerMovement : MonoBehaviour
             cam.transform.parent = null;
             anim.SetBool("Dead", true);
             DeathSFXPlayer.PlayOneShot(DeathSFX);
+            sceneManagement.Invoke("FadeOut", 1f);
             Invoke("Death", 4f);
             currentHealth = 1;
 

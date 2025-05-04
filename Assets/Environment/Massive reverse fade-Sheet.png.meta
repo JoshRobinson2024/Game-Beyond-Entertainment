@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8586990fd9e14d14abd3c61c7b33c71e
+guid: 529e62ec89ef84f43b3711c28ce16d3e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: explosion-Sheet_0
+      name: Massive reverse fade-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04f9db9240a6ca4db1c393647eb7524
-      internalID: -950168226
+      spriteID: a3a4ca81b4a2ad142837baf7521cfa22
+      internalID: 505226910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_1
+      name: Massive reverse fade-Sheet_1
       rect:
         serializedVersion: 2
-        x: 287
+        x: 800
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7f16fe8dbb1ab44a4ba1c32f036d5f
-      internalID: -128896571
+      spriteID: 050941b65bccea646ab7f9d58b02a1b3
+      internalID: -481230173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_2
+      name: Massive reverse fade-Sheet_2
       rect:
         serializedVersion: 2
-        x: 574
+        x: 1600
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b9327c505f3c874ab9fc4ea4d5559be
-      internalID: 330359683
+      spriteID: 1536cc3f4cece634294f4c6d27c3bcbf
+      internalID: -1891369383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_3
+      name: Massive reverse fade-Sheet_3
       rect:
         serializedVersion: 2
-        x: 861
+        x: 2400
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a15ed3c9d3125e4099422badbefd08d
-      internalID: 1861732514
+      spriteID: 449011f8fc01f4949acc370105b15df5
+      internalID: 1144536846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_4
+      name: Massive reverse fade-Sheet_4
       rect:
         serializedVersion: 2
-        x: 1148
+        x: 3200
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 542812031691c714f94c4b52d18dce32
-      internalID: -543203090
+      spriteID: 071bc4aacd3e73740acc0bb35426dd3f
+      internalID: -1933719703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_5
+      name: Massive reverse fade-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1435
+        x: 4000
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71963261294d1754b995caa35922353a
-      internalID: -467906445
+      spriteID: e84a687e2c8e6d04f8471a599888be87
+      internalID: 128660198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_6
+      name: Massive reverse fade-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1722
+        x: 4800
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc04fccd7459c245aa1eec5c6e44a26
-      internalID: -605818498
+      spriteID: f0932144082ed474c92061d1f2e6dd76
+      internalID: 686107920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_7
+      name: Massive reverse fade-Sheet_7
       rect:
         serializedVersion: 2
-        x: 2009
+        x: 5600
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da17f678abd435748ab1148fdaba6050
-      internalID: 522986590
+      spriteID: fa56ea0ffc7d72a439f566bfe59f290f
+      internalID: -1290017859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: explosion-Sheet_8
+      name: Massive reverse fade-Sheet_8
       rect:
         serializedVersion: 2
-        x: 2296
+        x: 6400
         y: 0
-        width: 287
-        height: 266
+        width: 800
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,29 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3c05a0b1e00324098e9a42763d5195
-      internalID: 1525215604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: explosion-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 2583
-        y: 0
-        width: 287
-        height: 266
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89d8605cba548524da7985df125f8092
-      internalID: 546991667
+      spriteID: 0e0720f6983afa243a9a12af18f02405
+      internalID: 20052735
       vertices: []
       indices: 
       edges: []
@@ -317,16 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      explosion-Sheet_0: -950168226
-      explosion-Sheet_1: -128896571
-      explosion-Sheet_2: 330359683
-      explosion-Sheet_3: 1861732514
-      explosion-Sheet_4: -543203090
-      explosion-Sheet_5: -467906445
-      explosion-Sheet_6: -605818498
-      explosion-Sheet_7: 522986590
-      explosion-Sheet_8: 1525215604
-      explosion-Sheet_9: 546991667
+      Massive reverse fade-Sheet_0: 505226910
+      Massive reverse fade-Sheet_1: -481230173
+      Massive reverse fade-Sheet_2: -1891369383
+      Massive reverse fade-Sheet_3: 1144536846
+      Massive reverse fade-Sheet_4: -1933719703
+      Massive reverse fade-Sheet_5: 128660198
+      Massive reverse fade-Sheet_6: 686107920
+      Massive reverse fade-Sheet_7: -1290017859
+      Massive reverse fade-Sheet_8: 20052735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
