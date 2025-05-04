@@ -10,13 +10,16 @@ public class Explode : MonoBehaviour
     private float endAngle;
     public Collider2D hitbox;
     public GameObject explosion;
-
+    public Spawner spawner;
+    public AudioSource exploSource;
+    public AudioClip exploClip;
     private void OnEnable()
     {
         Invoke("HitboxEnable", 0.5f);
     }
     public void HitboxEnable()
     {
+        exploSource.PlayOneShot(exploClip);
         fire();
         hitbox.enabled = true;
         Invoke("HitboxDisable", 0.1f);
@@ -32,7 +35,7 @@ public class Explode : MonoBehaviour
     }
     public void fire()
     {
-        bulletsAmount = Random.Range(15, 25);
+        bulletsAmount = Random.Range(5, 10);
     
         startAngle = Random.Range(0, 360);
         endAngle = startAngle + 360;

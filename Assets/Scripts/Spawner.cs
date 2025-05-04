@@ -91,14 +91,20 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                //attkSelected = Random.Range(1, 9);
-                attkSelected = 8;
+                attkSelected = Random.Range(1, 11);
+                
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
                 if (attkSelected != usedAttack)
                 {
                     switch (attkSelected)
                     {
+                        case 10:
+                            Attk10();
+                            break;
+                        case 9:
+                            Attk9();
+                            break;
                         case 8:
                             Attk8();
                             break;
@@ -156,12 +162,47 @@ public class Spawner : MonoBehaviour
             wait(); 
         }
     }
+    private void Attk10()
+    {
+        attacksDone += 1;
+        attkInProgress = true;
+        usedAttack = 0;
+        anim.wave();
+        explosion.lineAttack = false;
+        explosion.RandomAttack = false;
+        explosion.FollowAttack = true;
+        explosion.ExecuteExplosionLineAttack();
+        Invoke("wait", 6f);
+    }
+    private void Attk9()
+    {
+        attacksDone += 1;
+        attkInProgress = true;
+        usedAttack = 0;
+        anim.wave();
+        explosion.lineAttack = false;
+        explosion.RandomAttack = true;
+        explosion.FollowAttack = false;
+        explosion.ExecuteExplosionLineAttack();
+        explosion.Invoke("ExecuteExplosionLineAttack", 2);
+        explosion.Invoke("ExecuteExplosionLineAttack", 4);
+
+        Invoke("wait", 4);
+    }
     private void Attk8()
     {
         attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
+        anim.wave();
+        explosion.RandomAttack = false;
+        explosion.lineAttack = true;
+        explosion.FollowAttack = false;
         explosion.ExecuteExplosionLineAttack();
+        explosion.Invoke("ExecuteExplosionLineAttack", 2);
+        explosion.Invoke("ExecuteExplosionLineAttack", 4);
+        
+        Invoke("wait", 4);
         
     }
     private void Attk7()
@@ -332,7 +373,7 @@ public class Spawner : MonoBehaviour
         anim.stopWaving();
         anim.stopUlt();
         Invoke("Reset", waitTime);
-
+        
     }
     public void endSpiral()
     {

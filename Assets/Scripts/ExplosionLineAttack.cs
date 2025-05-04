@@ -8,9 +8,13 @@ public class ExplosionLineAttack : MonoBehaviour
     public GameObject explosionPrefab;
     public float spacing;
     public int explosionCount = 6;
-    public Spawner spawner;
+    public bool lineAttack;
+    public bool RandomAttack;
+    public bool FollowAttack;
     private Transform player;
-
+    public GameObject[] tpPoints;
+    private int tpSelected;
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -22,12 +26,13 @@ public class ExplosionLineAttack : MonoBehaviour
 
         Vector2 direction = (player.position - transform.position).normalized;
         spacing = direction.magnitude / 6;
+        spacing = spacing * 50;
 
-        for (int i = 1; i <= explosionCount; i++)
-        {
+        
+        
             
-            StartCoroutine(SpawnExplosionsWithDelay(direction));
-        }
+        StartCoroutine(SpawnExplosionsWithDelay(direction));
+        
     }
     
 
@@ -35,13 +40,26 @@ public class ExplosionLineAttack : MonoBehaviour
     {
         for (int i = 1; i <= explosionCount; i++)
         {
-            Vector2 spawnPosition = (Vector2)transform.position + direction * spacing * i;
-            Instantiate(explosionPrefab, spawnPosition, Quaternion.identity);
-            yield return new WaitForSeconds(0.1f); // Delay between explosions
-            if (i == explosionCount)
+            if (lineAttack)
             {
-                spawner.wait();
+                Vector2 spawnPosition = (Vector2)transform.position + direction * spacing * i;
+                Instantiate(explosionPrefab, spawnPosition, Quaternion.identity);
+                yield return new WaitForSeconds(0.2f); // Delay between explosions
             }
+            else if (RandomAttack)
+            {
+                tpSelected = Random.Range(0, tpPoints.Length);
+                Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.1f); // Delay between explosions
+            }
+            else if (FollowAttack)
+            {
+                Instantiate(explosionPrefab, player.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(1.35f); // Delay between explosions
+
+            }
+            
+            
         }
         
     }
