@@ -28,7 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public SceneManagement sceneManagement;
     public bool isDead;
     public Collider2D playerCol;
-
+    public GameObject player;
+    public GameObject blackHole;
+    public float pullForce = 1f;
     public bool centreDisabled = false;
     public bool tp1Disabled = false;
     public bool tp2Disabled = false;
@@ -360,6 +362,13 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             anim.SetBool("Moving", true);
+        }
+        if (Vortex.suction)
+        {
+            Vector2 direction = (Vector2)(Vortex.currentVortex.transform.position - player.transform.position);
+            float distance = direction.magnitude;
+            Vector2 pull = direction.normalized * 350f;
+            rb.AddForce(pull);
         }
     }
 

@@ -1859,6 +1859,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1594251374}
+    - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: sprite
       value: 
       objectReference: {fileID: 1594251374}
@@ -1890,6 +1894,10 @@ PrefabInstance:
       propertyPath: HitPlayer
       value: 
       objectReference: {fileID: 1594251400}
+    - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: blackHole
+      value: 
+      objectReference: {fileID: 4696975090498300966, guid: 516e18fd5c24cc847b8e34c8eafbb144, type: 3}
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: dashSpeed
       value: 18
@@ -3921,6 +3929,21 @@ MonoBehaviour:
   - {fileID: 912588664}
   - {fileID: 1996342970}
   - {fileID: 1553509226}
+--- !u!114 &673951994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673951915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afba443bab8c8a5408dacd281ae41e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vortex: {fileID: 4696975090498300966, guid: 516e18fd5c24cc847b8e34c8eafbb144, type: 3}
+  tpPoints:
+  - {fileID: 425781416}
 --- !u!1 &677299863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4236,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 673951960}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: Vortex
+      value: 
+      objectReference: {fileID: 673951994}
+    - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: spiral
       value: 
       objectReference: {fileID: 0}
@@ -4386,6 +4413,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 673951989}
+    - targetCorrespondingSourceObject: {fileID: 8835274119263181597, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 673951994}
   m_SourcePrefab: {fileID: 100100000, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
 --- !u!1 &765272582
 GameObject:
@@ -7190,7 +7220,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 50
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!224 &1209653168
 RectTransform:

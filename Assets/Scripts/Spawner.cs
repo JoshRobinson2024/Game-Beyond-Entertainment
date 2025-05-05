@@ -52,6 +52,8 @@ public class Spawner : MonoBehaviour
     public RotatingLaser rotLaser;
     private int laserAttkSelect;
     public BossAnimatorControl anim;
+    
+    public Vortex Vortex;
 
     // Start is called before the first frame update
     void Start()
@@ -91,7 +93,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(1, 11);
+                attkSelected = Random.Range(11, 12);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
@@ -99,6 +101,9 @@ public class Spawner : MonoBehaviour
                 {
                     switch (attkSelected)
                     {
+                        case 11:
+                            Attk11();
+                            break;
                         case 10:
                             Attk10();
                             break;
@@ -162,11 +167,17 @@ public class Spawner : MonoBehaviour
             wait(); 
         }
     }
-    private void Attk10()
+    private void Attk11()
     {
         attacksDone += 1;
         attkInProgress = true;
         usedAttack = 0;
+        anim.ult();
+        Vortex.spawnVortex();
+    }
+    private void Attk10()
+    {
+        
         anim.wave();
         explosion.lineAttack = false;
         explosion.RandomAttack = false;
