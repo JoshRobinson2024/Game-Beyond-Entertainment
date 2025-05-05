@@ -33,7 +33,7 @@ public class Explode : MonoBehaviour
     {
         Destroy(explosion);
     }
-    public void fire()
+    public void fire()  
     {
         bulletsAmount = Random.Range(5, 10);
     

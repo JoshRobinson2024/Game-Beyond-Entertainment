@@ -22,6 +22,7 @@ public class GuitarDamage : MonoBehaviour
     public TrailRenderer TrailRenderer;
     public GameObject Guitar;
     private bool broken;
+
     private void Start()
     {
         GuitarRespawnPos = Guitar.transform.position;
@@ -87,6 +88,15 @@ public class GuitarDamage : MonoBehaviour
 
             Debug.Log("hit");
             LoseHealth(1);
+            CDamage.heal();
+            JDamage.heal();
+        }
+        else if (Damaging && collision.gameObject.CompareTag("BabyDepression"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
+            Destroy(collision.gameObject);
             CDamage.heal();
             JDamage.heal();
         }

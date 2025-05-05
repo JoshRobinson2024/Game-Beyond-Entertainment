@@ -44,13 +44,13 @@ public class ExplosionLineAttack : MonoBehaviour
             {
                 Vector2 spawnPosition = (Vector2)transform.position + direction * spacing * i;
                 Instantiate(explosionPrefab, spawnPosition, Quaternion.identity);
-                yield return new WaitForSeconds(0.2f); // Delay between explosions
+                yield return new WaitForSeconds(0.5f); // Delay between explosions
             }
             else if (RandomAttack)
             {
                 tpSelected = Random.Range(0, tpPoints.Length);
                 Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(0.1f); // Delay between explosions
+                yield return new WaitForSeconds(0.5f); // Delay between explosions
             }
             else if (FollowAttack)
             {

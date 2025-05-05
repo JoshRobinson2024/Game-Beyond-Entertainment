@@ -25,9 +25,13 @@ public class Bullet : MonoBehaviour
     */
     private void OnEnable()
     {
-        
+
         //Debug.Log("Awake");
+        
+        
         Invoke("Destroy", 5f);
+        
+        
         Invoke("Trail", 0.25f);
         
     }
@@ -43,12 +47,13 @@ public class Bullet : MonoBehaviour
     {
         moveDirection = dir;
     }
-    void Destroy()
+    public void Destroy()
     {
-        
+
         gameObject.SetActive(false);
         trailRenderer.emitting = false;
     }
+    
     private void OnDisable()
     {
         CancelInvoke();

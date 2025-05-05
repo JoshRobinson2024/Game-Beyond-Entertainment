@@ -54,7 +54,7 @@ public class Spray : MonoBehaviour
     public void randomise()
     {
         
-        timeToShoot = Random.Range(0.03f, 0.05f);
+        timeToShoot = Random.Range(0.03f, 0.04f);
         if (Spawner.firstBattle || Spawner.furyMode)
         {
             timeToShoot = Random.Range(0.015f, 0.02f);

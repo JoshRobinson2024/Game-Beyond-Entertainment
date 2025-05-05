@@ -94,6 +94,15 @@ public class ObjectDamage : MonoBehaviour
             GDamage.heal();
             JDamage.heal();
         }
+        else if (Damaging && collision.gameObject.CompareTag("BabyDepression"))
+        {
+
+            Debug.Log("hit");
+            LoseHealth(1);
+            Destroy(collision.gameObject);
+            GDamage.heal();
+            JDamage.heal();
+        }
         if (collision.gameObject.CompareTag("OutOfBounds"))
         {
 

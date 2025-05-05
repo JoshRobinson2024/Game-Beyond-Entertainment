@@ -10,6 +10,8 @@ TagManager:
   - Weapon
   - OutOfBounds
   - BossEnterTrigger
+  - Vortex
+  - BabyDepression
   layers:
   - Default
   - TransparentFX

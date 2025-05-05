@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
 {
@@ -54,14 +55,16 @@ public class Spawner : MonoBehaviour
     public BossAnimatorControl anim;
     
     public Vortex Vortex;
-
+    public GameObject babyDepression;
+    public GameObject[] tpPoints;
+    private int tpSelected;
     // Start is called before the first frame update
     void Start()
     {
         attkInProgress = true;
         Invoke("lockCheck", 0.5f);
-        
-        
+
+        InvokeRepeating("SpawnBabyDepression", 15, 15);
         
         
         
@@ -77,7 +80,11 @@ public class Spawner : MonoBehaviour
             tp();
         }
     }
-    
+    public void SpawnBabyDepression()
+    {
+        tpSelected = Random.Range(0, tpPoints.Length);
+        Instantiate(babyDepression, tpPoints[tpSelected].transform.position, Quaternion.identity);
+    }
     void Update()
     {
 
@@ -93,7 +100,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(11, 12);
+                attkSelected = Random.Range(1, 12);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
@@ -174,16 +181,19 @@ public class Spawner : MonoBehaviour
         usedAttack = 0;
         anim.ult();
         Vortex.spawnVortex();
+        Invoke("wait", 17);
     }
     private void Attk10()
     {
-        
+        attacksDone += 1;
+        attkInProgress = true;
+        usedAttack = 0;
         anim.wave();
         explosion.lineAttack = false;
         explosion.RandomAttack = false;
         explosion.FollowAttack = true;
         explosion.ExecuteExplosionLineAttack();
-        Invoke("wait", 6f);
+        Invoke("wait", 6.5f);
     }
     private void Attk9()
     {
@@ -195,10 +205,10 @@ public class Spawner : MonoBehaviour
         explosion.RandomAttack = true;
         explosion.FollowAttack = false;
         explosion.ExecuteExplosionLineAttack();
-        explosion.Invoke("ExecuteExplosionLineAttack", 2);
-        explosion.Invoke("ExecuteExplosionLineAttack", 4);
+        explosion.Invoke("ExecuteExplosionLineAttack", 2.5f);
+        explosion.Invoke("ExecuteExplosionLineAttack", 4.5f);
 
-        Invoke("wait", 4);
+        Invoke("wait", 5);
     }
     private void Attk8()
     {
@@ -210,10 +220,10 @@ public class Spawner : MonoBehaviour
         explosion.lineAttack = true;
         explosion.FollowAttack = false;
         explosion.ExecuteExplosionLineAttack();
-        explosion.Invoke("ExecuteExplosionLineAttack", 2);
-        explosion.Invoke("ExecuteExplosionLineAttack", 4);
+        explosion.Invoke("ExecuteExplosionLineAttack", 2.5f);
+        explosion.Invoke("ExecuteExplosionLineAttack", 4.5f);
         
-        Invoke("wait", 4);
+        Invoke("wait", 5);
         
     }
     private void Attk7()
@@ -357,14 +367,18 @@ public class Spawner : MonoBehaviour
         rotLaser.laser2.SetActive(false);
         rotLaser.laser3.SetActive(false);
         reuse = Random.Range(0, 2);
-        //if (attkSelected == 1)
-        //{
-        //    usedAttack = 1;
-        //}
-        //else if (reuse == 0)
-        //{
-        //    usedAttack = attkSelected;
-        //}
+        if (attkSelected == 1)
+        {
+            usedAttack = 1;
+        }
+        else if (attkSelected == 11)
+        {
+            usedAttack = 11;
+        }
+        else if (reuse == 0)
+        {
+            usedAttack = attkSelected;
+        }
         attkInProgress = false;
         //Debug.Log(attkInProgress);
     }

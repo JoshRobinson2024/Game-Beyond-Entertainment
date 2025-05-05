@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public static float defense;
     public float currentHealth;
     public float healthToLose;
-    public bool iFrames = false;
+    public static bool damaged;
+    public static bool iFrames = false;
     public GameObject sprite;
     public Camera cam;
     public Image HealthBar;
@@ -96,11 +97,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet"))
+        if (collision.gameObject.name.Equals("Bullet") || collision.gameObject.name.Equals("BabyDepression(Clone)"))
         {
             if (iFrames == false)
             {
                 iFrames = true;
+                damaged = true;
                 currentHealth -= healthToLose;
                 Debug.Log(currentHealth.ToString());
                 Invoke("loseIFrames", 0.67f);
@@ -108,6 +110,15 @@ public class PlayerMovement : MonoBehaviour
                 Invoke("PlayDamageSound", 0.1f);
             }
 
+        }
+        else if (collision.gameObject.name.Equals("Vortex(Clone)"))
+        {
+            iFrames = true;
+            currentHealth = 0;
+            Debug.Log(currentHealth.ToString());
+            Invoke("loseIFrames", 0.67f);
+            HealthBar.fillAmount = currentHealth / maxHealth;
+            Invoke("PlayDamageSound", 0.1f);
         }
         if (collision.gameObject.name.Equals("quiet"))
         {
@@ -213,6 +224,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void loseIFrames()
     {
+        damaged = false;
         iFrames = false;
     }
     public void Death()
@@ -367,7 +379,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 direction = (Vector2)(Vortex.currentVortex.transform.position - player.transform.position);
             float distance = direction.magnitude;
-            Vector2 pull = direction.normalized * 350f;
+            Vector2 pull = direction.normalized * 250f;
             rb.AddForce(pull);
         }
     }
