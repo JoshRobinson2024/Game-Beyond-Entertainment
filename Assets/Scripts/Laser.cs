@@ -355,4 +355,29 @@ public class Laser : MonoBehaviour
         laser8.transform.position = rotator.transform.position;
         laser8.transform.Rotate(0, 0, 360 - rotation8);
     }
+    public void playerTrack9()
+    {
+
+        laser8.transform.position = Player.transform.position;
+        laser8.transform.Rotate(0, 0, rotation8);
+        laser8.SetActive(true);
+        Invoke("laserActivate9", 0.4f);
+    }
+    public void laserActivate9()
+    {
+        LaserSource.PlayOneShot(LaserSound);
+        laser8col.enabled = true;
+        Invoke("laserDeactivate9", 0.7f);
+
+    }
+    public void laserDeactivate9()
+    {
+        laser8col.enabled = false;
+
+        Invoke("reset9", 0.2f);
+    }
+    public void reset9()
+    {
+
+    }
 }

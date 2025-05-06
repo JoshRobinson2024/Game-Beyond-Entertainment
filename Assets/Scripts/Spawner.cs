@@ -23,13 +23,14 @@ public class Spawner : MonoBehaviour
     public int times = 1;
 
 
-
+    public GameObject explosionPrefab;
     public ExplosionLineAttack explosion;
     public AudioClip ShootNoise;
     public AudioSource ShootSource;
     public bool locked;
     private bool attkInProgress = false;
     private int attkSelected;
+    private int rUpAttkSelected;
     public GameObject[] bullets;
     public Fire fire;
     public float waitTime;
@@ -65,10 +66,10 @@ public class Spawner : MonoBehaviour
         attkInProgress = true;
         Invoke("lockCheck", 0.5f);
 
-        InvokeRepeating("SpawnBabyDepression", 15, 30);
+        InvokeRepeating("RampUp", 5, 7);
 
-        phase2 = false;
-        phase3 = false;
+        phase2 = true;
+        phase3 = true;
         furyMode = false;
         
         attacksToteleport = Random.Range(1, 4);
@@ -83,10 +84,38 @@ public class Spawner : MonoBehaviour
             tp();
         }
     }
-    public void SpawnBabyDepression()
+    
+    public void RampUp()
     {
-        tpSelected = Random.Range(0, tpPoints.Length);
-        Instantiate(babyDepression, tpPoints[tpSelected].transform.position, Quaternion.identity);
+        if (phase3 && !furyMode)
+        {
+            rUpAttkSelected = Random.Range(1, 4);
+            tpSelected = Random.Range(0, tpPoints.Length);
+            
+            switch (rUpAttkSelected)
+            {
+                case 3:
+                    tpSelected = Random.Range(0, tpPoints.Length);
+                    Instantiate(babyDepression, tpPoints[tpSelected].transform.position, Quaternion.identity);
+                    break;
+                case 2:
+                    tpSelected = Random.Range(0, tpPoints.Length);
+                    Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
+                    tpSelected = Random.Range(0, tpPoints.Length);
+                    Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
+                    tpSelected = Random.Range(0, tpPoints.Length);
+                    Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
+                    break;
+                case 1:
+                    if (attkSelected != 1 && attkSelected != 6)
+                    {
+                        laser.playerTrack9();
+                        laser.Invoke("playerTrack9", 3);
+                    }
+                    break;
+            }
+        }
+        
     }
     void Update()
     {
