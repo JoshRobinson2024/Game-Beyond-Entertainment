@@ -99,7 +99,7 @@ public class ObjectDamage : MonoBehaviour
 
             Debug.Log("hit");
             LoseHealth(1);
-            Destroy(collision.gameObject);
+            BabyDepressionFollow.dead = true;
             GDamage.heal();
             JDamage.heal();
         }

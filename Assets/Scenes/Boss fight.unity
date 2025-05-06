@@ -3563,8 +3563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss: {fileID: 673951915}
   HealthBar: {fileID: 1679712750}
-  maxHealth: 1000
-  health: 1000
+  maxHealth: 500
+  health: 500
   Agression: 0
   DamageSound: {fileID: 8300000, guid: 9aa68b7ea44581e468c12f73e5128102, type: 3}
   DamageSoundPlayer: {fileID: 673951975}

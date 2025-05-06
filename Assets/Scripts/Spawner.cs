@@ -66,7 +66,7 @@ public class Spawner : MonoBehaviour
         attkInProgress = true;
         Invoke("lockCheck", 0.5f);
 
-        InvokeRepeating("RampUp", 5, 7);
+        InvokeRepeating("RampUp", 5, 20);
 
         phase2 = true;
         phase3 = true;
@@ -89,33 +89,18 @@ public class Spawner : MonoBehaviour
     {
         if (phase3 && !furyMode)
         {
-            rUpAttkSelected = Random.Range(1, 4);
-            tpSelected = Random.Range(0, tpPoints.Length);
             
-            switch (rUpAttkSelected)
-            {
-                case 3:
-                    tpSelected = Random.Range(0, tpPoints.Length);
-                    Instantiate(babyDepression, tpPoints[tpSelected].transform.position, Quaternion.identity);
-                    break;
-                case 2:
-                    tpSelected = Random.Range(0, tpPoints.Length);
-                    Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
-                    tpSelected = Random.Range(0, tpPoints.Length);
-                    Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
-                    tpSelected = Random.Range(0, tpPoints.Length);
-                    Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
-                    break;
-                case 1:
-                    if (attkSelected != 1 && attkSelected != 6)
-                    {
-                        laser.playerTrack9();
-                        laser.Invoke("playerTrack9", 3);
-                    }
-                    break;
-            }
+            tpSelected = Random.Range(0, tpPoints.Length);
+            Instantiate(babyDepression, tpPoints[tpSelected].transform.position, Quaternion.identity);
+
+            
         }
         
+    }
+    public void explode()
+    {
+        tpSelected = Random.Range(0, tpPoints.Length);
+        Instantiate(explosionPrefab, tpPoints[tpSelected].transform.position, Quaternion.identity);
     }
     void Update()
     {
@@ -132,7 +117,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(1, 12);
+                attkSelected = Random.Range(8, 11);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);

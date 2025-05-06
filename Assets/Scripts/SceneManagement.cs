@@ -20,19 +20,14 @@ public class SceneManagement : MonoBehaviour
 
         //remove after boss is done
         
-        PlayerMovement.maxHealth = 100;
+        
         
         fadeAnim.SetBool("FadeOut", false);
     }
     // Update is called once per frame
     void Update()
     {
-        ObjectDamage.Controllerhealth = 2;
-        ObjectDamage.Strength = 3;
-        GuitarDamage.guitarStrength = 2;
-        GuitarDamage.Guitarhealth = 3;
-        JournalDamage.Journalhealth = 4;
-        JournalDamage.journalStrength = 1;
+        
     }
     public void FadeOut()
     {

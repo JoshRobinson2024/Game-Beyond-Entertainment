@@ -378,6 +378,7 @@ public class Laser : MonoBehaviour
     }
     public void reset9()
     {
-
+        laser8.transform.position = rotator.transform.position;
+        laser8.transform.Rotate(0, 0, 360 - rotation8);
     }
 }

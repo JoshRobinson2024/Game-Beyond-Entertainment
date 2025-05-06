@@ -96,7 +96,7 @@ public class GuitarDamage : MonoBehaviour
 
             Debug.Log("hit");
             LoseHealth(1);
-            Destroy(collision.gameObject);
+            BabyDepressionFollow.dead = true;
             CDamage.heal();
             JDamage.heal();
         }
