@@ -53,17 +53,20 @@ public class BossHealth : MonoBehaviour
         {
             dialogue.phaseChange = true;
             dialogue.startDialogue();
+            Spawner.phase2 = true;
 
         }
-        if (health / maxHealth <= 0.6f && !phase3 && !firstBoss)
+        if (health / maxHealth <= 0.5f && !phase3 && !firstBoss)
         {
             phase3 = true;
             dialogue.startDialogue();
+            Spawner.phase3 = true;
         }
-        if (health / maxHealth <= 0.4f && !dialogue.Final && !firstBoss)
+        if (health / maxHealth <= 0.1f && !dialogue.Final && !firstBoss)
         {
             dialogue.Final = true;
             dialogue.startDialogue();
+            Spawner.furyMode = true;
         }
         if (mov.isDead && !dialogue.Death && !firstBoss)
         {

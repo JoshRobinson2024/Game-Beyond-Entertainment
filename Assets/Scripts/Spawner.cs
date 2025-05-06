@@ -66,8 +66,10 @@ public class Spawner : MonoBehaviour
         Invoke("lockCheck", 0.5f);
 
         InvokeRepeating("SpawnBabyDepression", 15, 30);
-        phase2 = true;
-        
+
+        phase2 = false;
+        phase3 = false;
+        furyMode = false;
         
         attacksToteleport = Random.Range(1, 4);
        
