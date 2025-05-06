@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
+
 public class PlayerMovement : MonoBehaviour
 {
     //I recommend 7 for the move speed, and 1.2 for the force damping
@@ -154,9 +154,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.name.Equals("FirstBossEnterTrigger"))
         {
+            sceneManagement.FadeOut();
             sceneManagement.Invoke("LoadFirstBoss", 3f);
             sceneManagement.BossStart();
-            sceneManagement.FadeOut();
+            
         }
         if (collision.gameObject.name.Equals("centreTeleportDenial"))
         {
@@ -246,9 +247,13 @@ public class PlayerMovement : MonoBehaviour
         if (firstLoss)
         {
             sceneManagement.LoadTutorial();
+            InteractionCooldown.friendCoolDown = 1;
+            InteractionCooldown.journalCoolDown = 2;
+            InteractionCooldown.motherCoolDown = 3;
         }
         else
         {
+            InteractionCooldown.reduceCooldown();
             sceneManagement.LoadDeathScreen();
             WillGaining.calculateDisplay();
         }

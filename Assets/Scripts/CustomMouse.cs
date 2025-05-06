@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 public class CustomMouse : MonoBehaviour
 {
     [SerializeField] private Texture2D clickedTexture;

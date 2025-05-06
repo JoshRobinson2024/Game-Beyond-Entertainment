@@ -109,8 +109,8 @@ public class SceneManagement : MonoBehaviour
         Spawner.firstBattle = true;
         PlayerMovement.defense = 0;
         ObjectDamage.Controllerhealth = 2;
-        ObjectDamage.Strength = 300;
-        GuitarDamage.guitarStrength = 300;
+        ObjectDamage.Strength = 3;
+        GuitarDamage.guitarStrength = 2;
         GuitarDamage.Guitarhealth = 3;
         JournalDamage.Journalhealth = 4;
         JournalDamage.journalStrength = 1;
@@ -123,5 +123,14 @@ public class SceneManagement : MonoBehaviour
         Costs.DoubleJournalHealthCost = 2;
         Costs.HealthAndDefenseCost = 5;
         SceneManager.LoadScene("FirstBoss");
+    }
+    public void LoadStat()
+    {
+        FadeOut();
+        Invoke("DelayedLoadStat", 1);
+    }
+    public void DelayedLoadStat()
+    {
+        SceneManager.LoadScene("Stat");
     }
 }
