@@ -120,6 +120,15 @@ public class PlayerMovement : MonoBehaviour
             HealthBar.fillAmount = currentHealth / maxHealth;
             Invoke("PlayDamageSound", 0.1f);
         }
+        else if (collision.gameObject.name.Equals("laser"))
+        {
+            iFrames = true;
+            currentHealth -= 12;
+            Debug.Log(currentHealth.ToString());
+            Invoke("loseIFrames", 0.67f);
+            HealthBar.fillAmount = currentHealth / maxHealth;
+            Invoke("PlayDamageSound", 0.1f);
+        }
         if (collision.gameObject.name.Equals("quiet"))
         {
             BossSound.volume = 0.5f;
@@ -229,6 +238,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Death()
     {
+
         InteractionSelectDialogueController.changeLine = true;
         if (firstLoss)
         {
@@ -246,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (currentHealth <= 0)
         {
+            CustomMouse.aiming = false;
             playerCol.enabled = false;
             Debug.Log("death...");
             HitPlayer.enabled = false;

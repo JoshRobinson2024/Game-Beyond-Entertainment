@@ -68,8 +68,8 @@ public class Spawner : MonoBehaviour
 
         InvokeRepeating("RampUp", 5, 20);
 
-        phase2 = true;
-        phase3 = true;
+        phase2 = false;
+        phase3 = false;
         furyMode = false;
         
         attacksToteleport = Random.Range(1, 4);
@@ -117,7 +117,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(8, 11);
+                attkSelected = Random.Range(1, 12);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);

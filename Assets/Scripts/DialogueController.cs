@@ -193,6 +193,7 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        textComponent.text = string.Empty;
         if (lines[index] == checkA)
         {
             Text.text = lines[index - 1];

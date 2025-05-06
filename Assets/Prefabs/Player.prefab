@@ -217,7 +217,6 @@ MonoBehaviour:
   dashCooldown: 1
   currentHealth: 0
   healthToLose: 0
-  iFrames: 0
   sprite: {fileID: 0}
   cam: {fileID: 0}
   HealthBar: {fileID: 0}
@@ -225,6 +224,9 @@ MonoBehaviour:
   sceneManagement: {fileID: 0}
   isDead: 0
   playerCol: {fileID: 0}
+  player: {fileID: 0}
+  blackHole: {fileID: 0}
+  pullForce: 1
   centreDisabled: 0
   tp1Disabled: 0
   tp2Disabled: 0

@@ -109,8 +109,8 @@ public class SceneManagement : MonoBehaviour
         Spawner.firstBattle = true;
         PlayerMovement.defense = 0;
         ObjectDamage.Controllerhealth = 2;
-        ObjectDamage.Strength = 3;
-        GuitarDamage.guitarStrength = 2;
+        ObjectDamage.Strength = 300;
+        GuitarDamage.guitarStrength = 300;
         GuitarDamage.Guitarhealth = 3;
         JournalDamage.Journalhealth = 4;
         JournalDamage.journalStrength = 1;
