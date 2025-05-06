@@ -16,7 +16,7 @@ public class AnimatedCursor : MonoBehaviour
 
     public void Animate()
     {
-        cursorHotspot = new Vector2(cursorFrames[0].width / 2, cursorFrames[0].height / 2);
+        cursorHotspot = new Vector2(16, 16);
         timer += Time.deltaTime;
         if (timer >= frameRate)
         {

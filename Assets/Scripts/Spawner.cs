@@ -58,14 +58,15 @@ public class Spawner : MonoBehaviour
     public GameObject babyDepression;
     public GameObject[] tpPoints;
     private int tpSelected;
+    
     // Start is called before the first frame update
     void Start()
     {
         attkInProgress = true;
         Invoke("lockCheck", 0.5f);
 
-        InvokeRepeating("SpawnBabyDepression", 15, 15);
-        
+        InvokeRepeating("SpawnBabyDepression", 15, 30);
+        phase2 = true;
         
         
         attacksToteleport = Random.Range(1, 4);
@@ -176,54 +177,70 @@ public class Spawner : MonoBehaviour
     }
     private void Attk11()
     {
-        attacksDone += 1;
-        attkInProgress = true;
-        usedAttack = 0;
-        anim.ult();
-        Vortex.spawnVortex();
-        Invoke("wait", 17);
+        if (phase2||phase3||furyMode)
+        {
+            attacksDone += 1;
+            attkInProgress = true;
+            usedAttack = 0;
+            anim.ult();
+            Vortex.spawnVortex();
+            Invoke("wait", 17);
+        }
+        
     }
     private void Attk10()
     {
-        attacksDone += 1;
-        attkInProgress = true;
-        usedAttack = 0;
-        anim.wave();
-        explosion.lineAttack = false;
-        explosion.RandomAttack = false;
-        explosion.FollowAttack = true;
-        explosion.ExecuteExplosionLineAttack();
-        Invoke("wait", 6.5f);
+        if (phase2 || phase3 || furyMode)
+        {
+            attacksDone += 1;
+            attkInProgress = true;
+            usedAttack = 0;
+            anim.wave();
+            explosion.lineAttack = false;
+            explosion.RandomAttack = false;
+            explosion.FollowAttack = true;
+            explosion.ExecuteExplosionLineAttack();
+            Invoke("wait", 6.5f);
+        }
+            
     }
     private void Attk9()
     {
-        attacksDone += 1;
-        attkInProgress = true;
-        usedAttack = 0;
-        anim.wave();
-        explosion.lineAttack = false;
-        explosion.RandomAttack = true;
-        explosion.FollowAttack = false;
-        explosion.ExecuteExplosionLineAttack();
-        explosion.Invoke("ExecuteExplosionLineAttack", 2.5f);
-        explosion.Invoke("ExecuteExplosionLineAttack", 4.5f);
+        if (phase2 || phase3 || furyMode)
+        {
+            attacksDone += 1;
+            attkInProgress = true;
+            usedAttack = 0;
+            anim.wave();
+            explosion.lineAttack = false;
+            explosion.RandomAttack = true;
+            explosion.FollowAttack = false;
+            explosion.ExecuteExplosionLineAttack();
+            explosion.Invoke("ExecuteExplosionLineAttack", 3f);
+            explosion.Invoke("ExecuteExplosionLineAttack", 6f);
 
-        Invoke("wait", 5);
+            Invoke("wait", 8);
+        }
+        
     }
     private void Attk8()
     {
-        attacksDone += 1;
-        attkInProgress = true;
-        usedAttack = 0;
-        anim.wave();
-        explosion.RandomAttack = false;
-        explosion.lineAttack = true;
-        explosion.FollowAttack = false;
-        explosion.ExecuteExplosionLineAttack();
-        explosion.Invoke("ExecuteExplosionLineAttack", 2.5f);
-        explosion.Invoke("ExecuteExplosionLineAttack", 4.5f);
-        
-        Invoke("wait", 5);
+        if (phase2 || phase3 || furyMode)
+        {
+            attacksDone += 1;
+            attkInProgress = true;
+            usedAttack = 0;
+            anim.wave();
+            explosion.RandomAttack = false;
+            explosion.lineAttack = true;
+            explosion.FollowAttack = false;
+            explosion.ExecuteExplosionLineAttack();
+            explosion.Invoke("ExecuteExplosionLineAttack", 2.5f);
+            explosion.Invoke("ExecuteExplosionLineAttack", 4.5f);
+
+            Invoke("wait", 5);
+        }
+            
         
     }
     private void Attk7()
