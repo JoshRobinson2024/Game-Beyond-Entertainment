@@ -247,6 +247,55 @@ MonoBehaviour:
   DeathSFX: {fileID: 0}
   DeathSFXPlayer: {fileID: 0}
   locked: 0
+  playerCOntrols:
+    m_Name: Player C Ontrols
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9f850a01-8156-4a50-8717-263a28881a30
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Movement
+      m_Id: aa7ba28a-8b42-4671-9f0b-757c10fc9c95
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player C Ontrols
+      m_Flags: 4
+    - m_Name: up
+      m_Id: eaf8d41c-2b18-45a4-a52b-7aadb9b746bc
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player C Ontrols
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 9701d3a3-7170-451c-98fd-7574d5928cf4
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player C Ontrols
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 6308fc95-93ea-449d-9f1d-4097068aac5d
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player C Ontrols
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 2c6f39bb-4ad5-4acd-af94-638fda91bc5d
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player C Ontrols
+      m_Flags: 8
+    m_Flags: 0
 --- !u!114 &244754639396281096
 MonoBehaviour:
   m_ObjectHideFlags: 0

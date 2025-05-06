@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     //I recommend 7 for the move speed, and 1.2 for the force damping
@@ -57,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource DeathSFXPlayer;
 
     public bool locked;
+    
+    
     private void Start()
     {
         playerCol.enabled = true;
@@ -274,6 +277,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isDead && !locked)
         {
             PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+
             if (TutorialDialogueController.movedCheck && ObjectGrab.grabbed)
             {
                 TutorialDialogueController.moved = true;
@@ -297,7 +301,7 @@ public class PlayerMovement : MonoBehaviour
                     TutorialDialogueController.dashed = true;
                 }
                 Debug.Log("Dashhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
-                
+
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 iFrames = true;
