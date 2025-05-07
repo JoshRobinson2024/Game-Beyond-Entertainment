@@ -87,11 +87,13 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadCorridor()
     {
+        Transition.PlayOneShot(transitionClip);
         FadeOut();
-        Invoke("DelayedLoadCorridor", 2);
+        Invoke("DelayedLoadCorridor", 4);
     }
     public void DelayedLoadCorridor()
     {
+        
         SceneManager.LoadScene("Corridor");
     }
     public void LoadFriend()

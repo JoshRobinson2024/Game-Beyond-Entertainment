@@ -153,8 +153,8 @@ public class Costs : MonoBehaviour
         }
         else
         {
-            will2.enabled = false;
-            GuitarHealthCostText.enabled= false;
+            will2.enabled = true;
+            GuitarHealthCostText.enabled= true;
             GuitarHealthMaxText.enabled = false;
             GuitarhealthNotEnoughText.enabled = false;
             guitarHealthButton.enabled = true;

@@ -21,6 +21,13 @@ public class Fire : MonoBehaviour
 
     public AudioClip ShootNoise;
     public AudioSource ShootSource;
+    private void Update()
+    {
+        if (BossHealth.victory)
+        {
+            CancelInvoke("FireBul");
+        }
+    }
     public void FireBul()
     {
         if (Spawner.furyMode)

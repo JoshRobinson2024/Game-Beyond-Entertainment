@@ -388,17 +388,21 @@ public class Spawner : MonoBehaviour
     }
     private void Reset()
     {
-        laser.laser1.SetActive(false);
-        laser.laser2.SetActive(false);
-        laser.laser3.SetActive(false);
-        laser.laser4.SetActive(false);
-        laser.laser5.SetActive(false);
-        laser.laser6.SetActive(false);
-        laser.laser7.SetActive(false);
-        laser.laser8.SetActive(false);
-        rotLaser.laser1.SetActive(false);
-        rotLaser.laser2.SetActive(false);
-        rotLaser.laser3.SetActive(false);
+        if (!BossHealth.victory)
+        {
+            laser.laser1.SetActive(false);
+            laser.laser2.SetActive(false);
+            laser.laser3.SetActive(false);
+            laser.laser4.SetActive(false);
+            laser.laser5.SetActive(false);
+            laser.laser6.SetActive(false);
+            laser.laser7.SetActive(false);
+            laser.laser8.SetActive(false);
+            rotLaser.laser1.SetActive(false);
+            rotLaser.laser2.SetActive(false);
+            rotLaser.laser3.SetActive(false);
+        }
+        
         reuse = Random.Range(0, 2);
         if (attkSelected == 1)
         {

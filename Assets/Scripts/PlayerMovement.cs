@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet") || collision.gameObject.name.Equals("BabyDepression(Clone)")&& !BossHealth.victory)
+        if (collision.gameObject.name.Equals("Bullet") && !BossHealth.victory || collision.gameObject.name.Equals("BabyDepression(Clone)")&& !BossHealth.victory)
         {
             if (iFrames == false)
             {
@@ -395,7 +395,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Moving", true);
         }
-        if (Vortex.suction)
+        if (Vortex.suction && !BossHealth.victory)
         {
             Vector2 direction = (Vector2)(Vortex.currentVortex.transform.position - player.transform.position);
             float distance = direction.magnitude;

@@ -36,6 +36,17 @@ public class Vortex : MonoBehaviour
         whichAttack = Random.Range(0, 4);
         
     }
+    private void Update()
+    {
+        if (BossHealth.victory)
+        {
+            endSuction();
+            CancelInvoke("FireSpray");
+            CancelInvoke("FireSpiral");
+            CancelInvoke("FireMultiRing");
+            CancelInvoke("FireRandomRing");
+        }
+    }
     public void beginSuction()
     {
         suction = true;
@@ -70,9 +81,13 @@ public class Vortex : MonoBehaviour
         VortexSource.Stop();
         fadeOut = true;
         suction = false;
-        FireBul();
-        Invoke("FireBul", 0.07f);
-        Invoke("FireBul", 0.14f);
+        if(!BossHealth.victory)
+        {
+            FireBul();
+            Invoke("FireBul", 0.07f);
+            Invoke("FireBul", 0.14f);
+        }
+        
     }
     public void stopSpraying()
     {

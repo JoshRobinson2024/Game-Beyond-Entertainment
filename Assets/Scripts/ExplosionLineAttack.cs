@@ -19,7 +19,13 @@ public class ExplosionLineAttack : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
+    private void Update()
+    {
+        if (BossHealth.victory)
+        {
+            StopAllCoroutines();
+        }
+    }
     public void ExecuteExplosionLineAttack()
     {
         if (player == null) return;

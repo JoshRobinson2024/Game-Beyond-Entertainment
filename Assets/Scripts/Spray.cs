@@ -14,6 +14,13 @@ public class Spray : MonoBehaviour
     public AudioSource ShootSource;
     // Start is called before the first frame update
 
+    private void Update()
+    {
+        if (BossHealth.victory)
+        {
+            CancelInvoke("FireSpray");
+        }
+    }
     private void FireSpray()
     {
 

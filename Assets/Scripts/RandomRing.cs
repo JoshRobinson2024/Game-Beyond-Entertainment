@@ -12,6 +12,13 @@ public class RandomRing : MonoBehaviour
     private float angle = 0;
     public AudioClip ShootNoise;
     public AudioSource ShootSource;
+    private void Update()
+    {
+        if (BossHealth.victory)
+        {
+            CancelInvoke("FireBul");
+        }
+    }
     public void FireBul()
     {
         if (Spawner.furyMode)
