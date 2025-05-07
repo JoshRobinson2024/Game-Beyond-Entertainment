@@ -29,6 +29,24 @@ public class SceneManagement : MonoBehaviour
     {
         
     }
+    public void loadCredits()
+    {
+        FadeOut();
+        Invoke("DelayedLoadCredits", 1);
+    }
+    public void DelayedLoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void LoadTitle()
+    {
+        FadeOut();
+        Invoke("DelayedLoadTitle", 1);
+    }
+    public void DelayedLoadTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
     public void LoadFirstCorridor()
     {
         FadeOut();

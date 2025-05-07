@@ -2111,7 +2111,7 @@ PrefabInstance:
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: BossMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 1e6e383c08f9c8a4b9da17134daeb87a, type: 3}
+      objectReference: {fileID: 8300000, guid: 8cd231ca1ec4c5b46829c38c3298e0e8, type: 3}
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: BossSound
       value: 
@@ -9594,7 +9594,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1e6e383c08f9c8a4b9da17134daeb87a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8cd231ca1ec4c5b46829c38c3298e0e8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.9
   m_Pitch: 1
