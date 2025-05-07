@@ -28,5 +28,11 @@ public class BossAnimatorControl : MonoBehaviour
     {
         anim.SetBool("Ult", false);
     }
-
+    private void Update()
+    {
+        if (BossHealth.victory)
+        {
+            anim.SetBool("Dead", true);
+        }
+    }
 }

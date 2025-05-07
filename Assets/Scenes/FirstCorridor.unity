@@ -4532,6 +4532,7 @@ MonoBehaviour:
   WinThemeCLip: {fileID: 0}
   dialogue: {fileID: 0}
   mov: {fileID: 0}
+  spawner: {fileID: 0}
   phase3: 0
   firstBoss: 0
 --- !u!114 &673951941 stripped

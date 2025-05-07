@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet") || collision.gameObject.name.Equals("BabyDepression(Clone)"))
+        if (collision.gameObject.name.Equals("Bullet") || collision.gameObject.name.Equals("BabyDepression(Clone)")&& !BossHealth.victory)
         {
             if (iFrames == false)
             {
@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        else if (collision.gameObject.name.Equals("Vortex(Clone)"))
+        else if (collision.gameObject.name.Equals("Vortex(Clone)")&&!BossHealth.victory)
         {
             iFrames = true;
             currentHealth = 0;
@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
             HealthBar.fillAmount = currentHealth / maxHealth;
             Invoke("PlayDamageSound", 0.1f);
         }
-        else if (collision.gameObject.name.Equals("laser"))
+        else if (collision.gameObject.name.Equals("laser") && !BossHealth.victory)
         {
             iFrames = true;
             currentHealth -= 12;
@@ -262,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !BossHealth.victory)
         {
             CustomMouse.aiming = false;
             playerCol.enabled = false;

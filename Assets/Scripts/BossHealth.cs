@@ -14,10 +14,13 @@ public class BossHealth : MonoBehaviour
     public AudioSource DamageSoundPlayer;
     public AudioSource WinTheme;
     public AudioClip WinThemeCLip;
+    
     public DialogueController dialogue;
     public PlayerMovement mov;
+    public Spawner spawner;
     public bool phase3;
     public bool firstBoss;
+    public static bool victory = false;
     void Start()
     {
         if (!firstBoss) 
@@ -35,7 +38,15 @@ public class BossHealth : MonoBehaviour
         }
         
     }
-
+    public void victorySequence()
+    {
+        if (!victory)
+        {
+            victory = true;
+            mov.BossSound.Stop();
+            WinTheme.PlayOneShot(WinThemeCLip);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -47,8 +58,8 @@ public class BossHealth : MonoBehaviour
             }
             else 
             {
-                
-                WinTheme.PlayOneShot(WinThemeCLip);
+                spawner.enabled = false;
+                victorySequence();
             }
             
         }
