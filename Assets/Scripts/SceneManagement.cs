@@ -29,6 +29,16 @@ public class SceneManagement : MonoBehaviour
     {
         
     }
+    public void LoadFirstCorridor()
+    {
+        FadeOut();
+        Invoke("DelayedLoadFirstCorridor", 4);
+        Transition.PlayOneShot(transitionClip);
+    }
+    public void DelayedLoadFirstCorridor()
+    {
+        SceneManager.LoadScene("FirstCorridor");
+    }
     public void FadeOut()
     {
         fadeAnim.SetBool("FadeOut", true);
@@ -132,5 +142,9 @@ public class SceneManagement : MonoBehaviour
     public void DelayedLoadStat()
     {
         SceneManager.LoadScene("Stat");
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

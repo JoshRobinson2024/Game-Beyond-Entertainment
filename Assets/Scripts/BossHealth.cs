@@ -45,12 +45,13 @@ public class BossHealth : MonoBehaviour
             victory = true;
             mov.BossSound.Stop();
             WinTheme.PlayOneShot(WinThemeCLip);
+            
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !mov.isDead)
         {
             if (firstBoss)
             {
@@ -91,11 +92,15 @@ public class BossHealth : MonoBehaviour
     }
     public void damage(int strength)
     {
-        Debug.Log("Lose health");
-        health -= strength;
-        HealthBar.fillAmount = health / maxHealth;
-        Agression += 1;
-        DamageSoundPlayer.PlayOneShot(DamageSound);
+        if (!mov.isDead)
+        {
+            Debug.Log("Lose health");
+            health -= strength;
+            HealthBar.fillAmount = health / maxHealth;
+            Agression += 1;
+            DamageSoundPlayer.PlayOneShot(DamageSound);
+        }
+        
     }
     
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class Explode : MonoBehaviour
 {
+    public bool white;
     private int bulletsAmount;
     private float startAngle;
     private float endAngle;
     public Collider2D hitbox;
     public GameObject explosion;
-    public Spawner spawner;
+    
     public AudioSource exploSource;
     public AudioClip exploClip;
     private void OnEnable()
@@ -20,13 +21,21 @@ public class Explode : MonoBehaviour
     public void HitboxEnable()
     {
         exploSource.PlayOneShot(exploClip);
-        fire();
-        hitbox.enabled = true;
+        if (!white)
+        {
+            fire();
+            hitbox.enabled = true;
+        }
+        
         Invoke("HitboxDisable", 0.1f);
     }
     public void HitboxDisable()
     {
-        hitbox.enabled = false;
+        if (!white)
+        {
+            hitbox.enabled = false;
+        }
+        
         Invoke("End", 0.4f);
     }
     public void End()
