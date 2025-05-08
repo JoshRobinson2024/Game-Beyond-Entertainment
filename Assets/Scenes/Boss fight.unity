@@ -4870,6 +4870,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
+      propertyPath: DarkBullet
+      value: 
+      objectReference: {fileID: 1955669257165685175, guid: 05cbbf04a82a499489f658a6cb07c749, type: 3}
+    - target: {fileID: 6683858716733289835, guid: 2854107a609d0db48bcb522ff2fa905b, type: 3}
       propertyPath: ShootNoise
       value: 
       objectReference: {fileID: 8300000, guid: 0f72a9357386f3b4ba24d2de5d75026d, type: 3}
@@ -8470,6 +8474,7 @@ MonoBehaviour:
   fadeAnim: {fileID: 275948842}
   transforming1: 0
   transforming2: 0
+  backToTitle: 0
 --- !u!114 &1209653172
 MonoBehaviour:
   m_ObjectHideFlags: 0
