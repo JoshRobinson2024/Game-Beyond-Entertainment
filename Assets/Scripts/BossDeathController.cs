@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR;
 
 public class BossDeathController : MonoBehaviour
@@ -48,7 +49,11 @@ public class BossDeathController : MonoBehaviour
     public void FadeOut2()
     {
         Fade2.SetActive(true);
-
+        Invoke("ChangeScene", 1);
+    }
+    private void ChangeScene()
+    {
+        SceneManager.LoadScene("Kintsugi");
     }
     public void explode()
     {
