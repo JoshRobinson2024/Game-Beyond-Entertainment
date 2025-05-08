@@ -1202,6 +1202,8 @@ MonoBehaviour:
   transitionClip: {fileID: 8300000, guid: e291a1c8b2d1fc34cbf58c55cf6f5df9, type: 3}
   anim: {fileID: 0}
   fadeAnim: {fileID: 1601298148}
+  transforming1: 0
+  transforming2: 0
 --- !u!114 &1207976533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,7 +2527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bailey Madigan Hennesy
+  m_text: Bailey Madigan Hennessy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2fd88f35e7e797a4e82b59044bd3009b, type: 2}
   m_sharedMaterial: {fileID: -6939029272229402201, guid: 2fd88f35e7e797a4e82b59044bd3009b, type: 2}

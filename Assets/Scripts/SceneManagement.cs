@@ -35,6 +35,10 @@ public class SceneManagement : MonoBehaviour
 
         fadeAnim.SetBool("FadeOut", false);
     }
+    public void LoadThanks()
+    {
+        SceneManager.LoadScene("Thanks");
+    }
     public void LoadTransform1()
     {
         FadeOut();
@@ -42,7 +46,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void DelayedLoad1()
     {
-        SceneManager.LoadScene("Transform1");
+        SceneManager.LoadScene("Transform 1");
     }
     public void goToNext()
     {
@@ -167,12 +171,14 @@ public class SceneManagement : MonoBehaviour
         Spawner.firstBattle = true;
         PlayerMovement.defense = 0;
         ObjectDamage.Controllerhealth = 2;
-        ObjectDamage.Strength = 300;
-        GuitarDamage.guitarStrength = 200;
+        ObjectDamage.Strength = 3;
+        GuitarDamage.guitarStrength = 2;
         GuitarDamage.Guitarhealth = 3;
         JournalDamage.Journalhealth = 4;
-        JournalDamage.journalStrength = 100;
+        JournalDamage.journalStrength = 1;
         Costs.GamesCost = 1;
+        
+
         Costs.GuitarCost = 1;
         Costs.JournalCost = 1;
         Costs.ControllerHealthCost = 1;

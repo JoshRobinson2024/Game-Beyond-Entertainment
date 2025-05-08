@@ -56,5 +56,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalCorridor.unity
     guid: c9a42ae2a3970d24cb2951735c39ffab
+  - enabled: 1
+    path: Assets/Scenes/Thanks.unity
+    guid: a9870243dc088734a91992d1b4c6f2fb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2b93a0b088a90ea4184e8945c16a00a0, type: 2}

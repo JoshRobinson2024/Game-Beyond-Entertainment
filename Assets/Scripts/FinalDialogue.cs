@@ -16,6 +16,7 @@ public class FinalDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerMovement.maxHealth = 20;
         arrow.SetActive(false);
         mov.locked = true;
         textComponent.text = string.Empty;

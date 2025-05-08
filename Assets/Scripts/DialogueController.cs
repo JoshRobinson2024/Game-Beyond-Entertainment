@@ -42,6 +42,7 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerMovement.maxHealth = 20;
         phaseChange = false;
         Death = false;
         Final = false;

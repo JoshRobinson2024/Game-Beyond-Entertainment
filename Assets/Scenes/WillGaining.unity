@@ -1354,7 +1354,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &1683471338
 RectTransform:
@@ -1416,6 +1416,8 @@ MonoBehaviour:
   transitionClip: {fileID: 0}
   anim: {fileID: 0}
   fadeAnim: {fileID: 762345354}
+  transforming1: 0
+  transforming2: 0
 --- !u!82 &1683471341
 AudioSource:
   m_ObjectHideFlags: 0

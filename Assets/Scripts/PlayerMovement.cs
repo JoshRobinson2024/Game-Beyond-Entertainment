@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         BossSound.pitch = 1;
         BossSound.reverbZoneMix = 1;
     }
-    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Bullet") && !BossHealth.victory || collision.gameObject.name.Equals("BabyDepression(Clone)")&& !BossHealth.victory)
         {
@@ -118,6 +118,10 @@ public class PlayerMovement : MonoBehaviour
         else if (collision.gameObject.name.Equals("Kintsugi"))
         {
             sceneManagement.LoadTransform1();
+        }
+        else if (collision.gameObject.name.Equals("Credits trigger"))
+        {
+            SceneManagement.LoadThanks();
         }
         else if (collision.gameObject.name.Equals("Vortex(Clone)")&&!BossHealth.victory)
         {
