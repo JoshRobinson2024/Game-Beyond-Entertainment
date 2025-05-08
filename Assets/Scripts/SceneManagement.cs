@@ -11,18 +11,46 @@ public class SceneManagement : MonoBehaviour
     public AudioClip transitionClip;
     public Animator anim;
     public Animator fadeAnim;
-
+    
+    public bool transforming1;
+    public bool transforming2;
     
 
     // Start is called before the first frame update
     void Start()
     {
 
-        //remove after boss is done
-        
-        
-        
+        if (transforming1)
+        {
+            Invoke("FadeOut", 2);
+            Invoke("goToNext", 4);
+        }
+
+        if (transforming2)
+        {
+            Invoke("FadeOut", 2);
+            Invoke("goToNext2", 4);
+        }
+
+
         fadeAnim.SetBool("FadeOut", false);
+    }
+    public void LoadTransform1()
+    {
+        FadeOut();
+        Invoke("DelayedLoad1", 2);
+    }
+    public void DelayedLoad1()
+    {
+        SceneManager.LoadScene("Transform1");
+    }
+    public void goToNext()
+    {
+        SceneManager.LoadScene("Transform 2");
+    }
+    public void goToNext2()
+    {
+        SceneManager.LoadScene("FinalCorridor");
     }
     // Update is called once per frame
     void Update()

@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public bool tp8Disabled = false;
 
     Animator anim;
-
+    
     public GameObject dashRefresh;
     private bool firstDash;
     public bool dash;
@@ -58,10 +58,11 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource DeathSFXPlayer;
 
     public bool locked;
-    
+    public SceneManagement SceneManagement;
     
     private void Start()
     {
+        
         playerCol.enabled = true;
         HitPlayer.enabled = true;
         firstDash = false;
@@ -113,6 +114,10 @@ public class PlayerMovement : MonoBehaviour
                 Invoke("PlayDamageSound", 0.1f);
             }
 
+        }
+        else if (collision.gameObject.name.Equals("Kintsugi"))
+        {
+            sceneManagement.LoadTransform1();
         }
         else if (collision.gameObject.name.Equals("Vortex(Clone)")&&!BossHealth.victory)
         {

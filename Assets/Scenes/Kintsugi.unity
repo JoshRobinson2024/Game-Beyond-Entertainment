@@ -1722,6 +1722,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1594251401}
     - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
+      propertyPath: SceneManagement
+      value: 
+      objectReference: {fileID: 1209653171}
+    - target: {fileID: 5905974419294010419, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: sceneManagement
       value: 
       objectReference: {fileID: 1209653171}
@@ -6727,6 +6731,8 @@ MonoBehaviour:
   transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 0}
   fadeAnim: {fileID: 741248186}
+  transforming1: 0
+  transforming2: 0
 --- !u!114 &1209653172
 MonoBehaviour:
   m_ObjectHideFlags: 0

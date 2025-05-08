@@ -6308,6 +6308,8 @@ MonoBehaviour:
   transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 0}
   fadeAnim: {fileID: 741248186}
+  transforming1: 1
+  transforming2: 0
 --- !u!114 &1209653172
 MonoBehaviour:
   m_ObjectHideFlags: 0
