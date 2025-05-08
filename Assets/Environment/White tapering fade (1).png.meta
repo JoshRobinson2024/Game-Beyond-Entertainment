@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2b4f9b6ed769ee54ca47da93933b0afb
+guid: 0d0d6fe522598af49a0c7258a4319f8f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,91 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: WhiteCorridor_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1600
-        height: 1250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5487e3a94f60be043a0ecc4bac0cb7fa
-      internalID: -1878856736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhiteCorridor_1
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 1600
-        height: 1250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d81c395e05cfb584c9da97f20184536f
-      internalID: -739544331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhiteCorridor_2
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 1600
-        height: 1250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0147b28d817956d4f845e9afeb782acf
-      internalID: -4278203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhiteCorridor_3
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 1600
-        height: 1250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 455e817fd8c76ec46945212660a7fa54
-      internalID: 1691387457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -190,11 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      WhiteCorridor_0: -1878856736
-      WhiteCorridor_1: -739544331
-      WhiteCorridor_2: -4278203
-      WhiteCorridor_3: 1691387457
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
