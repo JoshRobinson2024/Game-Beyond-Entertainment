@@ -9,7 +9,7 @@ public class SceneTransition : MonoBehaviour
     public Animator fademanager;
     private void Start()
     {
-        Invoke("Fadeout", 3);
+        Invoke("Fadeout", 4.5f);
     }
     public void Fadeout()
     {

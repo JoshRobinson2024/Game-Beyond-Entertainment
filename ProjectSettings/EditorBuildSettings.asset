@@ -65,5 +65,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Thanks2.unity
     guid: 1f27a25834e5f944ca90febea0ac6e89
+  - enabled: 1
+    path: Assets/Scenes/Thanks3.unity
+    guid: eece6d507eca07042afaf3a515b77af1
+  - enabled: 1
+    path: Assets/Scenes/Thanks4.unity
+    guid: 559d2b98823887b4297f9287c83e35eb
+  - enabled: 1
+    path: Assets/Scenes/Thanks5.unity
+    guid: 20295de590d58094b9cd10059e8772f2
+  - enabled: 1
+    path: Assets/Scenes/Thanks6.unity
+    guid: 1b411e769d23d8443885ed6d47cfd828
+  - enabled: 1
+    path: Assets/Scenes/Thanks7.unity
+    guid: 8a7d37666fb068543a0babb48ddb1e48
+  - enabled: 1
+    path: Assets/Scenes/Thanks8.unity
+    guid: b55fc1fc4c9c96e449f00d2ab044c4d3
+  - enabled: 1
+    path: Assets/Scenes/Thanks9.unity
+    guid: a0191e40e5058d849aa02e0ad086829b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2b93a0b088a90ea4184e8945c16a00a0, type: 2}

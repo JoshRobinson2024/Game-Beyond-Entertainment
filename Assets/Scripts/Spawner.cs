@@ -59,7 +59,9 @@ public class Spawner : MonoBehaviour
     public GameObject babyDepression;
     public GameObject[] tpPoints;
     private int tpSelected;
-    
+
+    public GameObject DarkBullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,7 +75,8 @@ public class Spawner : MonoBehaviour
         furyMode = false;
         
         attacksToteleport = Random.Range(1, 4);
-       
+
+        
 
     }
 
@@ -117,7 +120,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(1, 12);
+                attkSelected = Random.Range(1, 13);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
@@ -125,6 +128,9 @@ public class Spawner : MonoBehaviour
                 {
                     switch (attkSelected)
                     {
+                        case 12:
+                            Attk12();
+                            break;
                         case 11:
                             Attk11();
                             break;
@@ -190,6 +196,27 @@ public class Spawner : MonoBehaviour
             spiral2off = false;
             wait(); 
         }
+    }
+    private void Attk12()
+    {
+        if (phase2 || phase3 || furyMode)
+        {
+            attacksDone += 1;
+            attkInProgress = true;
+            usedAttack = 0;
+            InvokeRepeating("DarkBulletSpawn", 0, 0.5f);
+            Invoke("wait", 3);
+            Invoke("StopBullets", 3.5f);
+        }
+
+    }
+    public void StopBullets()
+    {
+        CancelInvoke("DarkBulletSpawn");
+    }
+    public void DarkBulletSpawn()
+    {
+        Instantiate(DarkBullet, gameObject.transform.position, Quaternion.identity);
     }
     private void Attk11()
     {

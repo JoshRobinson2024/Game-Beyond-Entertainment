@@ -14,7 +14,7 @@ public class SceneManagement : MonoBehaviour
     
     public bool transforming1;
     public bool transforming2;
-    
+    public bool backToTitle;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void LoadThanks()
     {
-        SceneManager.LoadScene("Thanks");
+        SceneManager.LoadScene("Thanks3");
     }
     public void LoadTransform1()
     {
@@ -91,7 +91,15 @@ public class SceneManagement : MonoBehaviour
     }
     public void FadeOut()
     {
-        fadeAnim.SetBool("FadeOut", true);
+        if (backToTitle)
+        {
+            fadeAnim.enabled = true;
+        }
+        else
+        {
+            fadeAnim.SetBool("FadeOut", true);
+        }
+        
     }
     public void BossStart()
     {
