@@ -63,6 +63,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Parent 2.unity
     guid: c91bb365accc7ab419edc5f4e4a31618
   - enabled: 1
+    path: Assets/Scenes/Parent 3.unity
+    guid: 845b8f0e2bf12044ba2980d0140e2029
+  - enabled: 1
     path: Assets/Scenes/Stat.unity
     guid: f1fe2e379b32d3743a4d6b5209596fc5
   - enabled: 1

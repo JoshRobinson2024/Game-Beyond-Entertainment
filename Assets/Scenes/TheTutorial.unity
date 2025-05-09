@@ -2742,6 +2742,7 @@ MonoBehaviour:
   WinThemeCLip: {fileID: 0}
   dialogue: {fileID: 1209653172}
   mov: {fileID: 1594251386}
+  spawner: {fileID: 0}
   phase3: 0
   firstBoss: 0
 --- !u!114 &673951941 stripped
@@ -6620,6 +6621,9 @@ MonoBehaviour:
   transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 0}
   fadeAnim: {fileID: 741248183}
+  transforming1: 0
+  transforming2: 0
+  backToTitle: 0
 --- !u!114 &1209653172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6810,7 +6814,7 @@ MonoBehaviour:
   - Move... around...
   - Aim... with mouse...
   - Throw... by pressing left click...
-  - Hit Your adversary... to Damage it...
+  - Hit Your adversary... to damage it...
   - Be... careful...
   - Balance... Coping Mechanisms...
   - Every time one is thrown... it loses health...
