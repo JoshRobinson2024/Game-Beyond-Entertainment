@@ -243,11 +243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: damagingColour.b
-      value: 0.61960787
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: damagingColour.g
-      value: 0.61960787
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: damagingColour.r
@@ -3069,7 +3069,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9aa68b7ea44581e468c12f73e5128102, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.632
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4895,11 +4895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: damagingColour.b
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: damagingColour.g
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: damagingColour.r
@@ -5846,11 +5846,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: damagingColour.b
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: damagingColour.g
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: damagingColour.r
@@ -6600,6 +6600,9 @@ MonoBehaviour:
   transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 0}
   fadeAnim: {fileID: 1010830524}
+  transforming1: 0
+  transforming2: 0
+  backToTitle: 0
 --- !u!82 &1209653173
 AudioSource:
   m_ObjectHideFlags: 0

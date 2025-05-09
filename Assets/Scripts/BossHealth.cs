@@ -7,8 +7,8 @@ public class BossHealth : MonoBehaviour
 {
     public GameObject Boss;
     public Image HealthBar;
-    public float maxHealth = 500;
-    public float health = 500;
+    public float maxHealth = 250;
+    public float health = 250;
     public float Agression = 0;
     public AudioClip DamageSound;
     public AudioSource DamageSoundPlayer;
@@ -71,13 +71,13 @@ public class BossHealth : MonoBehaviour
             Spawner.phase2 = true;
 
         }
-        if (health / maxHealth <= 0.25f && !phase3 && !firstBoss)
+        if (health / maxHealth <= 0.4f && !phase3 && !firstBoss)
         {
             phase3 = true;
             dialogue.startDialogue();
             Spawner.phase3 = true;
         }
-        if (health / maxHealth <= 0.1f && !dialogue.Final && !firstBoss)
+        if (health / maxHealth <= 0.2f && !dialogue.Final && !firstBoss)
         {
             dialogue.Final = true;
             dialogue.startDialogue();

@@ -134,12 +134,16 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.name.Equals("laser") && !BossHealth.victory)
         {
-            iFrames = true;
-            currentHealth -= 12;
-            Debug.Log(currentHealth.ToString());
-            Invoke("loseIFrames", 0.67f);
-            HealthBar.fillAmount = currentHealth / maxHealth;
-            Invoke("PlayDamageSound", 0.1f);
+            if (iFrames == false)
+            {
+                iFrames = true;
+                currentHealth -= 12;
+                Debug.Log(currentHealth.ToString());
+                Invoke("loseIFrames", 0.67f);
+                HealthBar.fillAmount = currentHealth / maxHealth;
+                Invoke("PlayDamageSound", 0.1f);
+            }
+            
         }
         if (collision.gameObject.name.Equals("quiet"))
         {

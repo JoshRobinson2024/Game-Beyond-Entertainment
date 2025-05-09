@@ -1366,8 +1366,8 @@ MonoBehaviour:
   - HealthChoice
   - 'Mother: Ok, but He hasn''t been walked today so please do it soon..'
   - 'You: I will...'
-  - 'You: Just let me do it...'
   - 'You: Later...'
+  - 'You: Give me some time...'
   - 'Mother: Ok, Just make sure you walk him today'
   - Exit
   textSpeed: 0.03
