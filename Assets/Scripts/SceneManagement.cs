@@ -15,6 +15,9 @@ public class SceneManagement : MonoBehaviour
     public bool transforming1;
     public bool transforming2;
     public bool backToTitle;
+    public static string friendSceneToLoad;
+    public static string journalSceneToLoad;
+    public static string motherSceneToLoad;
 
     // Start is called before the first frame update
     void Start()
@@ -143,7 +146,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void DelayedLoadFriend()
     {
-        SceneManager.LoadScene("Friend");
+        SceneManager.LoadScene(friendSceneToLoad);
         InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadParents()
@@ -153,7 +156,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void DelayedLoadParents()
     {
-        SceneManager.LoadScene("Parent");
+        SceneManager.LoadScene(motherSceneToLoad);
         InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadJournal()
@@ -163,7 +166,7 @@ public class SceneManagement : MonoBehaviour
     }
     public void DelayedLoadJournal()
     {
-        SceneManager.LoadScene("Journal");
+        SceneManager.LoadScene(journalSceneToLoad);
         InteractionSelectDialogueController.changeLine = false;
     }
     public void LoadTutorial()

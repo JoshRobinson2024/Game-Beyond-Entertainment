@@ -1322,7 +1322,7 @@ MonoBehaviour:
   textComponent: {fileID: 1314087164}
   lines:
   - 'Friend: Hey man, wanna hang out at mine later?'
-  - "Friend: I don\u2019t mind what we do but lmk if ur down."
+  - 'Friend: I dont mind what we do but lmk if ur down.'
   - Choice
   - "Friend: Sounds fun, I\u2019m down"
   - You have fun playing the new Meteorite Prime game.
@@ -2067,6 +2067,9 @@ MonoBehaviour:
   transitionClip: {fileID: 0}
   anim: {fileID: 0}
   fadeAnim: {fileID: 317050772}
+  transforming1: 0
+  transforming2: 0
+  backToTitle: 0
 --- !u!114 &672840872
 MonoBehaviour:
   m_ObjectHideFlags: 0

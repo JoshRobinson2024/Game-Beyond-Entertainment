@@ -33,11 +33,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Friend.unity
     guid: aa4022555da88494dbeb2864e4863501
   - enabled: 1
+    path: Assets/Scenes/Friend 1.unity
+    guid: 6c62d2c5e781bb546a2dbc636a687ab5
+  - enabled: 1
+    path: Assets/Scenes/Friend 2.unity
+    guid: 1c0662559afafae4eb700b38b048185f
+  - enabled: 1
+    path: Assets/Scenes/Friend 3.unity
+    guid: 0c7617bbd034127429662226e94a833f
+  - enabled: 1
     path: Assets/Scenes/Journal.unity
     guid: 6c6d8dbc8d3428f4c9fe37e5c5511eea
   - enabled: 1
+    path: Assets/Scenes/Journal 1.unity
+    guid: d663bb993d377aa48aef66fb5afb8c70
+  - enabled: 1
+    path: Assets/Scenes/Journal 2.unity
+    guid: 291215944e95bc74892fc92220ee905c
+  - enabled: 1
+    path: Assets/Scenes/Journal 3.unity
+    guid: 8118f010240a8c7408e91b5c9a7e91c9
+  - enabled: 1
     path: Assets/Scenes/Parent.unity
     guid: 9c2be0e59d8cd334ca35e69a897ae9fe
+  - enabled: 1
+    path: Assets/Scenes/Parent 1.unity
+    guid: d07384b88f43118438efaf1f04adaaae
+  - enabled: 1
+    path: Assets/Scenes/Parent 2.unity
+    guid: c91bb365accc7ab419edc5f4e4a31618
   - enabled: 1
     path: Assets/Scenes/Stat.unity
     guid: f1fe2e379b32d3743a4d6b5209596fc5

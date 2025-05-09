@@ -1347,28 +1347,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1314087164}
   lines:
-  - 'Mother: Hey Could you please empty the dishwasher for me?'
+  - 'Mother: Hey Could you please put the bins out for me?'
   - Choice
-  - 'Mother: Of course, what''s the matter?'
-  - "You: I\u2019ve been... feeling bad, and I don't know why..."
-  - 'Mother: Why? What''s wrong?'
-  - 'You: I just feel horrible all the time, especially at night...'
+  - 'Mother: Of course, what is it?'
+  - "You: I\u2019ve been kinda struggling with my health lately and I need someone
+    to talk to"
+  - 'Mother: What''s wrong?'
+  - "You: I feel awful every time I close my eyes at night, I am bombarded with harmful
+    thoughts and I don\u2019t know how to deal with them."
   - 'Mother: I see...'
-  - 'You: I feel like I''m worthless and I can''t fight back against these feelings...'
-  - 'Mother: Oh, you''re not worthless at all, you mean so much to me...'
-  - 'Mother: Sometimes we all feel low... but you will always get better if you keep
-    trying'
-  - 'Mother: Don''t ever feel like you can''t do anything...'
-  - 'Mother: When you feel helpless... just know I am here...'
-  - 'Mother: As are your friends...'
-  - 'Mother: We all care about you, and want to help you... Don''t be silent...'
-  - Maybe people do care...
+  - 'Mother: I know what it''s like, I struggled with something very similar at your
+    age...'
+  - 'Mother: I got through it though, by focusing on my hobbies and friends. more
+    than anything'
+  - 'Mother: Make sure you have coping mechanisms, they help a lot more than you
+    might think'
+  - "Mother: Don\u2019t just settle for one though..."
+  - 'Mother: Have a good balance with all of them...'
+  - 'Mother: I care about you a lot and I hope it gets better'
+  - 'Mother: I am always here if you are struggling'
+  - Does she really understand you?
   - HealthChoice
-  - 'Mother: Ok, but please do it soon I need the side clean to cook later...'
-  - 'You: I''ll do it...'
+  - 'Mother: I would appreciate if you did it soon, the lorry arrives later today'
+  - 'You: I''ll get it out on time...'
   - 'You: I''m just...'
-  - 'You: Tired...'
-  - 'Mother: Ok, just make sure you do it soon...'
+  - 'You: Busy...'
+  - 'Mother: Ok, just make sure they go out on time'
   - Exit
   textSpeed: 0.03
   Text: {fileID: 1314087164}
@@ -1930,9 +1934,6 @@ MonoBehaviour:
   transitionClip: {fileID: 0}
   anim: {fileID: 0}
   fadeAnim: {fileID: 896634004}
-  transforming1: 0
-  transforming2: 0
-  backToTitle: 0
 --- !u!114 &672840872
 MonoBehaviour:
   m_ObjectHideFlags: 0
