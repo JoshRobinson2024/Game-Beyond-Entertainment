@@ -12,7 +12,7 @@ public class InteractionSelectDialogueController : MonoBehaviour
 
     public static bool changeLine;
     public static int dayNumber;
-    public int index;
+    public static int index;
     public TMP_Text Text;
     public Canvas house;
     public Canvas school;
@@ -20,6 +20,8 @@ public class InteractionSelectDialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        school.enabled = false;
+        house.enabled = false;
         if (canvasChosen == 0)
         {
             house.enabled = true;
@@ -34,6 +36,7 @@ public class InteractionSelectDialogueController : MonoBehaviour
             SceneManagement.journalSceneToLoad = "Journal 1";
             school.enabled = true;
         }
+        textComponent.text = lines[index];
         randomise();
     }
 
@@ -50,6 +53,7 @@ public class InteractionSelectDialogueController : MonoBehaviour
             if (canvasChosen == 0)
             {
                 house.enabled = true;
+                
                 SceneManagement.friendSceneToLoad = "Friend";
                 SceneManagement.motherSceneToLoad = "Parent";
                 SceneManagement.journalSceneToLoad = "Journal";

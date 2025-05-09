@@ -118,6 +118,7 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("WillGaining");
         InteractionSelectDialogueController.dayNumber++;
+        InteractionSelectDialogueController.changeLine = true;
     }
     public void loadInteractionSelect()
     {
@@ -207,6 +208,7 @@ public class SceneManagement : MonoBehaviour
     public void DelayedLoadStat()
     {
         SceneManager.LoadScene("Stat");
+        InteractionSelectDialogueController.changeLine = false;
     }
     public void Quit()
     {

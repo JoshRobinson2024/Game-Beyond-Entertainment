@@ -1356,18 +1356,19 @@ MonoBehaviour:
   - 'You: And they hurt me and make me feel horrible...'
   - 'You: And I feel like I''m on my own...'
   - 'Mother: I understand...'
-  - 'Mother: There are times we want to be alone, but sometimes we can feel helpless...'
-  - 'Mother: As if no one cares about our pain...'
-  - 'Mother: But people do care, even if you don''t see it...'
-  - 'Mother: I care...'
-  - 'Mother: Please don''t ever forget that I am always here and you are never alone...'
-  - Are you really not alone?
+  - 'Mother: I remember I suffered with something similar when I was young...'
+  - 'Mother: Those voices lie to you, they make you believe you are worthless...'
+  - 'Mother: And they convince you that you are  better alone...'
+  - 'Mother: But nothing could be further from the truth...'
+  - 'Mother: I''m always here for you... and you mean so much to me... and everyone
+    around you.'
+  - Do those voices really lie?
   - HealthChoice
-  - 'Mother: Ok, but don''t forget that we have guests round later...'
-  - 'You: I know...'
-  - 'You: I''ll do it...'
+  - 'Mother: Ok, but He hasn''t been walked today so please do it soon..'
+  - 'You: I will...'
+  - 'You: Just let me do it...'
   - 'You: Later...'
-  - 'Mother: Ok, but please do it soon, we have guests arriving at 5'
+  - 'Mother: Ok, Just make sure you walk him today'
   - Exit
   textSpeed: 0.03
   Text: {fileID: 1314087164}
