@@ -212,11 +212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: damagingColour.b
-      value: 0.61960787
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: damagingColour.g
-      value: 0.61960787
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3613528995779164273, guid: a8ffb0aae2879b34bbc740cadd59b1a2, type: 3}
       propertyPath: damagingColour.r
@@ -4938,11 +4938,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: damagingColour.b
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: damagingColour.g
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5039958398730269054, guid: 3b17ba9ca687c3c45a58567b24b0f91e, type: 3}
       propertyPath: damagingColour.r
@@ -5683,11 +5683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: damagingColour.b
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: damagingColour.g
-      value: 0.6179246
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8135354551119232037, guid: 19c7d8ad625c3d342b1d0907bbca3b1c, type: 3}
       propertyPath: damagingColour.r
@@ -6325,8 +6325,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172783404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6087, y: 2.6087, z: 2.6087}
+  m_LocalPosition: {x: 0, y: 0, z: -0.3257}
+  m_LocalScale: {x: 1.8477944, y: 1.8477944, z: 1.8477944}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1429297442}
@@ -6334,7 +6334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102, y: 267}
+  m_AnchoredPosition: {x: 668.69, y: -374.01}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1186801743
@@ -6549,8 +6549,9 @@ RectTransform:
   - {fileID: 1108955491}
   - {fileID: 1601910811}
   - {fileID: 884658754}
-  - {fileID: 1172783407}
   - {fileID: 1924290026}
+  - {fileID: 1172783407}
+  - {fileID: 1534618666}
   - {fileID: 571515799}
   - {fileID: 2022778479}
   m_Father: {fileID: 0}
@@ -6622,7 +6623,6 @@ MonoBehaviour:
   anim: {fileID: 0}
   fadeAnim: {fileID: 741248183}
   transforming1: 0
-  transforming2: 0
   backToTitle: 0
 --- !u!114 &1209653172
 MonoBehaviour:
@@ -6804,7 +6804,7 @@ MonoBehaviour:
   - You can... fight back...
   - You can dash... by pressing the space bar...
   - The trail... shows you are dashing...
-  - these particles show you... can dash again...
+  - These particles show you... can dash again...
   - While dashing... you can pass through bullets
   - Without... taking damage...
   - Remeber... your coping mechanisms...
@@ -6836,6 +6836,7 @@ MonoBehaviour:
   - Alone...
   textSpeed: 0.03
   Will: {fileID: 1172783404}
+  particles: {fileID: 1534618665}
   shadowVoice: {fileID: 1209653173}
   darkVoice: {fileID: 8300000, guid: e291a1c8b2d1fc34cbf58c55cf6f5df9, type: 3}
   index: 0
@@ -6845,6 +6846,8 @@ MonoBehaviour:
   Journal: {fileID: 634918668}
   SpawnWillImage: But you'll gain will... based on your performance
   DespawnWillImage: Never... give up...
+  spawnParticles: These particles show you... can dash again...
+  DespawnParticles: Remeber... your coping mechanisms...
   spawnController: Remeber... your coping mechanisms...
   spawnObjects: Balance... Coping Mechanisms...
   dash: You can dash... by pressing the space bar...
@@ -7387,6 +7390,81 @@ Transform:
   - {fileID: 1685396768}
   m_Father: {fileID: 673951967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1534618665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534618666}
+  - component: {fileID: 1534618668}
+  - component: {fileID: 1534618667}
+  m_Layer: 5
+  m_Name: Particles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1534618666
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534618665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 2.5869122, y: 1.8477944, z: 1.8477944}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1209653168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 785, y: -374}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1534618667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534618665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0354e4c0c97ded54b8bb2965cdf327e1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1534618668
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534618665}
+  m_CullTransparentMesh: 1
 --- !u!1 &1536457008
 GameObject:
   m_ObjectHideFlags: 0

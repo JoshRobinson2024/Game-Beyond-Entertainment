@@ -12,7 +12,7 @@ public class DarkBullet : MonoBehaviour
     public float moveSpeed = 7f;
     private Vector2 moveDirection;
     public float bulletLife = 7f;
-    
+    public DarkColliderRemove col;
     public TrailRenderer trailRenderer;
     private Vector2 direction;
     public Rigidbody2D rb;
@@ -37,30 +37,27 @@ public class DarkBullet : MonoBehaviour
     {
         x = UnityEngine.Random.Range(-10, 10);
         y = UnityEngine.Random.Range(-10, 10);
-        if(x < 5 && x > -5)
-        {
-            randomise();
-        }
-        else if (y < 5 && y > -5)
-        {
-            randomise();
-        }
-        else
-        {
-            direction = new Vector2(x + 5, y + 5);
+        
+        
+        
+            direction = new Vector2(x, y).normalized;
             //Debug.Log("Awake");
-            rb.AddForce(direction * 100);
-            Invoke("Destroy", 7f);
+            rb.AddForce(direction * 1500);
+            Invoke("Remove", 7f);
 
 
             Invoke("Trail", 0.25f);
-        }
+        
     }
     private void Trail()
     {
         trailRenderer.emitting = true;
     }
-    
+    public void Remove()
+    {
+        col.Remove();
+        Invoke("Destroy", 10);
+    }
     public void Destroy()
     {
 

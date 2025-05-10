@@ -68,9 +68,9 @@ public class Spawner : MonoBehaviour
         attkInProgress = true;
         Invoke("lockCheck", 0.5f);
 
-        InvokeRepeating("RampUp", 5, 20);
+        InvokeRepeating("RampUp", 5, 17);
 
-        phase2 = false;
+        phase2 = true;
         phase3 = false;
         furyMode = false;
         
@@ -120,7 +120,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(1, 13);
+                attkSelected = Random.Range(9, 13);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);

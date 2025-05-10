@@ -14,6 +14,7 @@ public class TutorialDialogueController : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     public GameObject Will;
+    public GameObject particles;
     public AudioSource shadowVoice;
     public AudioClip darkVoice;
     public int index;
@@ -23,6 +24,8 @@ public class TutorialDialogueController : MonoBehaviour
     public GameObject Journal;
     public string SpawnWillImage;
     public string DespawnWillImage;
+    public string spawnParticles;
+    public string DespawnParticles;
     public string spawnController;
     public string spawnObjects;
     public string dash;
@@ -126,6 +129,14 @@ public class TutorialDialogueController : MonoBehaviour
         if (lines[index] == DespawnWillImage)
         {
             Will.SetActive(false);
+        }
+        if (lines[index] == spawnParticles)
+        {
+            particles.SetActive(true);
+        }
+        if (lines[index] == DespawnParticles)
+        {
+            particles.SetActive(false);
         }
         if (lines[index] == dash)
         {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6d6401881ca9634980a7f5f820cd313
+guid: ce80d92cd2378a04b9967fe81c822ffa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_0
+      name: Kintsuigi collect sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000e44a6dd20ece4c87844e0548c7f57
-      internalID: 1991275892
+      spriteID: 7aa6fc15711a6f04a9189421f8a73e81
+      internalID: 231390113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_1
+      name: Kintsuigi collect sheet 1_1
       rect:
         serializedVersion: 2
         x: 160
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bd21e201bc5c7543a2549c161f0f0d3
-      internalID: -863042715
+      spriteID: 7a999e2e7a8199344a40fc47a3417f6e
+      internalID: -332252846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_2
+      name: Kintsuigi collect sheet 1_2
       rect:
         serializedVersion: 2
         x: 320
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aedf917a442321149a397e22cc645048
-      internalID: 1036172119
+      spriteID: e77c3758541a7dc4d9812dd02103eb1a
+      internalID: -1953104128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_3
+      name: Kintsuigi collect sheet 1_3
       rect:
         serializedVersion: 2
         x: 480
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2495c28c0a0a96408ca8322a31be792
-      internalID: 1506299600
+      spriteID: 0dd7b9aed6d1cb64792986d29a11afc4
+      internalID: 628663007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_4
+      name: Kintsuigi collect sheet 1_4
       rect:
         serializedVersion: 2
         x: 640
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbeee6f5d1b117c49b574779610b7809
-      internalID: 13536770
+      spriteID: 757dcacd82898c344bcc8f1f6bf02262
+      internalID: -938130047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_5
+      name: Kintsuigi collect sheet 1_5
       rect:
         serializedVersion: 2
         x: 800
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa9169dcc8ca0ef4fa948eb915b33606
-      internalID: -481221772
+      spriteID: dfa8719f015dd3b4696606900beddff0
+      internalID: 1587013751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kintsuigi collect sheet_6
+      name: Kintsuigi collect sheet 1_6
       rect:
         serializedVersion: 2
         x: 960
@@ -237,8 +237,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f733f4ad17e1a2c46b0ea2f69f9ce4ac
-      internalID: 2015965125
+      spriteID: 8e141d1f704c4ba4fb97168f7d74cb98
+      internalID: -1157182373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kintsuigi collect sheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23816ae5485ea594bb909f6b4f057311
+      internalID: 457289949
       vertices: []
       indices: 
       edges: []
@@ -254,13 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Kintsuigi collect sheet_0: 1991275892
-      Kintsuigi collect sheet_1: -863042715
-      Kintsuigi collect sheet_2: 1036172119
-      Kintsuigi collect sheet_3: 1506299600
-      Kintsuigi collect sheet_4: 13536770
-      Kintsuigi collect sheet_5: -481221772
-      Kintsuigi collect sheet_6: 2015965125
+      Kintsuigi collect sheet 1_0: 231390113
+      Kintsuigi collect sheet 1_1: -332252846
+      Kintsuigi collect sheet 1_2: -1953104128
+      Kintsuigi collect sheet 1_3: 628663007
+      Kintsuigi collect sheet 1_4: -938130047
+      Kintsuigi collect sheet 1_5: 1587013751
+      Kintsuigi collect sheet 1_6: -1157182373
+      Kintsuigi collect sheet 1_7: 457289949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -20,6 +20,7 @@ public class VortxAnimator : MonoBehaviour
         if (Vortex.fadeOut)
         {
             anim.SetBool("Gone", true);
+            Invoke("Remove", 2);
         }
         if (Vortex.suction)
         {
@@ -32,5 +33,8 @@ public class VortxAnimator : MonoBehaviour
             vortexHit2.enabled = false;
         }
     }
-    
+    public void Remove()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -13,7 +13,7 @@ public class SceneManagement : MonoBehaviour
     public Animator fadeAnim;
     
     public bool transforming1;
-    public bool transforming2;
+    
     public bool backToTitle;
     public static string friendSceneToLoad;
     public static string journalSceneToLoad;
@@ -25,18 +25,22 @@ public class SceneManagement : MonoBehaviour
 
         if (transforming1)
         {
-            Invoke("FadeOut", 2);
-            Invoke("goToNext", 4);
+            TransformSound();
+            Invoke("FadeOut", 10);
+            Invoke("TransformSound", 5.5f);
+            Invoke("goToNext", 11);
         }
 
-        if (transforming2)
-        {
-            Invoke("FadeOut", 2);
-            Invoke("goToNext2", 4);
-        }
+        
 
 
         fadeAnim.SetBool("FadeOut", false);
+    }
+    public void TransformSound()
+    {
+        Transition.pitch = UnityEngine.Random.Range(1.3f, 1.7f);
+        Transition.panStereo = UnityEngine.Random.Range(-1, 1);
+        Transition.PlayOneShot(transitionClip);
     }
     public void LoadThanks()
     {
@@ -53,12 +57,9 @@ public class SceneManagement : MonoBehaviour
     }
     public void goToNext()
     {
-        SceneManager.LoadScene("Transform 2");
-    }
-    public void goToNext2()
-    {
         SceneManager.LoadScene("FinalCorridor");
     }
+    
     // Update is called once per frame
     void Update()
     {

@@ -2508,7 +2508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 67
+      value: -420
       objectReference: {fileID: 0}
     - target: {fileID: 3413649695400117955, guid: 8cf93d0edd0eeee4b828797a2526b9b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8513,6 +8513,8 @@ MonoBehaviour:
   transitionClip: {fileID: 8300000, guid: 836fec7b8c9ff1c4799240d7e4e74738, type: 3}
   anim: {fileID: 548452445}
   fadeAnim: {fileID: 117000589}
+  transforming1: 0
+  backToTitle: 0
 --- !u!82 &1209653173
 AudioSource:
   m_ObjectHideFlags: 0

@@ -67,7 +67,9 @@ public class PlayerMovement : MonoBehaviour
         HitPlayer.enabled = true;
         firstDash = false;
         trailRenderer.emitting = false;
-        
+        //
+        //maxHealth = 100;
+        //
         currentHealth = maxHealth;
         healthToLose = 10 - defense;
         activeMoveSpeed = moveSpeed;
@@ -100,8 +102,8 @@ public class PlayerMovement : MonoBehaviour
         BossSound.reverbZoneMix = 1;
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Equals("Bullet") && !BossHealth.victory || collision.gameObject.name.Equals("BabyDepression(Clone)")&& !BossHealth.victory)
+    { 
+        if (collision.gameObject.name.Equals("Bullet") && !BossHealth.victory || collision.gameObject.name.Equals("BabyDepression(Clone)")&& !BossHealth.victory || collision.gameObject.CompareTag("Bullet") && !BossHealth.victory)
         {
             if (iFrames == false)
             {

@@ -13,6 +13,8 @@ public class FinalDialogue : MonoBehaviour
     private int index;
     public PlayerMovement mov;
     public GameObject arrow;
+    public AudioClip sound;
+    public AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,10 @@ public class FinalDialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        source.pitch = Random.Range(1.3f, 1.65f);
+
+        source.panStereo = Random.Range(-1f, 1f);
+        source.PlayOneShot(sound);
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
