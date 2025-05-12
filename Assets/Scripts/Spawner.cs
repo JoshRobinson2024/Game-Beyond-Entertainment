@@ -70,7 +70,7 @@ public class Spawner : MonoBehaviour
 
         InvokeRepeating("RampUp", 5, 17);
 
-        phase2 = true;
+        phase2 = false;
         phase3 = false;
         furyMode = false;
         
@@ -120,7 +120,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                attkSelected = Random.Range(9, 13);
+                attkSelected = Random.Range(1, 13);
                 
                 laserAttkSelect = Random.Range(0, 2);
                 //Debug.Log(attkSelected);
@@ -199,7 +199,7 @@ public class Spawner : MonoBehaviour
     }
     private void Attk12()
     {
-        if (phase2 || phase3 || furyMode)
+        if (phase2 || phase3)
         {
             attacksDone += 1;
             attkInProgress = true;
