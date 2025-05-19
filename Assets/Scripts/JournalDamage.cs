@@ -31,6 +31,9 @@ public class JournalDamage : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         
         TrailRenderer.emitting = false;
+        
+        rend.color = neutralColour;
+        JournalGrabbable = true;
     }
     public void JDamage()
     {

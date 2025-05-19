@@ -31,6 +31,9 @@ public class GuitarDamage : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         
         TrailRenderer.emitting = false;
+        
+        rend.color = neutralColour;
+        GuitarGrabbable = true;
     }
     public void GDamage()
     {
